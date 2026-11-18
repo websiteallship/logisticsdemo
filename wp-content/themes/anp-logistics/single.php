@@ -15,7 +15,11 @@ get_header();
 	<?php endif; ?>
 	<div class="anp-prose mt-10"><?php the_content(); ?></div>
 	<div class="mt-14 border-t border-slate-200 pt-8">
-		<a href="<?php echo esc_url(home_url('/#lien-he')); ?>" class="btn btn-accent"><?php echo esc_html(anp_t('get_quote')); ?> <?php echo anp_icon('arrow', 'h-4 w-4'); ?></a>
+		<?php
+		$contact_page = get_page_by_path('lien-he') ?: get_page_by_path('contact');
+		$contact_url  = $contact_page ? get_permalink($contact_page) : home_url('/lien-he/');
+		?>
+		<a href="<?php echo esc_url($contact_url); ?>" class="btn btn-accent"><?php echo esc_html(anp_t('get_quote')); ?> <?php echo anp_icon('arrow', 'h-4 w-4'); ?></a>
 	</div>
 </article>
 <?php endwhile; ?>
