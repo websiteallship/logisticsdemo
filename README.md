@@ -18,6 +18,9 @@ Trải nghiệm trực tiếp toàn bộ tính năng và giao diện tương tá
 - ❓ **Trang Hỏi đáp (FAQ Page):**  
   [https://raw.githack.com/websiteallship/logisticsdemo/main/hoi-dap.html](https://raw.githack.com/websiteallship/logisticsdemo/main/hoi-dap.html)
 
+- 🧰 **Trang dịch vụ (6 trang):**  
+  [khai-bao-hai-quan](https://raw.githack.com/websiteallship/logisticsdemo/main/khai-bao-hai-quan.html) · [van-chuyen-noi-dia](https://raw.githack.com/websiteallship/logisticsdemo/main/van-chuyen-noi-dia.html) · [van-chuyen-duong-bien](https://raw.githack.com/websiteallship/logisticsdemo/main/van-chuyen-duong-bien.html) · [van-chuyen-duong-khong](https://raw.githack.com/websiteallship/logisticsdemo/main/van-chuyen-duong-khong.html) · [kho-bai-xep-do](https://raw.githack.com/websiteallship/logisticsdemo/main/kho-bai-xep-do.html) · [hang-du-an](https://raw.githack.com/websiteallship/logisticsdemo/main/hang-du-an.html)
+
 ---
 
 ## 📁 Cấu trúc Repository

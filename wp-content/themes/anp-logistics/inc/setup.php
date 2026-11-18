@@ -393,7 +393,7 @@ function anp_fallback_menu($args = array()) {
 		anp_t('menu_about')    => home_url('/#gioi-thieu'),
 		anp_t('menu_services') => home_url('/#dich-vu'),
 		anp_t('menu_process')  => home_url('/#quy-trinh'),
-		anp_t('menu_news')     => home_url('/#tin-tuc'),
+		anp_t('menu_news')     => home_url('/tin-tuc/'),
 		anp_t('menu_faq')      => $faq_url,
 		anp_t('menu_contact')  => $contact_url,
 	);
@@ -459,6 +459,25 @@ function anp_register_query_vars($vars) {
 	return $vars;
 }
 add_filter('query_vars', 'anp_register_query_vars');
+
+function anp_modify_blog_archive_query($query) {
+	if (!is_admin() && $query->is_main_query()) {
+		$path = trim((string) parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
+		$slug = basename($path);
+		if (in_array($slug, array('tin-tuc', 'blog'), true) || $query->get('anp_custom_page') === 'blog') {
+			$query->set('post_type', 'post');
+			$query->set('post_status', 'publish');
+			$query->set('posts_per_page', 9);
+			$query->is_home = true;
+			$query->is_posts_page = true;
+			$query->is_archive = false;
+			$query->is_page = false;
+			$query->is_singular = false;
+			$query->is_404 = false;
+		}
+	}
+}
+add_action('pre_get_posts', 'anp_modify_blog_archive_query');
 
 function anp_prevent_custom_pages_404($preempt, $query) {
 	$request_uri = $_SERVER['REQUEST_URI'] ?? '';
