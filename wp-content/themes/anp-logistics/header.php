@@ -18,7 +18,7 @@ $faq_url      = $faq_page ? get_permalink($faq_page) : home_url('/hoi-dap/');
 
 <a class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-brand focus:shadow-lg" href="#main"><?php echo esc_html(anp_t('skip_nav')); ?></a>
 
-<header id="site-header" class="fixed inset-x-0 top-0 z-50 bg-white transition-shadow duration-300">
+<header id="site-header" class="sticky top-[-37px] z-50 bg-white transition-shadow duration-300">
 	<!-- 1. Top Utility Bar (36px) -->
 	<div class="anp-topbar border-b border-white/10 bg-brand text-xs text-slate-300">
 		<div class="mx-auto flex h-9 max-w-7xl items-center justify-between px-5 sm:px-8">
@@ -130,4 +130,4 @@ $faq_url      = $faq_page ? get_permalink($faq_page) : home_url('/hoi-dap/');
 	</div>
 </header>
 
-<main id="main" class="pt-[108px]">
+<main id="main">

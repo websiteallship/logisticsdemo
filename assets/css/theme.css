@@ -112,14 +112,10 @@ html { scroll-behavior: smooth; }
 	transition: height 0.3s ease;
 }
 #site-header.is-scrolled { box-shadow: 0 10px 28px -14px rgb(15 23 42 / 0.35); }
-#site-header.is-scrolled .anp-topbar {
-	max-height: 0;
-	opacity: 0;
-	border-bottom-width: 0;
-	visibility: hidden; /* bỏ khỏi thứ tự Tab sau khi thu gọn xong */
-	transition: max-height 0.3s ease, opacity 0.25s ease, visibility 0s linear 0.3s;
-}
-#site-header.is-scrolled .anp-mainbar { height: 60px; }
+/* Header sticky (top: -37px): thanh trên cùng tự cuộn khỏi màn hình, menu chính dính lại.
+   Header nằm trong luồng trang nên không cần chừa khoảng trống phía trên nội dung. */
+#site-header { position: sticky; top: -37px; }
+body.admin-bar #site-header { top: -5px; }
 
 /* Menu thả xuống (desktop): hiện khi rê chuột hoặc khi focus bằng bàn phím */
 #site-header .anp-nav li { position: relative; }

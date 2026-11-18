@@ -351,7 +351,7 @@ $step_slas  = array(
 	$is_en ? 'Full POD & Tax Invoicing' : 'Bàn giao đủ POD & Hóa đơn',
 );
 ?>
-<section id="quy-trinh" class="relative isolate scroll-mt-28 overflow-hidden bg-[#061220] py-20 text-white sm:py-28">
+<section id="quy-trinh" class="relative isolate scroll-mt-28 overflow-hidden bg-[#0A2410] py-20 text-white sm:py-28">
 	<!-- Ảnh nền cảng đêm & Lớp phủ gradient sâu chống chói (Deep Maritime Navy) -->
 	<div class="absolute inset-0 -z-10">
 		<?php if ($process_bg) : ?>

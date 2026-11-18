@@ -94,7 +94,7 @@ tailwind.config = {theme:{extend:{colors:{brand:{DEFAULT:"rgb(var(--c-primary) /
 
 <a class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-brand focus:shadow-lg" href="#main">Bỏ qua điều hướng</a>
 
-<header id="site-header" class="fixed inset-x-0 top-0 z-50 bg-white transition-shadow duration-300">
+<header id="site-header" class="sticky top-[-37px] z-50 bg-white transition-shadow duration-300">
 	<!-- 1. Top Utility Bar (36px) -->
 	<div class="anp-topbar border-b border-white/10 bg-brand text-xs text-slate-300">
 		<div class="mx-auto flex h-9 max-w-7xl items-center justify-between px-5 sm:px-8">
@@ -177,7 +177,7 @@ Thứ 7: 08:00 – 12:00">
 	</div>
 </header>
 
-<main id="main" class="pt-[108px]">
+<main id="main">
 
 <!-- 1. Breadcrumb Navigation -->
 <nav class="border-b border-slate-200 bg-slate-50" aria-label="Đường dẫn">
@@ -188,125 +188,21 @@ Thứ 7: 08:00 – 12:00">
 	</div>
 </nav>
 
-<!-- 2. HERO: Split Industrial Showcase & Floating Fleet Stage (Phương án 1) -->
-<header class="relative isolate overflow-hidden bg-[#061220] py-14 sm:py-20 lg:py-24 text-white">
-	<!-- Atmospheric glow layers -->
-	<div class="pointer-events-none absolute -left-40 -top-40 h-[500px] w-[500px] rounded-full bg-brand/35 blur-[140px]"></div>
-	<div class="pointer-events-none absolute -right-20 top-1/2 h-[450px] w-[450px] -translate-y-1/2 rounded-full bg-[#1F4F25]/25 blur-[140px]"></div>
-	<div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/[0.04] via-transparent to-transparent"></div>
-
+<!-- 2. Hero Banner: Ảnh Toàn Cảnh Nhận Diện Doanh Nghiệp & Đội Xe HP Trading -->
+<header class="bg-white pt-4 pb-2 sm:pt-6 sm:pb-4">
 	<div class="mx-auto max-w-7xl px-5 sm:px-8">
-		<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-			
-			<!-- CỘT TRÁI (7 cols): Định Vị Thương Hiệu, Headline, CTA & Dải Chỉ Số -->
-			<div class="lg:col-span-7 space-y-6 sm:space-y-7">
-				
-				<!-- Badge Xác Thực Doanh Nghiệp -->
-				<div class="inline-flex flex-wrap items-center gap-2">
-					<div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-[#1F4F25]/50 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-emerald-300 backdrop-blur-md">
-						<span class="relative flex h-2 w-2">
-							<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-							<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
-						</span>
-						HP Trading - Transport • 10 Năm Vững Bước					</div>
-					<span class="hidden sm:inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-slate-300">
-						Đơn vị vận tải cảng biển &amp; Hải quan					</span>
-				</div>
-
-				<!-- H1 Headline Công Nghiệp -->
-				<h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.18]">
-					Một Đầu Mối Toàn Diện Cho					<span class="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-emerald-400 to-accent">
-						Chuỗi Cung Ứng Xuất Nhập Khẩu					</span>
-				</h1>
-
-				<!-- Đoạn Lead Khẳng Định Vị Thế -->
-				<p class="text-base sm:text-lg leading-relaxed text-slate-300 max-w-2xl">
-					Thành lập từ năm 2014, HP Trading - Transport chuyên sâu vận tải container và thủ tục hải quan trọn gói. Chúng tôi sở hữu đội xe hơn 40 đầu kéo chủ động, kết nối trực tiếp các cụm cảng quốc tế Cát Lái, Cái Mép, ICD đến các khu công nghiệp trọng điểm phía Nam với cam kết 100% đúng hạn closing time.				</p>
-
-				<!-- CTA Kép Hành Động -->
-				<div class="flex flex-wrap items-center gap-3.5 pt-2">
-					<a href="lien-he.html" class="btn btn-accent px-6 py-3.5 font-bold text-sm shadow-xl flex items-center gap-2">
-						<span>Yêu Cầu Báo Giá Trọn Gói</span>
-						<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-					</a>
-					<a href="#nang-luc-doi-xe" class="btn btn-ghost-light px-5 py-3.5 font-semibold text-sm flex items-center gap-2">
-						<svg class="h-4 w-4 text-emerald-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h11v10H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>						<span>Khảo Sát Năng Lực Đội Xe</span>
-					</a>
-				</div>
-
-				<!-- Dải Capsule 4 Chỉ Số Năng Lực -->
-				<div class="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-3 border-t border-white/10">
-					<div class="rounded-xl border border-white/10 bg-white/[0.04] p-3.5 backdrop-blur-sm">
-						<div class="font-display text-2xl font-extrabold text-accent">10+</div>
-						<p class="mt-0.5 text-xs text-slate-300">Năm kinh nghiệm thực chiến</p>
-					</div>
-					<div class="rounded-xl border border-white/10 bg-white/[0.04] p-3.5 backdrop-blur-sm">
-						<div class="font-display text-2xl font-extrabold text-white">40+</div>
-						<p class="mt-0.5 text-xs text-slate-300">Đầu kéo &amp; rơ-moóc GPS</p>
-					</div>
-					<div class="rounded-xl border border-white/10 bg-white/[0.04] p-3.5 backdrop-blur-sm">
-						<div class="font-display text-2xl font-extrabold text-emerald-400">500+</div>
-						<p class="mt-0.5 text-xs text-slate-300">Doanh nghiệp FDI tin cậy</p>
-					</div>
-					<div class="rounded-xl border border-white/10 bg-white/[0.04] p-3.5 backdrop-blur-sm">
-						<div class="font-display text-2xl font-extrabold text-accent">0 VNĐ</div>
-						<p class="mt-0.5 text-xs text-slate-300">Phí ẩn phát sinh</p>
-					</div>
-				</div>
-
-			</div>
-
-			<!-- CỘT PHẢI (5 cols): Floating Fleet Stage (Frame Đa Tầng & Thẻ Nổi Kính) -->
-			<div class="lg:col-span-5 relative">
-				<div class="relative mx-auto max-w-lg lg:max-w-none">
-					
-					<!-- Glow hậu cảnh thẻ media -->
-					<div class="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-emerald-500/20 via-accent/20 to-brand/30 blur-lg opacity-75"></div>
-					
-					<!-- Khung kiến trúc Media -->
-					<div class="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-white/20 bg-slate-900 shadow-2xl group">
-						<img src="uploads/2026/11/banner-doi-xe-hp-trading.jpg" 
-							 alt="Toàn cảnh đội xe đầu kéo và bãi container HP Trading - Transport" 
-							 class="w-full h-[360px] sm:h-[440px] object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-							 loading="eager" fetchpriority="high">
-						
-						<!-- Lớp gradient bảo đảm độ tương phản thẻ nổi -->
-						<div class="absolute inset-0 bg-gradient-to-t from-[#061220]/90 via-[#061220]/25 to-transparent"></div>
-
-						<!-- Floating Glass Badge 1: Live Fleet Tracking (Góc trên trái) -->
-						<div class="absolute top-4 left-4 rounded-xl border border-white/20 bg-[#061220]/80 p-3 sm:p-3.5 backdrop-blur-md shadow-2xl flex items-center gap-3">
-							<div class="relative flex h-3 w-3">
-								<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-								<span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-400"></span>
-							</div>
-							<div>
-								<div class="text-xs font-bold text-white">Đội Xe Chủ Động 24/7</div>
-								<div class="text-[11px] text-emerald-300 font-medium">40+ Đầu kéo kết nối định vị GPS</div>
-							</div>
-						</div>
-
-						<!-- Floating Glass Badge 2: Cam Kết SLA & Bảo Hiểm (Góc dưới phải) -->
-						<div class="absolute bottom-4 right-4 rounded-xl border border-white/20 bg-[#0B192C]/90 p-3 sm:p-3.5 backdrop-blur-md shadow-2xl flex items-center gap-3">
-							<div class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent text-[#0B192C] font-black text-sm">
-								✓
-							</div>
-							<div>
-								<div class="text-xs font-bold text-white">Cam Kết Thông Quan &lt; 24h</div>
-								<div class="text-[11px] text-accent font-medium">Bảo hiểm trách nhiệm 10 Tỷ VNĐ</div>
-							</div>
-						</div>
-
-					</div>
-
-				</div>
-			</div>
-
+		<h1 class="sr-only">HP Trading - Transport | Giới Thiệu Doanh Nghiệp &amp; Hồ Sơ Năng Lực Chuỗi Cung Ứng</h1>
+		<div class="overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xl bg-slate-900 group">
+			<img src="uploads/2026/11/banner-doi-xe-hp-trading.jpg" 
+				 alt="HP Trading - Transport - Vận tải hàng hóa, Cho thuê xe đầu kéo, Kho bãi hàng hóa, Tư vấn dịch vụ hải quan" 
+				 class="w-full h-auto object-cover transition-transform duration-700 hover:scale-[1.01]"
+				 loading="eager" fetchpriority="high">
 		</div>
 	</div>
 </header>
 
-<main class="py-14 sm:py-20 bg-white">
-	<div class="mx-auto max-w-7xl px-5 sm:px-8 space-y-20 sm:space-y-28">
+<main class="py-10 sm:py-16 bg-white">
+	<div class="mx-auto max-w-7xl px-5 sm:px-8 space-y-16 sm:space-y-24">
 
 		<!-- SECTION 1: TẦM NHÌN & SỨ MỆNH (VISION & MISSION CARDS) -->
 		<section class="reveal-up">
@@ -521,10 +417,10 @@ Thứ 7: 08:00 – 12:00">
 					Đội xe chủ động hơn 40 đầu kéo Chenglong, Scania, Hải Âu H7 được kiểm định định kỳ, tích hợp thiết bị giám sát hành trình GPS và camera 24/7.				</p>
 			</div>
 
-			<!-- Ảnh Panorama thực tế -->
+			<!-- Ảnh Đội Xe & Bãi Trung Chuyển Thực Tế -->
 			<div class="overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xl bg-slate-900">
-				<img src="uploads/2026/11/banner-doi-xe-hp-trading.jpg" 
-					 alt="Toàn cảnh đội xe đầu kéo và kho bãi HP Trading - Transport" 
+				<img src="uploads/2026/11/doi-ngu-anp-logistics-fleet.jpg" 
+					 alt="Đội xe đầu kéo và bãi container HP Trading - Transport" 
 					 class="w-full h-auto object-cover max-h-[550px]"
 					 loading="lazy" decoding="async">
 			</div>
