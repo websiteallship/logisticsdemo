@@ -393,7 +393,7 @@ function anp_fallback_menu($args = array()) {
 		anp_t('menu_about')    => home_url('/#gioi-thieu'),
 		anp_t('menu_services') => home_url('/#dich-vu'),
 		anp_t('menu_process')  => home_url('/#quy-trinh'),
-		anp_t('menu_news')     => get_permalink(get_option('page_for_posts')) ?: home_url('/blog/'),
+		anp_t('menu_news')     => home_url('/#tin-tuc'),
 		anp_t('menu_faq')      => $faq_url,
 		anp_t('menu_contact')  => $contact_url,
 	);
@@ -439,10 +439,18 @@ function anp_on_switch() {
 }
 add_action('after_switch_theme', 'anp_on_switch');
 
-/* ---------- 8. Định tuyến trang chuyên biệt (Liên hệ, Hỏi đáp) ---------- */
+/* ---------- 8. Định tuyến trang chuyên biệt (Liên hệ, Hỏi đáp) ----------
+ * Đây là trang "ảo" không có WP_Post. Không đặt is_page/is_singular = true,
+ * nếu không Rank Math sẽ đọc get_post() = null và in hàng loạt Warning ra <head>. */
+function anp_is_faq_request() {
+	$path = trim((string) parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
+	return get_query_var('anp_custom_page') === 'faq' || in_array(basename($path), array('hoi-dap', 'faq'), true);
+}
+
 function anp_register_custom_rewrites() {
 	add_rewrite_rule('^(lien-he|contact)/?$', 'index.php?anp_custom_page=contact', 'top');
 	add_rewrite_rule('^(hoi-dap|faq)/?$', 'index.php?anp_custom_page=faq', 'top');
+	add_rewrite_rule('^(tin-tuc|blog)/?$', 'index.php?anp_custom_page=blog', 'top');
 }
 add_action('init', 'anp_register_custom_rewrites');
 
@@ -456,11 +464,17 @@ function anp_prevent_custom_pages_404($preempt, $query) {
 	$request_uri = $_SERVER['REQUEST_URI'] ?? '';
 	$path = trim((string) parse_url($request_uri, PHP_URL_PATH), '/');
 	$slug = basename($path);
-	if (in_array($slug, array('lien-he', 'contact', 'hoi-dap', 'faq'), true)) {
+	if (in_array($slug, array('lien-he', 'contact', 'hoi-dap', 'faq', 'tin-tuc', 'blog'), true)) {
 		status_header(200);
 		if ($query) {
 			$query->is_404 = false;
-			$query->is_page = true;
+			if (in_array($slug, array('tin-tuc', 'blog'), true)) {
+				$query->is_home = true;
+				$query->is_posts_page = true;
+			} else {
+				$query->is_page = false;
+				$query->is_singular = false;
+			}
 		}
 		return true;
 	}
@@ -486,7 +500,8 @@ function anp_custom_templates_routing($template) {
 			global $wp_query;
 			if ($wp_query) {
 				$wp_query->is_404  = false;
-				$wp_query->is_page = true;
+				$wp_query->is_page     = false;
+				$wp_query->is_singular = false;
 			}
 			return $contact_tpl;
 		}
@@ -499,9 +514,24 @@ function anp_custom_templates_routing($template) {
 			global $wp_query;
 			if ($wp_query) {
 				$wp_query->is_404  = false;
-				$wp_query->is_page = true;
+				$wp_query->is_page     = false;
+				$wp_query->is_singular = false;
 			}
 			return $faq_tpl;
+		}
+	}
+
+	if ($custom_page === 'blog' || in_array($slug, array('tin-tuc', 'blog'), true)) {
+		$blog_tpl = locate_template(array('index.php', 'archive.php'));
+		if ($blog_tpl) {
+			status_header(200);
+			global $wp_query;
+			if ($wp_query) {
+				$wp_query->is_404        = false;
+				$wp_query->is_home       = true;
+				$wp_query->is_posts_page = true;
+			}
+			return $blog_tpl;
 		}
 	}
 

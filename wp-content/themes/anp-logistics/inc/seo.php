@@ -155,7 +155,7 @@ function anp_seo_head() {
 	$graph = array(anp_schema_organization());
 	if ($is_service) {
 		$graph = array_merge($graph, anp_service_schema(get_the_ID()));
-	} elseif (is_front_page() || is_page_template('page-faq.php') || is_page(array('hoi-dap', 'faq'))) {
+	} elseif (is_front_page() || anp_is_faq_request()) {
 		$graph[] = anp_schema_faq();
 	}
 	echo '<script type="application/ld+json">' . wp_json_encode(array('@context' => 'https://schema.org', '@graph' => $graph), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . "</script>\n";
@@ -167,7 +167,7 @@ function anp_rankmath_jsonld($data, $jsonld = null) {
 	if (!is_array($data)) {
 		return $data;
 	}
-	if (is_front_page() || is_page_template('page-faq.php') || is_page(array('hoi-dap', 'faq'))) {
+	if (is_front_page() || anp_is_faq_request()) {
 		$data['anp-faq'] = anp_schema_faq();
 	}
 	if (is_singular('anp_service')) {
