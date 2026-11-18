@@ -47,22 +47,15 @@ if (anp_opt('anp_license_no') !== '') {
 </nav>
 
 <!-- 2. Header Banner (Deep Navy & Emerald Atmosphere) -->
-<header class="relative isolate overflow-hidden bg-[#061220] py-14 sm:py-20 text-white">
-	<div class="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-brand/35 blur-3xl"></div>
-	<div class="pointer-events-none absolute -right-20 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-[#1F4F25]/30 blur-3xl"></div>
-	<div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/[0.04] via-transparent to-transparent"></div>
+<header class="relative isolate overflow-hidden bg-[#1a4d1e] py-14 sm:py-20 text-white">
+	<div class="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-white/10 blur-3xl"></div>
+	<div class="pointer-events-none absolute -right-20 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-black/20 blur-3xl"></div>
+	<div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/[0.06] via-transparent to-transparent"></div>
 
 	<div class="mx-auto max-w-7xl px-5 sm:px-8">
 		<div class="max-w-3xl">
-			<div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-[#1F4F25]/50 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-emerald-300 backdrop-blur-md">
-				<span class="relative flex h-2 w-2">
-					<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-					<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
-				</span>
-				<?php echo esc_html($is_en ? 'Direct Logistics Advisory • 24/7 Response' : 'Tư Vấn Trực Tiếp • Phản Hồi Trong 30 Phút'); ?>
-			</div>
 
-			<h1 class="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+			<h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
 				<?php echo esc_html($page_h1); ?>
 			</h1>
 

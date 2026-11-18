@@ -497,9 +497,9 @@ body.anp-menu-open {
 		0 0 0 1px rgba(255, 255, 255, 0.08) inset;
 }
 
-/* Card kính mờ quy trình 4 bước (Connected Glass Stepper - Deep Maritime Navy) */
+/* Card kính mờ quy trình 4 bước (Connected Glass Stepper - Green Theme) */
 .anp-stepper-glass {
-	background: linear-gradient(160deg, rgba(11, 25, 44, 0.78) 0%, rgba(6, 18, 32, 0.88) 100%);
+	background: linear-gradient(160deg, rgba(13, 59, 16, 0.75) 0%, rgba(10, 46, 13, 0.88) 100%);
 	backdrop-filter: blur(20px);
 	-webkit-backdrop-filter: blur(20px);
 	border: 1px solid rgba(255, 255, 255, 0.14);
@@ -509,13 +509,13 @@ body.anp-menu-open {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.4);
 	transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .anp-stepper-glass:hover {
 	transform: translateY(-6px);
-	border-color: rgba(234, 88, 12, 0.6);
-	box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.7), 0 0 25px -5px rgba(234, 88, 12, 0.25);
+	border-color: rgba(124, 194, 66, 0.6);
+	box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.5), 0 0 25px -5px rgba(124, 194, 66, 0.2);
 }
 
 /* Lớp phủ đa tầng bảo đảm độ tương phản chữ & Live Tracking Card (Anti-slop) */

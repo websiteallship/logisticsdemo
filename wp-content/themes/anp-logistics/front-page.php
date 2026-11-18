@@ -383,24 +383,20 @@ $step_slas  = array(
 	$is_en ? 'Full POD & Tax Invoicing' : 'Bàn giao đủ POD & Hóa đơn',
 );
 ?>
-<section id="quy-trinh" class="relative isolate scroll-mt-28 overflow-hidden bg-[#0A2410] py-20 text-white sm:py-28">
-	<!-- Ảnh nền cảng đêm & Lớp phủ gradient sâu chống chói (Deep Maritime Navy) -->
+<section id="quy-trinh" class="relative isolate scroll-mt-28 overflow-hidden bg-[#1a4d1e] py-20 text-white sm:py-28">
+	<!-- Ảnh nền cảng đêm & Lớp phủ gradient sâu chống chói -->
 	<div class="absolute inset-0 -z-10">
 		<?php if ($process_bg) : ?>
 			<img src="<?php echo esc_url($process_bg); ?>" alt="" class="h-full w-full object-cover" loading="lazy" decoding="async">
 		<?php else : ?>
 			<?php echo anp_photo_img('night', array('class' => 'h-full w-full object-cover', 'sizes' => '100vw', 'alt' => '')); // phpcs:ignore ?>
 		<?php endif; ?>
-		<div class="absolute inset-0 bg-gradient-to-b from-[#061220]/95 via-[#0B192C]/85 to-[#061220]/95"></div>
+		<div class="absolute inset-0 bg-gradient-to-b from-[#0d3b10]/95 via-[#1a4d1e]/80 to-[#0d3b10]/95"></div>
 	</div>
 
 	<div class="mx-auto max-w-7xl px-5 sm:px-8">
 		<div class="reveal-up max-w-2xl">
-			<p class="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-500/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-amber-400">
-				<span class="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-				<?php echo esc_html(anp_t('process_label')); ?>
-			</p>
-			<h2 class="mt-4 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl"><?php echo esc_html(anp_opt('anp_process_title')); ?></h2>
+			<h2 class="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl"><?php echo esc_html(anp_opt('anp_process_title')); ?></h2>
 			<p class="mt-3 text-base text-slate-300/90"><?php echo esc_html($is_en ? 'Standardized 4-stage logistics pipeline from cargo intake, customs handling to last-mile fulfillment.' : 'Quy trình 4 bước chuẩn hóa từ khâu tiếp nhận, xử lý hải quan đến điều phối và đối soát minh bạch.'); ?></p>
 		</div>
 
@@ -419,13 +415,13 @@ $step_slas  = array(
 									<div class="relative z-10 grid h-12 w-12 place-items-center rounded-xl border border-white/20 bg-white/[0.08] text-white shadow-md backdrop-blur-md transition-all duration-300 group-hover:scale-105 group-hover:border-accent group-hover:bg-accent group-hover:text-white">
 										<?php echo anp_icon($icon_name, 'h-5 w-5'); ?>
 									</div>
-									<span class="font-mono text-xs font-bold tracking-wider text-amber-300 rounded-md border border-amber-400/30 bg-amber-500/15 px-2.5 py-1">
+									<span class="font-mono text-xs font-bold tracking-wider text-emerald-300 rounded-md border border-emerald-400/30 bg-emerald-500/15 px-2.5 py-1">
 										STAGE 0<?php echo esc_html($i + 1); ?>
 									</span>
 								</div>
 
 								<!-- Tiêu đề bước -->
-								<h3 class="mt-5 font-display text-lg font-bold tracking-tight text-white transition-colors group-hover:text-amber-300">
+								<h3 class="mt-5 font-display text-lg font-bold tracking-tight text-white transition-colors group-hover:text-emerald-300">
 									<?php echo esc_html($step['q']); ?>
 								</h3>
 
@@ -438,8 +434,8 @@ $step_slas  = array(
 							<!-- Footer card: Cam kết SLA & Trạng thái minh bạch -->
 							<?php if ($sla_text) : ?>
 								<div class="mt-6 border-t border-white/10 pt-4">
-									<span class="inline-flex items-center gap-2 text-xs font-medium text-amber-400">
-										<span class="h-1.5 w-1.5 rounded-full bg-amber-400"></span>
+									<span class="inline-flex items-center gap-2 text-xs font-medium text-emerald-300">
+									<span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
 										<span><?php echo esc_html($sla_text); ?></span>
 									</span>
 								</div>
