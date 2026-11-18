@@ -303,33 +303,73 @@ if (anp_opt('anp_license_no') !== '') {
 	</div>
 </section>
 
-<!-- 4. Cam kết chất lượng dịch vụ B2B (3 Cột) -->
-<section class="border-t border-slate-200 bg-white py-16">
+<!-- 4. Cam kết chất lượng dịch vụ B2B (3 Cột) - Pattern & Brand Emerald Lift -->
+<section class="relative isolate overflow-hidden border-t border-slate-200/80 bg-slate-100/70 py-16 sm:py-20">
+	<!-- Subtle Architectural Logistics Dot Pattern & Ambient Glows -->
+	<div class="pointer-events-none absolute inset-0 -z-10 opacity-60" style="background-image: radial-gradient(rgba(31, 79, 37, 0.14) 1.2px, transparent 1.2px); background-size: 24px 24px;"></div>
+	<div class="pointer-events-none absolute -left-20 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-[#1F4F25]/10 blur-3xl"></div>
+	<div class="pointer-events-none absolute -right-20 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-[#1F4F25]/10 blur-3xl"></div>
+
 	<div class="mx-auto max-w-7xl px-5 sm:px-8">
 		<div class="grid gap-6 sm:grid-cols-3">
-			<div class="rounded-2xl border border-slate-200/90 bg-slate-50/70 p-6 shadow-sm hover:shadow-md transition">
-				<div class="grid h-11 w-11 place-items-center rounded-xl bg-brand text-accent font-bold">
-					<?php echo anp_icon('clock', 'h-5 w-5'); ?>
+			
+			<!-- Card 1 -->
+			<div class="relative rounded-3xl border border-slate-200/90 bg-white p-7 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#1F4F25]/40 hover:shadow-2xl hover:shadow-[#1F4F25]/12 group overflow-hidden flex flex-col justify-between">
+				<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#1F4F25] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+				<div>
+					<div class="flex items-center justify-between">
+						<div class="grid h-14 w-14 place-items-center rounded-2xl bg-[#1F4F25] text-white ring-4 ring-emerald-100/90 shadow-md group-hover:scale-110 group-hover:bg-[#143E1C] transition-all duration-300">
+							<?php echo anp_icon('clock', 'h-6 w-6 text-white'); ?>
+						</div>
+						<span class="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-bold text-slate-500 group-hover:bg-emerald-50 group-hover:text-[#1F4F25] transition">SLA 30 Phút</span>
+					</div>
+					<h3 class="mt-5 font-display font-bold text-brand text-lg group-hover:text-[#1F4F25] transition"><?php echo esc_html($is_en ? '30-Minute Response' : 'Phản hồi trong 30 phút'); ?></h3>
+					<p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed"><?php echo esc_html($is_en ? 'Fast quotes and customs consultancy directly from field specialists.' : 'Báo giá nhanh chóng và tư vấn chính xác biểu thuế, mã HS từ chuyên viên hiện trường.'); ?></p>
 				</div>
-				<h3 class="mt-4 font-display font-bold text-brand text-base"><?php echo esc_html($is_en ? '30-Minute Response' : 'Phản hồi trong 30 phút'); ?></h3>
-				<p class="mt-1.5 text-xs text-slate-600 leading-relaxed"><?php echo esc_html($is_en ? 'Fast quotes and customs consultancy directly from field specialists.' : 'Báo giá nhanh chóng và tư vấn chính xác biểu thuế, mã HS từ chuyên viên hiện trường.'); ?></p>
+				<div class="mt-5 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-[#1F4F25]">
+					<span class="h-1.5 w-1.5 rounded-full bg-[#1F4F25]"></span>
+					<span><?php echo esc_html($is_en ? 'Direct specialist contact' : 'Tiếp nhận yêu cầu trực tiếp'); ?></span>
+				</div>
 			</div>
 
-			<div class="rounded-2xl border border-slate-200/90 bg-slate-50/70 p-6 shadow-sm hover:shadow-md transition">
-				<div class="grid h-11 w-11 place-items-center rounded-xl bg-brand text-accent font-bold">
-					<?php echo anp_icon('check', 'h-5 w-5'); ?>
+			<!-- Card 2 -->
+			<div class="relative rounded-3xl border border-slate-200/90 bg-white p-7 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#1F4F25]/40 hover:shadow-2xl hover:shadow-[#1F4F25]/12 group overflow-hidden flex flex-col justify-between">
+				<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#1F4F25] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+				<div>
+					<div class="flex items-center justify-between">
+						<div class="grid h-14 w-14 place-items-center rounded-2xl bg-[#1F4F25] text-white ring-4 ring-emerald-100/90 shadow-md group-hover:scale-110 group-hover:bg-[#143E1C] transition-all duration-300">
+							<?php echo anp_icon('check', 'h-6 w-6 text-white'); ?>
+						</div>
+						<span class="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-bold text-slate-500 group-hover:bg-emerald-50 group-hover:text-[#1F4F25] transition">100% Minh Bạch</span>
+					</div>
+					<h3 class="mt-5 font-display font-bold text-brand text-lg group-hover:text-[#1F4F25] transition"><?php echo esc_html($is_en ? 'Zero Hidden Surcharges' : 'Báo giá trọn gói 0 phí ẩn'); ?></h3>
+					<p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed"><?php echo esc_html($is_en ? 'Every fee itemized transparently with legal contracts and full VAT.' : 'Mọi khoản phí minh bạch từ đầu, hợp đồng pháp lý rõ ràng và xuất hóa đơn VAT đầy đủ.'); ?></p>
 				</div>
-				<h3 class="mt-4 font-display font-bold text-brand text-base"><?php echo esc_html($is_en ? 'Zero Hidden Surcharges' : 'Báo giá trọn gói 0 phí ẩn'); ?></h3>
-				<p class="mt-1.5 text-xs text-slate-600 leading-relaxed"><?php echo esc_html($is_en ? 'Every fee itemized transparently with legal contracts and full VAT.' : 'Mọi khoản phí minh bạch từ đầu, hợp đồng pháp lý rõ ràng và xuất hóa đơn VAT đầy đủ.'); ?></p>
+				<div class="mt-5 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-[#1F4F25]">
+					<span class="h-1.5 w-1.5 rounded-full bg-[#1F4F25]"></span>
+					<span><?php echo esc_html($is_en ? 'Itemized cost calculation' : 'Đối soát hóa đơn & chứng từ'); ?></span>
+				</div>
 			</div>
 
-			<div class="rounded-2xl border border-slate-200/90 bg-slate-50/70 p-6 shadow-sm hover:shadow-md transition">
-				<div class="grid h-11 w-11 place-items-center rounded-xl bg-brand text-accent font-bold">
-					<?php echo anp_icon('truck', 'h-5 w-5'); ?>
+			<!-- Card 3 -->
+			<div class="relative rounded-3xl border border-slate-200/90 bg-white p-7 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#1F4F25]/40 hover:shadow-2xl hover:shadow-[#1F4F25]/12 group overflow-hidden flex flex-col justify-between">
+				<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#1F4F25] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+				<div>
+					<div class="flex items-center justify-between">
+						<div class="grid h-14 w-14 place-items-center rounded-2xl bg-[#1F4F25] text-white ring-4 ring-emerald-100/90 shadow-md group-hover:scale-110 group-hover:bg-[#143E1C] transition-all duration-300">
+							<?php echo anp_icon('truck', 'h-6 w-6 text-white'); ?>
+						</div>
+						<span class="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-bold text-slate-500 group-hover:bg-emerald-50 group-hover:text-[#1F4F25] transition">Túc Trực 24/7</span>
+					</div>
+					<h3 class="mt-5 font-display font-bold text-brand text-lg group-hover:text-[#1F4F25] transition"><?php echo esc_html($is_en ? '24/7 Port & Fleet Support' : 'Hỗ trợ cảng & xe 24/7'); ?></h3>
+					<p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed"><?php echo esc_html($is_en ? 'Dedicated operational team on-site at major ports, airports and ICDs.' : 'Đội ngũ giao nhận túc trực tại Cát Lái, Cái Mép, ICD và sân bay sẵn sàng xử lý phát sinh.'); ?></p>
 				</div>
-				<h3 class="mt-4 font-display font-bold text-brand text-base"><?php echo esc_html($is_en ? '24/7 Port & Fleet Support' : 'Hỗ trợ cảng & xe 24/7'); ?></h3>
-				<p class="mt-1.5 text-xs text-slate-600 leading-relaxed"><?php echo esc_html($is_en ? 'Dedicated operational team on-site at major ports, airports and ICDs.' : 'Đội ngũ giao nhận túc trực tại Cát Lái, Cái Mép, ICD và sân bay sẵn sàng xử lý phát sinh.'); ?></p>
+				<div class="mt-5 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-[#1F4F25]">
+					<span class="h-1.5 w-1.5 rounded-full bg-[#1F4F25]"></span>
+					<span><?php echo esc_html($is_en ? 'GPS tracking & on-site staff' : 'Giám sát hành trình GPS & hiện trường'); ?></span>
+				</div>
 			</div>
+
 		</div>
 	</div>
 </section>

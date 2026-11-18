@@ -27,19 +27,25 @@ $contact_url  = $contact_page ? get_permalink($contact_page) : home_url('/lien-h
 	</ol>
 </nav>
 
-<!-- 2. Header Banner (Deep Navy) -->
-<header class="relative isolate overflow-hidden bg-brand py-16 text-white sm:py-20">
-	<div class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-brand via-brand/95 to-brand/85"></div>
+<!-- 2. Header Banner (Deep Navy & Emerald Atmosphere) -->
+<header class="relative isolate overflow-hidden bg-[#061220] py-14 sm:py-20 text-white">
+	<div class="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-brand/35 blur-3xl"></div>
+	<div class="pointer-events-none absolute -right-20 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-[#1F4F25]/30 blur-3xl"></div>
+	<div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/[0.04] via-transparent to-transparent"></div>
+
 	<div class="mx-auto max-w-7xl px-5 sm:px-8">
-		<div class="reveal-up max-w-3xl">
-			<p class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white">
-				<span class="h-1.5 w-1.5 rounded-full bg-accent animate-pulse"></span>
-				<?php echo esc_html($is_en ? 'Logistics & Supply Chain Insights' : 'Bản tin nghiệp vụ & Xuất nhập khẩu'); ?>
-			</p>
-			<h1 class="mt-4 font-display text-3xl font-bold tracking-tight sm:text-5xl">
+		<div class="max-w-3xl">
+			<div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-[#1F4F25]/50 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-emerald-300 backdrop-blur-md">
+				<span class="relative flex h-2 w-2">
+					<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+					<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+				</span>
+				<?php echo esc_html($is_en ? 'Logistics & Supply Chain Insights' : 'Bản Tin Nghiệp Vụ & Xuất Nhập Khẩu'); ?>
+			</div>
+			<h1 class="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
 				<?php echo esc_html($is_en ? 'News, Tariff Guides & Industry Insights' : 'Tin tức, Biểu thuế XNK & Kiến thức Logistics'); ?>
 			</h1>
-			<p class="mt-4 text-base leading-relaxed text-slate-300 sm:text-lg">
+			<p class="mt-4 text-base sm:text-lg leading-relaxed text-slate-300 max-w-2xl">
 				<?php echo esc_html($is_en ? 'Practical guides on customs declaration, freight cost optimization, and supply chain updates from HP Trading - Transport experts.' : 'Cập nhật chính sách biểu thuế hải quan, cẩm nang thông quan cảng biển và giải pháp tối ưu hóa chi phí chuỗi cung ứng từ các chuyên gia HP Trading - Transport.'); ?>
 			</p>
 		</div>
