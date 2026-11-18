@@ -1,0 +1,14 @@
+/*
+Theme Name: ANP Logistics
+Theme URI: https://anplogistics.com/
+Author: ANP Logistics Dev
+Description: Theme doanh nghiệp logistics. Tailwind CSS (CDN) + PHP cơ bản. Logo, thông tin công ty, 5 bộ màu và SEO/GEO được cấu hình trong Customizer (Giao diện > Tùy chỉnh > ANP Theme Options).
+Version: 1.0.1
+Requires at least: 6.4
+Requires PHP: 7.4
+License: GPLv2 or later
+Text Domain: anp
+*/
+
+/* Toàn bộ style chính nằm trong assets/css/theme.css và Tailwind CDN.
+   File này chỉ khai báo metadata theme cho WordPress. */

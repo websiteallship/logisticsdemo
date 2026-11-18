@@ -1,0 +1,712 @@
+/* ANP Logistics – CSS bổ sung cho Tailwind CDN.
+   Màu lấy từ biến :root (sinh ra bởi inc/setup.php theo bộ màu đã chọn). */
+
+:root {
+	--c-primary: 11 25 44;
+	--c-primary-soft: 30 41 59;
+	--c-accent: 234 88 12;
+	--c-accent-hover: 194 65 12;
+	--c-on-accent: 255 255 255;
+}
+
+/* Font chữ duy nhất toàn website: Be Vietnam Pro (tối ưu tiếng Việt, đa nền tảng) */
+html,
+body,
+h1, h2, h3, h4, h5, h6,
+.font-display {
+	font-family: "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+/* Băng logo đối tác: 1 dòng chạy từ phải sang trái, dừng khi rê chuột */
+.anp-marquee {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	-webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+	mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.anp-marquee__track {
+	display: flex;
+	align-items: center;
+	gap: 1.25rem;
+	width: max-content;
+	margin: 0;
+	padding: 0.75rem 0;
+	list-style: none;
+	animation: anp-marquee-rtl 65s linear infinite;
+	will-change: transform;
+}
+.anp-marquee:hover .anp-marquee__track { animation-play-state: paused; }
+/* Dịch từ 0 về -50%: nội dung chạy từ phải sang trái liên tục không giật */
+@keyframes anp-marquee-rtl {
+	from { transform: translateX(0); }
+	to { transform: translateX(-50%); }
+}
+
+/* Cỡ chữ nội dung tối thiểu 16px trên mobile */
+body { font-size: 1rem; line-height: 1.6; }
+
+/* Ô nhập, nút và vùng văn bản phải dùng cùng font với trang */
+button,
+input,
+select,
+textarea {
+	font-family: inherit;
+}
+
+html { scroll-behavior: smooth; }
+
+/* Lưới nền trang trí cho hero */
+.anp-grid-bg {
+	background-image:
+		linear-gradient(rgb(255 255 255 / 0.06) 1px, transparent 1px),
+		linear-gradient(90deg, rgb(255 255 255 / 0.06) 1px, transparent 1px);
+	background-size: 56px 56px;
+	mask-image: radial-gradient(ellipse at 30% 20%, #000 30%, transparent 75%);
+	-webkit-mask-image: radial-gradient(ellipse at 30% 20%, #000 30%, transparent 75%);
+}
+
+/* Nút */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	border-radius: 0.75rem;
+	padding: 0.8rem 1.4rem;
+	font-weight: 600;
+	font-size: 0.95rem;
+	line-height: 1;
+	transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+	min-height: 44px;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0) scale(0.98); }
+.btn:focus-visible { outline: 3px solid rgb(var(--c-accent)); outline-offset: 3px; }
+
+.btn { cursor: pointer; white-space: nowrap; }
+.btn-accent {
+	background: rgb(var(--c-accent));
+	color: rgb(var(--c-on-accent));
+	box-shadow: 0 4px 14px -3px rgb(var(--c-accent) / 0.5);
+	border-radius: 0.5rem;
+}
+.btn-accent:hover {
+	background: rgb(var(--c-accent-hover));
+	color: rgb(var(--c-on-accent));
+}
+
+/* Header co gọn khi cuộn: ẩn thanh trên cùng, thanh menu chính thấp hơn */
+#site-header { transition: box-shadow 0.3s ease; }
+#site-header .anp-topbar {
+	max-height: 37px; /* 36px nội dung + 1px viền */
+	overflow: hidden;
+	visibility: visible;
+	transition: max-height 0.3s ease, opacity 0.25s ease, visibility 0s;
+}
+#site-header .anp-mainbar {
+	height: 72px;
+	transition: height 0.3s ease;
+}
+#site-header.is-scrolled { box-shadow: 0 10px 28px -14px rgb(15 23 42 / 0.35); }
+#site-header.is-scrolled .anp-topbar {
+	max-height: 0;
+	opacity: 0;
+	border-bottom-width: 0;
+	visibility: hidden; /* bỏ khỏi thứ tự Tab sau khi thu gọn xong */
+	transition: max-height 0.3s ease, opacity 0.25s ease, visibility 0s linear 0.3s;
+}
+#site-header.is-scrolled .anp-mainbar { height: 60px; }
+
+/* Menu thả xuống (desktop): hiện khi rê chuột hoặc khi focus bằng bàn phím */
+#site-header .anp-nav li { position: relative; }
+#site-header .anp-nav .sub-menu {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: -14px;
+	z-index: 60;
+	min-width: 300px;
+	margin: 0;
+	padding: 8px;
+	list-style: none;
+	background: #fff;
+	border: 1px solid #e2e8f0;
+	border-radius: 14px;
+	box-shadow: 0 20px 40px -18px rgb(15 23 42 / 0.35);
+}
+#site-header .anp-nav li:hover > .sub-menu,
+#site-header .anp-nav li:focus-within > .sub-menu { display: block; }
+#site-header .anp-nav .sub-menu a {
+	display: flex;
+	padding: 10px 12px;
+	border-radius: 10px;
+	font-weight: 500;
+	line-height: 1.35;
+	white-space: normal;
+	color: #334155;
+}
+#site-header .anp-nav .sub-menu a::after { display: none; }
+#site-header .anp-nav .sub-menu a:hover,
+#site-header .anp-nav .sub-menu a:focus-visible {
+	background: rgb(var(--c-accent) / 0.12);
+	color: rgb(var(--c-primary));
+}
+/* Mục có menu con: mũi tên nhỏ nằm phía sau chữ */
+#site-header .anp-nav .menu-item-has-children > a::before {
+	content: "";
+	display: inline-block;
+	order: 2;
+	width: 5px;
+	height: 5px;
+	margin-left: 6px;
+	margin-right: 0;
+	border-right: 1.5px solid currentColor;
+	border-bottom: 1.5px solid currentColor;
+	transform: translateY(-2px) rotate(45deg);
+	transition: transform 0.2s ease, opacity 0.2s ease;
+	opacity: 0.65;
+}
+#site-header .anp-nav .menu-item-has-children:hover > a::before,
+#site-header .anp-nav .menu-item-has-children:focus-within > a::before {
+	transform: translateY(1px) rotate(225deg);
+	opacity: 1;
+}
+/* ==========================================================================
+   Mobile Menu Drawer & Accordion (Chuẩn /design-taste-frontend)
+   ========================================================================== */
+body.anp-menu-open {
+	overflow: hidden;
+}
+
+#mobile-menu {
+	border-top: 1px solid #f1f5f9;
+	box-shadow: 0 24px 48px -12px rgba(11, 25, 44, 0.16);
+	animation: anpMobileMenuSlide 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes anpMobileMenuSlide {
+	from {
+		opacity: 0;
+		transform: translateY(-6px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+#mobile-menu .anp-mobile-drawer {
+	max-height: calc(100vh - 90px);
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+#mobile-menu .anp-mobile-drawer::-webkit-scrollbar {
+	width: 4px;
+}
+#mobile-menu .anp-mobile-drawer::-webkit-scrollbar-thumb {
+	background: #cbd5e1;
+	border-radius: 4px;
+}
+
+/* Danh sách menu */
+#mobile-menu .anp-nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+}
+
+#mobile-menu .anp-nav > nav > ul > li,
+#mobile-menu .anp-nav > ul > li {
+	position: relative;
+	border-radius: 12px;
+	transition: background-color 0.15s ease;
+}
+
+#mobile-menu .anp-nav > nav > ul > li > a,
+#mobile-menu .anp-nav > ul > li > a {
+	display: flex;
+	align-items: center;
+	padding: 10px 14px;
+	font-size: 15px;
+	font-weight: 600;
+	color: #1e293b;
+	border-radius: 12px;
+	transition: all 0.15s ease;
+}
+
+#mobile-menu .anp-nav > nav > ul > li > a:hover,
+#mobile-menu .anp-nav > ul > li > a:hover,
+#mobile-menu .anp-nav > nav > ul > li > a:focus-visible,
+#mobile-menu .anp-nav > ul > li > a:focus-visible {
+	background-color: #f1f5f9;
+	color: rgb(var(--c-primary));
+}
+
+#mobile-menu .anp-nav > nav > ul > li > a::after,
+#mobile-menu .anp-nav > ul > li > a::after {
+	display: none !important;
+}
+
+/* Accordion Item (.menu-item-has-children) */
+#mobile-menu .anp-nav .menu-item-has-children {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#mobile-menu .anp-nav .menu-item-has-children > a {
+	flex: 1;
+	min-width: 0;
+}
+
+#mobile-menu .anp-nav .menu-item-has-children > a::before {
+	display: none !important;
+}
+
+#mobile-menu .anp-nav .anp-sub-toggle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 38px;
+	height: 38px;
+	margin-right: 4px;
+	border-radius: 10px;
+	border: 1px solid #e2e8f0;
+	background: #f8fafc;
+	color: #64748b;
+	cursor: pointer;
+	transition: all 0.18s ease;
+}
+
+#mobile-menu .anp-nav .anp-sub-toggle:hover {
+	background: #f1f5f9;
+	color: #0f172a;
+	border-color: #cbd5e1;
+}
+
+#mobile-menu .anp-nav .menu-item-has-children.is-open > .anp-sub-toggle {
+	background: rgb(var(--c-accent) / 0.15);
+	color: rgb(var(--c-primary));
+	border-color: rgb(var(--c-accent) / 0.4);
+}
+
+#mobile-menu .anp-nav .menu-item-has-children.is-open > .anp-sub-toggle svg {
+	transform: rotate(180deg);
+}
+
+/* Khối Sub-menu con */
+#mobile-menu .anp-nav .sub-menu {
+	display: none;
+	width: 100%;
+	position: static;
+	margin: 4px 0 6px 0;
+	padding: 8px;
+	background: #f8fafc;
+	border: 1px solid #e2e8f0;
+	border-radius: 14px;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
+	list-style: none;
+}
+
+#mobile-menu .anp-nav .menu-item-has-children.is-open > .sub-menu {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	animation: anpSubmenuFade 0.2s ease-out forwards;
+}
+
+@keyframes anpSubmenuFade {
+	from {
+		opacity: 0;
+		transform: translateY(-4px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+#mobile-menu .anp-nav .sub-menu a {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 8px 12px;
+	font-size: 14px;
+	font-weight: 500;
+	color: #334155;
+	border-radius: 8px;
+	background: transparent;
+	transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+#mobile-menu .anp-nav .sub-menu a::before {
+	content: "";
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	border-radius: 9999px;
+	background-color: rgb(var(--c-accent));
+	opacity: 0.7;
+	flex-shrink: 0;
+	transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+#mobile-menu .anp-nav .sub-menu a:hover,
+#mobile-menu .anp-nav .sub-menu a:focus-visible {
+	background: #ffffff;
+	color: rgb(var(--c-primary));
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+	transform: translateX(2px);
+}
+
+#mobile-menu .anp-nav .sub-menu a:hover::before {
+	opacity: 1;
+	transform: scale(1.4);
+}
+
+/* Header Navigation Links */
+#site-header nav a {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	padding: 0.5rem 0.25rem;
+	font-weight: 600;
+	color: #334155;
+	transition: color 0.18s ease;
+}
+#site-header nav a:hover {
+	color: rgb(var(--c-accent));
+}
+#site-header nav a::after {
+	content: "";
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: rgb(var(--c-accent));
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 0.2s ease;
+}
+#site-header nav a:hover::after,
+#site-header nav .current-menu-item > a::after {
+	transform: scaleX(1);
+	transform-origin: left;
+}
+
+.btn-ghost-light { border: 1px solid rgb(255 255 255 / 0.3); color: #fff; }
+.btn-ghost-light:hover { background: rgb(255 255 255 / 0.1); }
+
+.btn-ghost-dark { border: 1px solid rgb(var(--c-primary) / 0.25); color: rgb(var(--c-primary)); }
+.btn-ghost-dark:hover { background: rgb(var(--c-primary) / 0.05); }
+
+/* Thẻ */
+.card-lift { transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+.card-lift:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -22px rgb(var(--c-primary) / 0.35); }
+
+/* Ô nhập liệu */
+.anp-input {
+	width: 100%;
+	border-radius: 0.75rem;
+	border: 1px solid #cbd5e1;
+	background: #fff;
+	padding: 0.8rem 1rem;
+	font-size: 0.95rem;
+	color: #0f172a;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.anp-input:focus { outline: none; border-color: rgb(var(--c-accent)); box-shadow: 0 0 0 4px rgb(var(--c-accent) / 0.2); }
+
+/* Hiệu ứng vào trang của hero và card tracking */
+@keyframes anp-rise {
+	from { opacity: 0; transform: translateY(20px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes anpCardPop {
+	from {
+		opacity: 0;
+		transform: translateY(28px) scale(0.97);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+@keyframes anpLineGrow {
+	from { transform: scaleY(0); }
+	to { transform: scaleY(1); }
+}
+
+@keyframes anpStepSlide {
+	from {
+		opacity: 0;
+		transform: translateX(18px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes anpPulseGlow {
+	0%, 100% {
+		box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.45);
+	}
+	50% {
+		box-shadow: 0 0 0 8px rgba(234, 88, 12, 0);
+	}
+}
+
+.anp-enter { animation: anp-rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.anp-enter.anp-delay { animation-delay: 0.15s; }
+
+.anp-card-entrance {
+	animation: anpCardPop 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.anp-line-grow {
+	transform-origin: top;
+	animation: anpLineGrow 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+
+.anp-step-1 { animation: anpStepSlide 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both; }
+.anp-step-2 { animation: anpStepSlide 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.60s both; }
+.anp-step-3 { animation: anpStepSlide 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.75s both; }
+.anp-step-4 { animation: anpStepSlide 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.90s both; }
+
+.anp-pulse-active {
+	animation: anpPulseGlow 2.4s infinite;
+}
+
+/* Glassmorphism Card hoà quyện tự nhiên với background biển & cẩu cảng */
+.anp-tracking-glass {
+	background: linear-gradient(145deg, rgba(16, 36, 64, 0.82) 0%, rgba(9, 21, 38, 0.88) 100%);
+	backdrop-filter: blur(24px);
+	-webkit-backdrop-filter: blur(24px);
+	border: 1px solid rgba(255, 255, 255, 0.16);
+	box-shadow:
+		0 25px 60px -15px rgba(0, 0, 0, 0.5),
+		0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+}
+
+/* Card kính mờ quy trình 4 bước (Connected Glass Stepper) */
+.anp-stepper-glass {
+	background: linear-gradient(160deg, rgba(16, 36, 64, 0.78) 0%, rgba(9, 21, 38, 0.88) 100%);
+	backdrop-filter: blur(18px);
+	-webkit-backdrop-filter: blur(18px);
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	border-radius: 1.25rem;
+	padding: 1.75rem 1.5rem;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.anp-stepper-glass:hover {
+	transform: translateY(-6px);
+	border-color: rgba(234, 88, 12, 0.5);
+	box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.6), 0 0 25px -5px rgba(234, 88, 12, 0.25);
+}
+
+/* Lớp phủ đa tầng bảo đảm độ tương phản chữ & Live Tracking Card (Anti-slop) */
+.anp-hero-overlay {
+	position: absolute;
+	inset: 0;
+	z-index: 5;
+	pointer-events: none;
+	background:
+		linear-gradient(to right, rgba(11, 25, 44, 0.85) 0%, rgba(11, 25, 44, 0.72) 45%, rgba(11, 25, 44, 0.42) 75%, rgba(11, 25, 44, 0.18) 100%),
+		linear-gradient(to top, rgba(11, 25, 44, 0.88) 0%, rgba(11, 25, 44, 0.35) 30%, transparent 60%),
+		rgba(11, 25, 44, 0.15);
+}
+
+/* Ambient Crossfade & Ken-Burns Hero Slider */
+.anp-hero-slide {
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+	transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+	pointer-events: none;
+	will-change: opacity;
+}
+.anp-hero-slide.is-active {
+	opacity: 1;
+	pointer-events: auto;
+	z-index: 1;
+}
+.anp-hero-slide img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transform: scale(1);
+	transition: transform 7.5s cubic-bezier(0.25, 1, 0.5, 1);
+	will-change: transform;
+}
+.anp-hero-slide.is-active img {
+	transform: scale(1.045);
+}
+
+/* Timeline progress bar & Bullet buttons */
+.hero-progress-btn {
+	cursor: pointer;
+	text-align: left;
+	position: relative;
+	transition: opacity 0.2s ease;
+	outline: none;
+}
+.hero-progress-btn:focus-visible {
+	outline: 2px solid rgb(var(--c-accent));
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+.hero-progress-btn .hero-bullet-dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 9999px;
+	background-color: rgba(255, 255, 255, 0.35);
+	transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+	flex-shrink: 0;
+}
+.hero-progress-btn.is-active .hero-bullet-dot {
+	background-color: rgb(var(--c-accent));
+	box-shadow: 0 0 10px rgb(var(--c-accent) / 0.8);
+	transform: scale(1.35);
+}
+.hero-progress-btn:hover .hero-bullet-dot {
+	background-color: #ffffff;
+}
+.hero-progress-btn.is-active:hover .hero-bullet-dot {
+	background-color: rgb(var(--c-accent));
+}
+.hero-progress-btn .hero-progress-track {
+	height: 3px;
+	width: 100%;
+	background: rgba(255, 255, 255, 0.22);
+	border-radius: 9999px;
+	overflow: hidden;
+	position: relative;
+}
+.hero-progress-btn .hero-progress-bar {
+	height: 100%;
+	width: 0%;
+	background: rgb(var(--c-accent));
+	border-radius: 9999px;
+	will-change: width;
+}
+.hero-progress-btn.is-active .hero-label {
+	color: #ffffff;
+	font-weight: 700;
+}
+.hero-progress-btn.is-active .hero-sub {
+	color: rgb(var(--c-accent));
+	font-weight: 600;
+}
+
+/* Liên kết trong nội dung bài viết / trang */
+.anp-prose { color: #334155; font-size: 1.05rem; line-height: 1.8; }
+.anp-prose h2 { margin: 2.2rem 0 0.8rem; font-size: 1.6rem; font-weight: 800; color: rgb(var(--c-primary)); }
+.anp-prose h3 { margin: 1.8rem 0 0.6rem; font-size: 1.25rem; font-weight: 700; color: rgb(var(--c-primary)); }
+.anp-prose p { margin: 0 0 1.1rem; }
+.anp-prose ul { list-style: disc; padding-left: 1.4rem; margin: 0 0 1.1rem; }
+.anp-prose a { color: rgb(var(--c-accent-hover)); text-decoration: underline; text-underline-offset: 3px; }
+.anp-prose img { border-radius: 1rem; margin: 1.5rem 0; }
+
+/* Tiêu đề mục trang Liên hệ, footer dùng chung */
+.skip-link:focus { outline: none; }
+
+/* ==========================================================================
+   ANP Native Reveal Animation System (Zero-dependency, 60fps)
+   ========================================================================== */
+
+/* Trạng thái ban đầu */
+.reveal-up,
+.reveal-down,
+.reveal-left,
+.reveal-right,
+.reveal-scale,
+.reveal-fade {
+	opacity: 0;
+	transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+	            transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+	will-change: opacity, transform;
+}
+
+.reveal-up    { transform: translateY(28px); }
+.reveal-down  { transform: translateY(-28px); }
+.reveal-left  { transform: translateX(-32px); }
+.reveal-right { transform: translateX(32px); }
+.reveal-scale { transform: scale(0.94); }
+.reveal-fade  { transform: none; }
+
+/* Trạng thái đã kích hoạt (in viewport) */
+.reveal-up.is-revealed,
+.reveal-down.is-revealed,
+.reveal-left.is-revealed,
+.reveal-right.is-revealed,
+.reveal-scale.is-revealed,
+.reveal-fade.is-revealed {
+	opacity: 1;
+	transform: translate(0, 0) scale(1);
+}
+
+/* Các bước trễ so le (Stagger Delays) */
+.delay-50  { transition-delay: 50ms; }
+.delay-100 { transition-delay: 100ms; }
+.delay-150 { transition-delay: 150ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-250 { transition-delay: 250ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-350 { transition-delay: 350ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+.delay-600 { transition-delay: 600ms; }
+
+/* Tốc độ animation */
+.duration-fast { transition-duration: 0.45s; }
+.duration-slow { transition-duration: 1.05s; }
+
+/* Hoạt động giảm chuyển động */
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+	.reveal-up,
+	.reveal-down,
+	.reveal-left,
+	.reveal-right,
+	.reveal-scale,
+	.reveal-fade {
+		opacity: 1 !important;
+		transform: none !important;
+		transition: none !important;
+	}
+
+	.anp-hero-slide img {
+		transition: none !important;
+		transform: none !important;
+	}
+	.anp-hero-slide {
+		transition: opacity 0.2s linear !important;
+	}
+
+	/* Băng logo đứng yên: hiện một lượt logo, cuộn ngang bằng tay nếu cần */
+	.anp-marquee { overflow-x: auto; mask-image: none; -webkit-mask-image: none; }
+	.anp-marquee__track { animation: none; width: auto; justify-content: center; flex-wrap: wrap; }
+	.anp-marquee__item[aria-hidden="true"] { display: none; }
+}
