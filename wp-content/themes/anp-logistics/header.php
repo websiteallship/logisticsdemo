@@ -81,7 +81,7 @@ $faq_url      = $faq_page ? get_permalink($faq_page) : home_url('/hoi-dap/');
 			<!-- Header tiện ích mobile: Trạng thái trực & Chuyển ngôn ngữ -->
 			<div class="flex items-center justify-between pb-3 border-b border-slate-100">
 				<div class="inline-flex items-center gap-2 text-xs font-semibold text-slate-500">
-					<span class="inline-block h-2 w-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
+					<span class="inline-block h-2 w-2 rounded-full bg-amber-500 animate-pulse" aria-hidden="true"></span>
 					<span><?php echo esc_html(anp_lang() === 'en' ? 'Direct Support 24/7' : 'Hỗ trợ trực tuyến 24/7'); ?></span>
 				</div>
 				<div>

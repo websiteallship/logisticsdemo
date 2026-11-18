@@ -34,7 +34,7 @@ if (anp_opt('anp_license_no') !== '') {
 ?>
 </main>
 
-<footer id="site-footer" class="border-t border-white/10 bg-[#061220] text-slate-300">
+<footer id="site-footer" class="border-t border-white/10 bg-[#0A2410] text-slate-300">
 	<div class="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
 		<!-- Cột 1: Nhận diện thương hiệu & Slogan (4 cols) -->
 		<div class="space-y-5 lg:col-span-4">

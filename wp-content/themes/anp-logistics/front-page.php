@@ -71,10 +71,10 @@ $services_options = anp_t_list('service_options');
 					<span class="inline-flex items-center rounded-md border border-white/20 bg-white/10 px-2.5 py-1 font-mono text-xs font-semibold tracking-wider text-white/90">
 						B/L #ANP-8924-SGN
 					</span>
-					<div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-300">
+					<div class="inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-500/15 px-3 py-1 text-xs font-semibold text-amber-300">
 						<span class="relative flex h-2 w-2">
-							<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-							<span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+							<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75"></span>
+							<span class="relative inline-flex h-2 w-2 rounded-full bg-amber-400"></span>
 						</span>
 						<span><?php echo esc_html(anp_t('panel_badge')); ?></span>
 					</div>
@@ -105,7 +105,7 @@ $services_options = anp_t_list('service_options');
 							<div class="min-w-0 flex-1 pt-0.5">
 								<div class="flex items-center justify-between gap-2">
 									<p class="text-sm font-semibold text-white"><?php echo esc_html(anp_t('step1_t')); ?></p>
-									<span class="font-mono text-[11px] font-medium text-emerald-300"><?php echo esc_html(anp_t('panel_step1_time')); ?></span>
+									<span class="font-mono text-[11px] font-medium text-amber-300"><?php echo esc_html(anp_t('panel_step1_time')); ?></span>
 								</div>
 								<p class="text-xs text-white/70"><?php echo esc_html(anp_t('step1_s')); ?></p>
 							</div>
@@ -118,7 +118,7 @@ $services_options = anp_t_list('service_options');
 							<div class="min-w-0 flex-1 pt-0.5">
 								<div class="flex items-center justify-between gap-2">
 									<p class="text-sm font-semibold text-white"><?php echo esc_html(anp_t('step2_t')); ?></p>
-									<span class="font-mono text-[11px] font-medium text-emerald-300"><?php echo esc_html(anp_t('panel_step2_time')); ?></span>
+									<span class="font-mono text-[11px] font-medium text-amber-300"><?php echo esc_html(anp_t('panel_step2_time')); ?></span>
 								</div>
 								<p class="text-xs text-white/70"><?php echo esc_html(anp_t('step2_s')); ?></p>
 							</div>
@@ -325,7 +325,7 @@ $services_options = anp_t_list('service_options');
 								<?php echo anp_photo_img($s['photo'], array('class' => 'aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.03]', 'sizes' => '(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw', 'alt' => $s['title'])); // phpcs:ignore ?>
 							<?php endif; ?>
 						</div>
-						<span class="absolute bottom-0 left-6 grid h-12 w-12 translate-y-1/2 place-items-center rounded-xl bg-accent text-onaccent shadow-lg"><?php echo anp_icon($s['icon'], 'h-6 w-6'); ?></span>
+						<span class="anp-service-badge absolute bottom-0 left-6 grid h-12 w-12 translate-y-1/2 place-items-center text-white ring-4 ring-white shadow-xl"><?php echo anp_icon($s['icon'], 'h-6 w-6 text-white'); ?></span>
 					</div>
 					<div class="flex flex-1 flex-col p-7 pt-10">
 						<h3 class="font-display text-lg font-semibold text-brand"><?php echo esc_html($s['title']); ?></h3>
@@ -359,7 +359,7 @@ $step_slas  = array(
 		<?php else : ?>
 			<?php echo anp_photo_img('night', array('class' => 'h-full w-full object-cover', 'sizes' => '100vw', 'alt' => '')); // phpcs:ignore ?>
 		<?php endif; ?>
-		<div class="absolute inset-0 bg-gradient-to-b from-brand/95 via-brand/85 to-brand/95"></div>
+		<div class="absolute inset-0 bg-gradient-to-b from-[#0F3016]/95 via-brand/80 to-[#0A2410]/95"></div>
 	</div>
 
 	<div class="mx-auto max-w-7xl px-5 sm:px-8">
@@ -375,7 +375,7 @@ $step_slas  = array(
 		<!-- Grid 4 Card kính mờ có kết nối dòng chảy -->
 		<div class="relative mt-14">
 			<!-- Ray kết nối tiến trình trên Desktop (Connected Stepper Beam) -->
-			<div class="pointer-events-none absolute top-12 left-16 right-16 hidden h-0.5 bg-gradient-to-r from-accent/30 via-accent/70 to-emerald-400/80 lg:block" aria-hidden="true"></div>
+			<div class="pointer-events-none absolute top-12 left-16 right-16 hidden h-0.5 bg-gradient-to-r from-accent/30 via-accent/70 to-amber-400/80 lg:block" aria-hidden="true"></div>
 
 			<ol class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 				<?php foreach (array_values($process) as $i => $step) :
@@ -409,8 +409,8 @@ $step_slas  = array(
 							<!-- Footer card: Cam kết SLA & Trạng thái minh bạch -->
 							<?php if ($sla_text) : ?>
 								<div class="mt-6 border-t border-white/10 pt-4">
-									<span class="inline-flex items-center gap-2 text-xs font-medium text-emerald-400">
-										<span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+									<span class="inline-flex items-center gap-2 text-xs font-medium text-amber-400">
+										<span class="h-1.5 w-1.5 rounded-full bg-amber-400"></span>
 										<span><?php echo esc_html($sla_text); ?></span>
 									</span>
 								</div>
