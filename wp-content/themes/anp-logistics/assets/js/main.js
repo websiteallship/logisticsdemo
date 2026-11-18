@@ -1,4 +1,4 @@
-/* ANP Logistics – JS nhẹ: menu mobile, đổ bóng header khi cuộn, khởi tạo AOS. */
+/* HP Trading - Transport – JS nhẹ: menu mobile, đổ bóng header khi cuộn, khởi tạo AOS. */
 (function () {
 	'use strict';
 

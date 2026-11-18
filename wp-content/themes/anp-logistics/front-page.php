@@ -69,7 +69,7 @@ $services_options = anp_t_list('service_options');
 				<!-- Header thẻ: Mã vận đơn & Live Pulse Beacon hài hoà -->
 				<div class="flex items-center justify-between border-b border-white/15 pb-4">
 					<span class="inline-flex items-center rounded-md border border-white/20 bg-white/10 px-2.5 py-1 font-mono text-xs font-semibold tracking-wider text-white/90">
-						B/L #ANP-8924-SGN
+						B/L #HP-8924-SGN
 					</span>
 					<div class="inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-500/15 px-3 py-1 text-xs font-semibold text-amber-300">
 						<span class="relative flex h-2 w-2">

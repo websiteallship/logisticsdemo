@@ -111,10 +111,10 @@ if (!$related_query->have_posts() && $primary_cat) {
 				<!-- Box Tác Giả & Kiểm Duyệt Nội Dung -->
 				<div class="mt-12 rounded-2xl border border-slate-200 bg-slate-50/70 p-6 sm:p-7 flex flex-col sm:flex-row items-start sm:items-center gap-5">
 					<div class="h-16 w-16 shrink-0 rounded-2xl bg-brand text-white flex items-center justify-center font-bold text-xl shadow-md">
-						ANP
+						HP Trading - Transport
 					</div>
 					<div>
-						<h4 class="font-bold text-brand text-base sm:text-lg">Ban Biên Tập Chuyên Môn ANP Logistics</h4>
+						<h4 class="font-bold text-brand text-base sm:text-lg">Ban Biên Tập Chuyên Môn HP Trading - Transport</h4>
 						<p class="mt-1 text-sm text-slate-600 leading-relaxed">
 							Nội dung được tổng hợp và kiểm duyệt bởi đội ngũ chuyên viên giao nhận & khai báo hải quan hơn 10 năm kinh nghiệm thực chiến tại Cát Lái, Cái Mép và các KCN trọng điểm miền Nam.
 						</p>
@@ -148,7 +148,7 @@ if (!$related_query->have_posts() && $primary_cat) {
 							Cần Tư Vấn & Báo Giá Tuyến Vận Chuyển?
 						</h3>
 						<p class="mt-2 text-sm text-slate-300 leading-relaxed">
-							ANP Logistics khảo sát và gửi bảng giá chi tiết, cam kết trọn gói minh bạch 100% không chi phí ẩn.
+							HP Trading - Transport khảo sát và gửi bảng giá chi tiết, cam kết trọn gói minh bạch 100% không chi phí ẩn.
 						</p>
 
 						<div class="mt-6 space-y-3">
@@ -163,10 +163,10 @@ if (!$related_query->have_posts() && $primary_cat) {
 					</div>
 				</div>
 
-				<!-- 2. Thẻ Cam Kết Năng Lực ANP -->
+				<!-- 2. Thẻ Cam Kết Năng Lực HP Trading - Transport -->
 				<div class="rounded-2xl border border-slate-200 bg-slate-50/70 p-6 shadow-sm">
 					<h3 class="font-bold text-brand text-base uppercase tracking-wider text-slate-800">
-						Cam Kết Năng Lực ANP
+						Cam Kết Năng Lực HP Trading - Transport
 					</h3>
 					<ul class="mt-4 space-y-3 text-sm text-slate-600">
 						<li class="flex items-start gap-2.5">
@@ -203,7 +203,7 @@ if (!$related_query->have_posts() && $primary_cat) {
 										</a>
 									<?php else : ?>
 										<div class="h-16 w-16 shrink-0 rounded-lg bg-slate-100 flex items-center justify-center text-slate-400 font-bold text-xs">
-											ANP
+											HP Trading - Transport
 										</div>
 									<?php endif; ?>
 									<div class="min-w-0 flex-1">

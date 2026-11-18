@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-define('ANP_SERVICE_CONTENT_VERSION', '2');
+define('ANP_SERVICE_CONTENT_VERSION', '3');
 
 function anp_service_library() {
 	return array(
@@ -29,20 +29,20 @@ function anp_service_library() {
 			'vi' => array(
 				'title'      => 'Khai báo hải quan',
 				'keyword'    => 'khai báo hải quan',
-				'excerpt'    => 'ANP Logistics là đại lý hải quan, khai báo điện tử và làm thủ tục thông quan cho hàng xuất nhập khẩu. Chúng tôi xác định mã HS và thuế suất, hướng dẫn hồ sơ theo quy định hiện hành để lô hàng thông quan đúng và đủ thủ tục.',
-				'meta_title' => 'Khai báo hải quan xuất nhập khẩu | ANP Logistics',
+				'excerpt'    => 'HP Trading - Transport là đại lý hải quan, khai báo điện tử và làm thủ tục thông quan cho hàng xuất nhập khẩu. Chúng tôi xác định mã HS và thuế suất, hướng dẫn hồ sơ theo quy định hiện hành để lô hàng thông quan đúng và đủ thủ tục.',
+				'meta_title' => 'Khai báo hải quan xuất nhập khẩu | HP Trading - Transport',
 				'meta_desc'  => 'Dịch vụ khai báo hải quan điện tử, phân loại mã HS, xác định thuế xuất nhập khẩu và thông quan hàng hóa tại TP.HCM. Tư vấn hồ sơ rõ ràng.',
 				'faq'        => <<<'TXT'
 Ai cần dịch vụ khai báo hải quan? | Doanh nghiệp xuất nhập khẩu, chủ hàng không có bộ phận hải quan riêng, hoặc doanh nghiệp muốn giao toàn bộ thủ tục cho một đơn vị chuyên trách. Chúng tôi nhận cả lô hàng lẻ lẫn lô nguyên container.
 Cần chuẩn bị hồ sơ gì để khai báo? | Thường gồm hợp đồng thương mại, hóa đơn thương mại, vận đơn (B/L hoặc AWB), phiếu đóng gói và thông tin về hàng hóa. Tùy loại hình và mặt hàng, có thể cần thêm giấy phép, chứng nhận chất lượng hoặc kiểm dịch. Chúng tôi sẽ liệt kê danh mục cụ thể sau khi nhận thông tin lô hàng.
 Mã HS do ai xác định và có chắc chắn không? | Chúng tôi phân loại mã HS dựa trên mô tả hàng hóa và quy định hiện hành, đồng thời giải thích cơ sở để bạn kiểm soát rủi ro. Với mặt hàng có tranh chấp phân loại, chúng tôi đề nghị bạn làm việc với cơ quan hải quan trước khi khai chính thức.
 Thời gian thông quan kéo dài bao lâu? | Phụ thuộc loại hình xuất nhập khẩu và kết quả kiểm tra của cơ quan hải quan (không kiểm tra, kiểm tra hồ sơ hoặc kiểm tra thực tế). Sau khi nhận đủ hồ sơ, chúng tôi báo thời gian dự kiến cho từng lô.
-ANP có làm thủ tục cho hàng xuất khẩu không? | Có. Chúng tôi làm cả thủ tục xuất khẩu lẫn nhập khẩu, bao gồm khai báo điện tử, thông quan và phối hợp giao nhận từ cảng đến kho hoặc từ kho ra cảng.
+HP Trading - Transport có làm thủ tục cho hàng xuất khẩu không? | Có. Chúng tôi làm cả thủ tục xuất khẩu lẫn nhập khẩu, bao gồm khai báo điện tử, thông quan và phối hợp giao nhận từ cảng đến kho hoặc từ kho ra cảng.
 TXT,
 				'body'       => <<<'HTML'
-<p>ANP Logistics là đại lý hải quan, thay mặt chủ hàng khai báo điện tử và hoàn tất thủ tục thông quan cho hàng xuất khẩu và nhập khẩu. Chúng tôi phân loại mã HS, xác định thuế suất và hướng dẫn hồ sơ theo văn bản pháp luật hiện hành, để lô hàng đi qua cửa khẩu đúng quy định và tránh bị trì hoãn vì sai sót thủ tục.</p>
+<p>HP Trading - Transport là đại lý hải quan, thay mặt chủ hàng khai báo điện tử và hoàn tất thủ tục thông quan cho hàng xuất khẩu và nhập khẩu. Chúng tôi phân loại mã HS, xác định thuế suất và hướng dẫn hồ sơ theo văn bản pháp luật hiện hành, để lô hàng đi qua cửa khẩu đúng quy định và tránh bị trì hoãn vì sai sót thủ tục.</p>
 
-<h2>Dịch vụ khai báo hải quan của ANP bao gồm những gì</h2>
+<h2>Dịch vụ khai báo hải quan của HP Trading - Transport bao gồm những gì</h2>
 <ul>
 <li>Khai báo hải quan điện tử cho tờ khai nhập khẩu và xuất khẩu.</li>
 <li>Phân loại mã HS theo mô tả hàng hóa, kèm cơ sở pháp lý để bạn kiểm soát rủi ro.</li>
@@ -60,7 +60,7 @@ TXT,
 <li><strong>Thông quan và hoàn tất:</strong> xử lý yêu cầu kiểm tra (nếu có), nhận thông báo thông quan và bàn giao chứng từ cho bạn.</li>
 </ol>
 
-<h2>Vì sao doanh nghiệp chọn ANP</h2>
+<h2>Vì sao doanh nghiệp chọn HP Trading - Transport</h2>
 <ul>
 <li>Đội ngũ có kinh nghiệm xử lý nhiều nhóm hàng và nhiều loại hình xuất nhập khẩu.</li>
 <li>Giải thích rõ từng khoản thuế và từng bước thủ tục, không để bạn phải đoán.</li>
@@ -74,8 +74,8 @@ HTML,
 			'en' => array(
 				'title'      => 'Customs declaration',
 				'keyword'    => 'customs declaration Vietnam',
-				'excerpt'    => 'ANP Logistics is a licensed customs agent. We prepare electronic declarations, confirm HS codes and duty rates, and guide documents under current rules so your import or export cargo clears on the first attempt.',
-				'meta_title' => 'Customs Declaration Vietnam | ANP Logistics',
+				'excerpt'    => 'HP Trading - Transport is a licensed customs agent. We prepare electronic declarations, confirm HS codes and duty rates, and guide documents under current rules so your import or export cargo clears on the first attempt.',
+				'meta_title' => 'Customs Declaration Vietnam | HP Trading - Transport',
 				'meta_desc'  => 'Electronic customs declarations in Vietnam: HS code classification, duty calculation and cargo clearance in Ho Chi Minh City. Clear document guidance.',
 				'faq'        => <<<'TXT'
 Who needs a customs declaration service? | Importers and exporters without an in-house customs team, or businesses that want one partner to handle all procedures. We take both LCL and FCL shipments.
@@ -85,7 +85,7 @@ How long does clearance take? | It depends on the trade type and the customs ins
 Do you handle export clearance too? | Yes. We handle both export and import procedures, including electronic declaration, clearance and coordination between port and warehouse.
 TXT,
 				'body'       => <<<'HTML'
-<p>ANP Logistics is a licensed customs agent. We prepare electronic declarations on behalf of importers and exporters and complete clearance procedures. We classify HS codes, confirm duty rates and guide documents under current law, so your cargo passes the border under the right rules and avoids delays caused by paperwork errors.</p>
+<p>HP Trading - Transport is a licensed customs agent. We prepare electronic declarations on behalf of importers and exporters and complete clearance procedures. We classify HS codes, confirm duty rates and guide documents under current law, so your cargo passes the border under the right rules and avoids delays caused by paperwork errors.</p>
 
 <h2>What our customs declaration service covers</h2>
 <ul>
@@ -105,7 +105,7 @@ TXT,
 <li><strong>Clear and close out:</strong> we handle any inspection request, obtain the clearance notice and hand over the documents.</li>
 </ol>
 
-<h2>Why businesses choose ANP for customs</h2>
+<h2>Why businesses choose HP Trading - Transport for customs</h2>
 <ul>
 <li>Experience across many product groups and trade types.</li>
 <li>Clear explanation of each duty item and each procedural step.</li>
@@ -126,7 +126,7 @@ HTML,
 				'title'      => 'Vận chuyển nội địa',
 				'keyword'    => 'vận chuyển nội địa',
 				'excerpt'    => 'Vận chuyển nội địa bằng đội xe đầu kéo và romooc chủ động, phục vụ hàng lẻ, hàng nguyên container và hàng dạng đặc biệt. Chúng tôi điều phối theo khung giờ bạn chọn, từ cảng đến kho, từ kho đến điểm giao trên toàn quốc.',
-				'meta_title' => 'Vận chuyển nội địa, xe đầu kéo container | ANP Logistics',
+				'meta_title' => 'Vận chuyển nội địa, xe đầu kéo container | HP Trading - Transport',
 				'meta_desc'  => 'Vận chuyển nội địa bằng xe đầu kéo và romooc chủ động: hàng lẻ, container, giao tận nơi. Điều phối theo khung giờ, theo dõi lô hàng từ cảng đến kho.',
 				'faq'        => <<<'TXT'
 Vận chuyển nội địa có những loại hình nào? | Hàng lẻ ghép chuyến, hàng nguyên container (FCL), hàng cần xe kín hoặc có kiểm soát nhiệt độ, và giao hàng tận nơi (door to door). Chúng tôi tư vấn loại xe phù hợp với kích thước và khối lượng hàng.
@@ -136,7 +136,7 @@ Hàng bị hư hỏng hoặc thất lạc thì xử lý thế nào? | Chúng tô
 Cần cung cấp thông tin gì để báo giá? | Điểm lấy hàng, điểm giao hàng, loại hàng, khối lượng, số kiện hoặc kích thước, yêu cầu xe, khung giờ lấy và giao, và có cần bốc xếp hay không.
 TXT,
 				'body'       => <<<'HTML'
-<p>Vận chuyển nội địa là khâu nối giữa cảng, kho và điểm giao hàng cuối cùng. ANP Logistics vận hành đội xe đầu kéo và romooc chủ động, điều phối theo khung giờ bạn chọn để hàng đi đúng tuyến, đúng lịch và được theo dõi xuyên suốt.</p>
+<p>Vận chuyển nội địa là khâu nối giữa cảng, kho và điểm giao hàng cuối cùng. HP Trading - Transport vận hành đội xe đầu kéo và romooc chủ động, điều phối theo khung giờ bạn chọn để hàng đi đúng tuyến, đúng lịch và được theo dõi xuyên suốt.</p>
 
 <h2>Các loại hình vận chuyển nội địa</h2>
 <ul>
@@ -154,7 +154,7 @@ TXT,
 <li><strong>Giao hàng và xác nhận:</strong> người nhận ký biên bản giao nhận, chúng tôi chuyển bản xác nhận cho bạn.</li>
 </ol>
 
-<h2>Vì sao chọn đội xe của ANP</h2>
+<h2>Vì sao chọn đội xe của HP Trading - Transport</h2>
 <ul>
 <li>Đội xe đầu kéo và romooc chủ động, không phụ thuộc hoàn toàn vào xe thuê ngoài.</li>
 <li>Điều phối kết hợp với các dịch vụ hải quan, đường biển, đường không và kho bãi trong cùng một hệ thống.</li>
@@ -169,7 +169,7 @@ HTML,
 				'title'      => 'Domestic transport',
 				'keyword'    => 'domestic transport Vietnam trucking',
 				'excerpt'    => 'Domestic transport with our own tractor trucks and trailers, for LCL, full container and special cargo. We schedule to your time window, from port to warehouse and from warehouse to delivery points across Vietnam.',
-				'meta_title' => 'Domestic Trucking Vietnam, Container Transport | ANP',
+				'meta_title' => 'Domestic Trucking Vietnam, Container Transport | HP Trading - Transport',
 				'meta_desc'  => 'Domestic trucking in Vietnam with our own tractor trucks and trailers: LCL, full container and door-to-door delivery. Scheduled pickups and shipment tracking.',
 				'faq'        => <<<'TXT'
 What types of domestic transport do you offer? | LCL shared trucks, full container (FCL) trucks, closed or temperature-controlled trucks for special goods, and door-to-door delivery. We recommend the vehicle that fits the size and weight of your cargo.
@@ -179,7 +179,7 @@ What happens if cargo is damaged or lost? | We record the condition at handover,
 What do you need to quote a trip? | Pickup and delivery addresses, cargo type, weight, number of packages or dimensions, vehicle requirements, pickup and delivery time windows, and whether loading or waiting is needed.
 TXT,
 				'body'       => <<<'HTML'
-<p>Domestic transport is the link between port, warehouse and the final delivery point. ANP Logistics operates its own tractor trucks and trailers and schedules them to your time window, so cargo moves on the right route, on time, and is tracked from collection to delivery.</p>
+<p>Domestic transport is the link between port, warehouse and the final delivery point. HP Trading - Transport operates its own tractor trucks and trailers and schedules them to your time window, so cargo moves on the right route, on time, and is tracked from collection to delivery.</p>
 
 <h2>Types of domestic transport</h2>
 <ul>
@@ -197,7 +197,7 @@ TXT,
 <li><strong>Deliver and confirm:</strong> the receiver signs the delivery record, and we send you the confirmation.</li>
 </ol>
 
-<h2>Why ANP's fleet</h2>
+<h2>Why HP Trading - Transport's fleet</h2>
 <ul>
 <li>Our own tractor trucks and trailers, so we are not fully dependent on hired vehicles.</li>
 <li>Scheduling is connected to our customs, sea, air and warehousing services, so you have one point of contact.</li>
@@ -218,7 +218,7 @@ HTML,
 				'title'      => 'Vận chuyển đường biển',
 				'keyword'    => 'vận chuyển đường biển FCL LCL',
 				'excerpt'    => 'Vận chuyển đường biển xuất nhập khẩu cho hàng nguyên container (FCL) và hàng lẻ ghép container (LCL). Chúng tôi phối hợp với hãng tàu và đại lý tại cảng, chọn tuyến và lịch tàu phù hợp, báo rõ chi phí từng khoản.',
-				'meta_title' => 'Vận chuyển đường biển FCL LCL xuất nhập khẩu | ANP',
+				'meta_title' => 'Vận chuyển đường biển FCL LCL xuất nhập khẩu | HP Trading - Transport',
 				'meta_desc'  => 'Vận chuyển đường biển xuất nhập khẩu FCL và LCL: lịch tàu theo tuyến, phối hợp hãng tàu và đại lý cảng, báo giá rõ từng khoản phí tại TP.HCM.',
 				'faq'        => <<<'TXT'
 FCL và LCL khác nhau thế nào? | FCL là hàng nguyên container, bạn thuê trọn một container. LCL là hàng lẻ được ghép chung container với hàng của khách khác, phù hợp lô nhỏ. Chúng tôi tư vấn lựa chọn theo khối lượng và tần suất gửi hàng.
@@ -228,7 +228,7 @@ Hàng đi theo điều kiện giao hàng nào? | Chúng tôi làm việc theo In
 Có hỗ trợ hàng xuất đi các thị trường nào? | Chúng tôi xử lý các tuyến chính đi và đến Mỹ, châu Âu, Nhật Bản và châu Á, dựa trên mạng lưới đại lý và hãng tàu hợp tác. Với tuyến khác, chúng tôi xác nhận khả năng trước khi nhận đơn.
 TXT,
 				'body'       => <<<'HTML'
-<p>ANP Logistics tổ chức vận chuyển đường biển xuất nhập khẩu cho hàng nguyên container (FCL) và hàng lẻ ghép container (LCL). Chúng tôi phối hợp với hãng tàu và đại lý tại cảng, chọn tuyến và lịch tàu phù hợp với hàng hóa và thời gian của bạn, đồng thời báo rõ chi phí từng khoản trước khi đặt chỗ.</p>
+<p>HP Trading - Transport tổ chức vận chuyển đường biển xuất nhập khẩu cho hàng nguyên container (FCL) và hàng lẻ ghép container (LCL). Chúng tôi phối hợp với hãng tàu và đại lý tại cảng, chọn tuyến và lịch tàu phù hợp với hàng hóa và thời gian của bạn, đồng thời báo rõ chi phí từng khoản trước khi đặt chỗ.</p>
 
 <h2>Hai hình thức vận chuyển đường biển</h2>
 <ul>
@@ -253,7 +253,7 @@ TXT,
 <li><strong>Theo dõi và giao hàng:</strong> cập nhật lịch tàu, thông báo tàu chạy và hàng đến, phối hợp nhận hàng tại cảng dỡ.</li>
 </ol>
 
-<h2>Vì sao doanh nghiệp chọn ANP</h2>
+<h2>Vì sao doanh nghiệp chọn HP Trading - Transport</h2>
 <ul>
 <li>Mạng lưới đại lý và hợp tác với hãng tàu giúp chúng tôi chủ động hơn về chỗ và lịch tàu.</li>
 <li>Bảng giá chi tiết từng khoản, không để phát sinh bất ngờ ở cuối lô.</li>
@@ -268,7 +268,7 @@ HTML,
 				'title'      => 'Sea freight',
 				'keyword'    => 'sea freight Vietnam FCL LCL',
 				'excerpt'    => 'Import and export sea freight for full container (FCL) and consolidated cargo (LCL). We work with shipping lines and port agents, choose routes and sailing schedules that suit your cargo, and quote every charge clearly before booking.',
-				'meta_title' => 'Sea Freight Vietnam, FCL and LCL | ANP Logistics',
+				'meta_title' => 'Sea Freight Vietnam, FCL and LCL | HP Trading - Transport',
 				'meta_desc'  => 'Sea freight for import and export in Vietnam: FCL and LCL, sailing schedules by route, coordination with shipping lines and port agents, and transparent quotes.',
 				'faq'        => <<<'TXT'
 What is the difference between FCL and LCL? | FCL is full container load: you hire one container for your cargo. LCL is less-than-container load: your goods share a container with other shippers' cargo, which suits smaller shipments. We advise which fits your volume and shipping frequency.
@@ -278,7 +278,7 @@ Which Incoterms do you work with? | We work with the Incoterms you choose, for e
 Which trade lanes do you handle? | We handle the main lanes to and from the United States, Europe, Japan and Asia, based on our agent network and carrier relationships. For other lanes, we confirm capacity before accepting an order.
 TXT,
 				'body'       => <<<'HTML'
-<p>ANP Logistics arranges import and export sea freight for full container load (FCL) and less-than-container load (LCL) cargo. We work with shipping lines and port agents, choose the route and sailing schedule that suit your goods and your timing, and show every charge before you book.</p>
+<p>HP Trading - Transport arranges import and export sea freight for full container load (FCL) and less-than-container load (LCL) cargo. We work with shipping lines and port agents, choose the route and sailing schedule that suit your goods and your timing, and show every charge before you book.</p>
 
 <h2>Two sea freight options</h2>
 <ul>
@@ -303,7 +303,7 @@ TXT,
 <li><strong>Track and deliver:</strong> we update the sailing schedule, notify departure and arrival, and coordinate collection at the port of discharge.</li>
 </ol>
 
-<h2>Why businesses choose ANP for sea freight</h2>
+<h2>Why businesses choose HP Trading - Transport for sea freight</h2>
 <ul>
 <li>Our agent network and carrier relationships help us secure space and schedules.</li>
 <li>Itemised quotes, so there are no unexpected charges at the end of a shipment.</li>
@@ -324,7 +324,7 @@ HTML,
 				'title'      => 'Vận chuyển đường không',
 				'keyword'    => 'vận chuyển hàng không',
 				'excerpt'    => 'Vận chuyển hàng không cho lô gấp, hàng giá trị cao và hàng cần đúng chuyến bay. Chúng tôi đề xuất phương án theo tuyến, gồm chuyến bay trực tiếp hoặc chuyển tải, và theo dõi lô hàng từ lúc nhận đến khi giao cho người nhận.',
-				'meta_title' => 'Vận chuyển hàng không air freight Việt Nam | ANP',
+				'meta_title' => 'Vận chuyển hàng không air freight Việt Nam | HP Trading - Transport',
 				'meta_desc'  => 'Vận chuyển hàng không xuất nhập khẩu: hàng gấp, hàng giá trị cao, door-to-door. Đề xuất chuyến bay trực tiếp hoặc chuyển tải, theo dõi lô hàng.',
 				'faq'        => <<<'TXT'
 Khi nào nên chọn vận chuyển hàng không? | Khi hàng cần đến nhanh, có giá trị cao, dễ hư hỏng theo thời gian, hoặc có thời hạn chặt chẽ. So với đường biển, hàng không thường nhanh hơn nhưng chi phí cao hơn, nên chúng tôi tư vấn theo từng lô.
@@ -334,7 +334,7 @@ Làm sao biết lô hàng đã bay chưa? | Chúng tôi cập nhật các mốc:
 Có cần kiểm tra hải quan không? | Hàng nhập khẩu đều phải làm thủ tục hải quan. Chúng tôi phối hợp khai báo và thông quan để hàng ra sân bay không bị giữ lại.
 TXT,
 				'body'       => <<<'HTML'
-<p>ANP Logistics tổ chức vận chuyển hàng không cho lô hàng cần đến nhanh, hàng giá trị cao và hàng phải đi đúng chuyến bay. Chúng tôi đề xuất phương án theo tuyến, gồm chuyến bay trực tiếp hoặc chuyển tải, và theo dõi lô hàng từ lúc nhận đến khi giao cho người nhận.</p>
+<p>HP Trading - Transport tổ chức vận chuyển hàng không cho lô hàng cần đến nhanh, hàng giá trị cao và hàng phải đi đúng chuyến bay. Chúng tôi đề xuất phương án theo tuyến, gồm chuyến bay trực tiếp hoặc chuyển tải, và theo dõi lô hàng từ lúc nhận đến khi giao cho người nhận.</p>
 
 <h2>Các hình thức vận chuyển hàng không</h2>
 <ul>
@@ -352,7 +352,7 @@ TXT,
 <li><strong>Theo dõi và nhận hàng:</strong> cập nhật từng mốc, làm thủ tục nhập khẩu và giao hàng cho người nhận.</li>
 </ol>
 
-<h2>Vì sao chọn ANP cho hàng không</h2>
+<h2>Vì sao chọn HP Trading - Transport cho hàng không</h2>
 <ul>
 <li>Phương án được đề xuất theo tuyến và thời hạn, không đặt một chuyến duy nhất cho mọi lô.</li>
 <li>Theo dõi hàng xuyên suốt, báo từng mốc quan trọng.</li>
@@ -367,7 +367,7 @@ HTML,
 				'title'      => 'Air freight',
 				'keyword'    => 'air freight Vietnam',
 				'excerpt'    => 'Air freight for urgent shipments, high-value goods and cargo that must travel on a specific flight. We propose the route, with direct or transit flights, and track the shipment from pickup to delivery to the receiver.',
-				'meta_title' => 'Air Freight Vietnam, Air Cargo | ANP Logistics',
+				'meta_title' => 'Air Freight Vietnam, Air Cargo | HP Trading - Transport',
 				'meta_desc'  => 'Air freight for import and export in Vietnam: urgent and high-value cargo, airport-to-airport and door-to-door, with direct or transit options and tracking.',
 				'faq'        => <<<'TXT'
 When should I choose air freight? | When cargo must arrive quickly, has high value, is time-sensitive, or has a tight deadline. Compared with sea freight, air is usually faster and costs more, so we advise shipment by shipment.
@@ -377,7 +377,7 @@ How can I know whether my shipment has flown? | We update each milestone: collec
 Do air shipments need customs clearance? | Imports always require customs procedures. We coordinate the declaration and clearance so cargo is not held at the airport.
 TXT,
 				'body'       => <<<'HTML'
-<p>ANP Logistics arranges air freight for shipments that need to arrive quickly, high-value cargo and goods that must travel on a specific flight. We propose the route, with direct or transit flights, and track each shipment from pickup until it is delivered to the receiver.</p>
+<p>HP Trading - Transport arranges air freight for shipments that need to arrive quickly, high-value cargo and goods that must travel on a specific flight. We propose the route, with direct or transit flights, and track each shipment from pickup until it is delivered to the receiver.</p>
 
 <h2>Air freight options</h2>
 <ul>
@@ -395,7 +395,7 @@ TXT,
 <li><strong>Track and receive:</strong> we update each milestone, handle import procedures and deliver to the receiver.</li>
 </ol>
 
-<h2>Why choose ANP for air freight</h2>
+<h2>Why choose HP Trading - Transport for air freight</h2>
 <ul>
 <li>We propose options by route and deadline, not one flight for every shipment.</li>
 <li>End-to-end tracking, with notice at each key milestone.</li>
@@ -416,7 +416,7 @@ HTML,
 				'title'      => 'Kho bãi & xếp dỡ',
 				'keyword'    => 'dịch vụ kho bãi logistics',
 				'excerpt'    => 'Dịch vụ kho bãi và xếp dỡ: lưu kho ngắn hoặc dài hạn, đóng và rút container, kiểm đếm, quản lý tồn kho và xếp dỡ tại cảng hoặc kho. Chúng tôi xây dựng hệ thống kho liên kết trên toàn quốc để hàng hóa luôn sẵn sàng khi bạn cần.',
-				'meta_title' => 'Dịch vụ kho bãi, xếp dỡ, quản lý tồn kho | ANP',
+				'meta_title' => 'Dịch vụ kho bãi, xếp dỡ, quản lý tồn kho | HP Trading - Transport',
 				'meta_desc'  => 'Dịch vụ kho bãi logistics tại Việt Nam: lưu kho, đóng rút container, kiểm đếm, quản lý tồn kho và xếp dỡ tại cảng và kho. Báo cáo định kỳ.',
 				'faq'        => <<<'TXT'
 Dịch vụ kho bãi gồm những gì? | Lưu kho theo kệ hoặc theo diện tích, đóng và rút container, xếp dỡ, kiểm đếm, đóng gói lại, quản lý tồn kho và xuất nhập kho theo lệnh của bạn.
@@ -426,7 +426,7 @@ Hàng có được bảo hiểm trong kho không? | Trách nhiệm của kho và
 Xếp dỡ tại cảng có được không? | Có. Chúng tôi phối hợp xếp dỡ container và hàng lẻ tại cảng, và có thể bốc xếp hàng tại kho bạn theo yêu cầu.
 TXT,
 				'body'       => <<<'HTML'
-<p>ANP Logistics cung cấp dịch vụ kho bãi và xếp dỡ cho hàng xuất nhập khẩu và hàng nội địa. Chúng tôi lưu kho ngắn hạn hoặc dài hạn, đóng và rút container, kiểm đếm, quản lý tồn kho và xếp dỡ tại cảng hoặc kho, để hàng hóa sẵn sàng đúng lúc bạn cần.</p>
+<p>HP Trading - Transport cung cấp dịch vụ kho bãi và xếp dỡ cho hàng xuất nhập khẩu và hàng nội địa. Chúng tôi lưu kho ngắn hạn hoặc dài hạn, đóng và rút container, kiểm đếm, quản lý tồn kho và xếp dỡ tại cảng hoặc kho, để hàng hóa sẵn sàng đúng lúc bạn cần.</p>
 
 <h2>Dịch vụ kho bãi và xếp dỡ</h2>
 <ul>
@@ -438,7 +438,7 @@ TXT,
 <li><strong>Đóng gói bổ sung:</strong> đóng gói lại, dán nhãn và chuẩn bị hàng theo yêu cầu phân phối.</li>
 </ul>
 
-<h2>Quy trình làm việc với kho ANP</h2>
+<h2>Quy trình làm việc với kho HP Trading - Transport</h2>
 <ol>
 <li><strong>Khảo sát hàng hóa:</strong> chúng tôi xem loại hàng, khối lượng, yêu cầu bảo quản và thời gian lưu để đề xuất diện tích và cách xếp.</li>
 <li><strong>Nhập kho:</strong> kiểm đếm, lập phiếu nhập và chụp ảnh tình trạng hàng khi nhận.</li>
@@ -446,7 +446,7 @@ TXT,
 <li><strong>Báo cáo và đối soát:</strong> gửi báo cáo định kỳ và đối soát chi phí lưu kho theo tháng.</li>
 </ol>
 
-<h2>Vì sao chọn kho ANP</h2>
+<h2>Vì sao chọn kho HP Trading - Transport</h2>
 <ul>
 <li>Hệ thống kho liên kết với mạng vận chuyển, nên hàng ra vào kho được điều phối cùng lịch xe và lịch tàu.</li>
 <li>Báo cáo tồn kho rõ ràng, có thể kiểm đếm đột xuất khi cần.</li>
@@ -461,7 +461,7 @@ HTML,
 				'title'      => 'Warehousing and handling',
 				'keyword'    => 'logistics warehousing Vietnam',
 				'excerpt'    => 'Warehousing and handling: short or long-term storage, container stuffing and unstuffing, counting and inspection, inventory management, and port or warehouse handling. Our connected warehouse network across Vietnam keeps your goods ready when you need them.',
-				'meta_title' => 'Warehousing and Handling Vietnam | ANP Logistics',
+				'meta_title' => 'Warehousing and Handling Vietnam | HP Trading - Transport',
 				'meta_desc'  => 'Logistics warehousing in Vietnam: short and long-term storage, container stuffing, inventory control, port and warehouse handling and periodic reports.',
 				'faq'        => <<<'TXT'
 What does warehousing service include? | Racked or area-based storage, container stuffing and unstuffing, handling, counting, repacking, inventory control, and inbound and outbound movements against your instructions.
@@ -471,7 +471,7 @@ Is goods stored in the warehouse insured? | Warehouse liability and compensation
 Can you handle port operations too? | Yes. We coordinate container and LCL handling at the port, and can load or unload goods at your warehouse on request.
 TXT,
 				'body'       => <<<'HTML'
-<p>ANP Logistics provides warehousing and handling for import, export and domestic cargo. We offer short and long-term storage, container stuffing and unstuffing, counting, inventory control and handling at ports or warehouses, so your goods are ready at the right time.</p>
+<p>HP Trading - Transport provides warehousing and handling for import, export and domestic cargo. We offer short and long-term storage, container stuffing and unstuffing, counting, inventory control and handling at ports or warehouses, so your goods are ready at the right time.</p>
 
 <h2>Warehousing and handling services</h2>
 <ul>
@@ -483,7 +483,7 @@ TXT,
 <li><strong>Value-added packing:</strong> repacking, labelling and preparing goods for distribution.</li>
 </ul>
 
-<h2>How working with an ANP warehouse runs</h2>
+<h2>How working with an HP Trading - Transport warehouse runs</h2>
 <ol>
 <li><strong>Survey the goods:</strong> we review the cargo type, volume, storage conditions and planned duration to propose space and layout.</li>
 <li><strong>Receive into storage:</strong> we count, issue a receiving note and photograph the condition on arrival.</li>
@@ -491,7 +491,7 @@ TXT,
 <li><strong>Report and reconcile:</strong> we send periodic reports and reconcile storage charges monthly.</li>
 </ol>
 
-<h2>Why choose ANP warehousing</h2>
+<h2>Why choose HP Trading - Transport warehousing</h2>
 <ul>
 <li>Our warehouses connect to our transport network, so inbound and outbound moves follow the truck and vessel schedules.</li>
 <li>Clear inventory reports, with unscheduled counts on request.</li>
@@ -512,19 +512,19 @@ HTML,
 				'title'      => 'Hàng dự án',
 				'keyword'    => 'vận chuyển hàng dự án quá khổ',
 				'excerpt'    => 'Vận chuyển hàng dự án: máy móc, thiết bị, hàng quá khổ và quá tải cho công trình. Chúng tôi khảo sát tuyến, lập phương án chằng buộc và tổ chức vận tải đa phương thức, chịu trách nhiệm từ thủ tục hải quan đến lắp đặt tại công trình.',
-				'meta_title' => 'Vận chuyển hàng dự án, hàng quá khổ quá tải | ANP',
+				'meta_title' => 'Vận chuyển hàng dự án, hàng quá khổ quá tải | HP Trading - Transport',
 				'meta_desc'  => 'Vận chuyển hàng dự án: máy móc thiết bị, hàng quá khổ, quá tải cho công trình. Khảo sát tuyến, chằng buộc, thủ tục hải quan và lắp đặt tại công trình.',
 				'faq'        => <<<'TXT'
 Hàng dự án là gì? | Hàng cho công trình hoặc nhà máy có kích thước hoặc trọng lượng vượt tiêu chuẩn thông thường, như máy móc, thiết bị, cấu kiện thép, bồn bể và hàng quá khổ hoặc quá tải. Loại hàng này cần kế hoạch riêng từ khâu khảo sát.
 Vì sao cần khảo sát tuyến trước khi vận chuyển? | Hàng quá khổ hoặc quá tải có thể không đi được qua cầu, đường hẹp hoặc các điểm giao thông nhất định. Khảo sát giúp xác định tuyến, thời điểm được phép đi và cần xin giấy phép nào.
 Có giấy phép vận chuyển hàng quá khổ không? | Nếu tuyến cần giấy phép lưu hành cho xe và hàng quá khổ hoặc quá tải, chúng tôi chuẩn bị hồ sơ và làm việc với cơ quan có thẩm quyền theo quy định.
 Có đảm nhận lắp đặt tại công trình không? | Có. Chúng tôi phối hợp cẩu, dỡ và di chuyển thiết bị vào vị trí lắp đặt, hoặc làm việc với đơn vị lắp đặt của chủ đầu tư.
-Ai chịu trách nhiệm về thủ tục hải quan? | ANP chịu trách nhiệm toàn bộ thủ tục hải quan và các thủ tục chuyên ngành theo quy định, cùng khâu vận chuyển và giao hàng tại công trình.
+Ai chịu trách nhiệm về thủ tục hải quan? | HP Trading - Transport chịu trách nhiệm toàn bộ thủ tục hải quan và các thủ tục chuyên ngành theo quy định, cùng khâu vận chuyển và giao hàng tại công trình.
 TXT,
 				'body'       => <<<'HTML'
-<p>ANP Logistics vận chuyển hàng dự án: máy móc, thiết bị, cấu kiện và hàng quá khổ hoặc quá tải phục vụ công trình và nhà máy. Chúng tôi khảo sát tuyến, lập phương án chằng buộc và tổ chức vận tải đa phương thức, và chịu trách nhiệm từ thủ tục hải quan đến khi hàng được đưa vào vị trí lắp đặt.</p>
+<p>HP Trading - Transport vận chuyển hàng dự án: máy móc, thiết bị, cấu kiện và hàng quá khổ hoặc quá tải phục vụ công trình và nhà máy. Chúng tôi khảo sát tuyến, lập phương án chằng buộc và tổ chức vận tải đa phương thức, và chịu trách nhiệm từ thủ tục hải quan đến khi hàng được đưa vào vị trí lắp đặt.</p>
 
-<h2>Hàng dự án mà ANP đảm nhận</h2>
+<h2>Hàng dự án mà HP Trading - Transport đảm nhận</h2>
 <ul>
 <li>Máy móc và thiết bị sản xuất, thiết bị công nghiệp, dây chuyền.</li>
 <li>Hàng quá khổ, quá tải và hàng có trọng lượng lớn.</li>
@@ -548,7 +548,7 @@ TXT,
 <li><strong>Giao hàng và lắp đặt:</strong> đưa thiết bị vào vị trí, phối hợp với đơn vị lắp đặt và bàn giao biên bản.</li>
 </ol>
 
-<h2>Vì sao chọn ANP cho hàng dự án</h2>
+<h2>Vì sao chọn HP Trading - Transport cho hàng dự án</h2>
 <ul>
 <li>Đội ngũ có kinh nghiệm quy trình chuyên chở và đóng gói hàng công nghiệp.</li>
 <li>Đội xe chuyên dụng và đối tác có trang thiết bị phù hợp với hàng nặng và hàng quá khổ.</li>
@@ -563,17 +563,17 @@ HTML,
 				'title'      => 'Project cargo',
 				'keyword'    => 'project cargo oversize Vietnam',
 				'excerpt'    => 'Project cargo transport: machinery, equipment, oversized and overweight goods for construction and industrial sites. We survey the route, plan lashing and run multimodal transport, taking responsibility from customs clearance to installation at site.',
-				'meta_title' => 'Project Cargo, Oversize and Overweight | ANP',
+				'meta_title' => 'Project Cargo, Oversize and Overweight | HP Trading - Transport',
 				'meta_desc'  => 'Project cargo transport in Vietnam: machinery and oversize or overweight loads for construction and factories. Route survey, lashing, customs and site delivery.',
 				'faq'        => <<<'TXT'
 What is project cargo? | Goods for a construction site or factory that exceed standard size or weight, such as machinery, equipment, steel structures, tanks and oversize or overweight loads. This cargo needs its own plan from the survey stage.
 Why is a route survey needed before transport? | Oversize or overweight loads may not pass certain bridges, narrow roads or traffic points. The survey confirms the route, permitted travel times and which permits are needed.
 Do you obtain permits for oversize transport? | If the route needs permits for oversize or overweight vehicles and loads, we prepare the papers and work with the competent authority as required.
 Do you handle installation at site? | Yes. We coordinate lifting, unloading and moving equipment to its installation position, or work with the installer appointed by the owner.
-Who is responsible for customs procedures? | ANP is responsible for all customs procedures and specialised procedures required by regulation, together with transport and delivery at site.
+Who is responsible for customs procedures? | HP Trading - Transport is responsible for all customs procedures and specialised procedures required by regulation, together with transport and delivery at site.
 TXT,
 				'body'       => <<<'HTML'
-<p>ANP Logistics transports project cargo: machinery, equipment, structural components and oversized or overweight loads for construction sites and factories. We survey the route, plan lashing and run multimodal transport, and we take responsibility from customs clearance until the cargo is placed at its installation position.</p>
+<p>HP Trading - Transport transports project cargo: machinery, equipment, structural components and oversized or overweight loads for construction sites and factories. We survey the route, plan lashing and run multimodal transport, and we take responsibility from customs clearance until the cargo is placed at its installation position.</p>
 
 <h2>Project cargo we handle</h2>
 <ul>
@@ -599,7 +599,7 @@ TXT,
 <li><strong>Deliver and install:</strong> we place the equipment in position, coordinate with the installer and sign off the handover record.</li>
 </ol>
 
-<h2>Why choose ANP for project cargo</h2>
+<h2>Why choose HP Trading - Transport for project cargo</h2>
 <ul>
 <li>Team experience in transporting and packing industrial cargo.</li>
 <li>Specialised vehicles and partners with equipment suited to heavy and oversize loads.</li>

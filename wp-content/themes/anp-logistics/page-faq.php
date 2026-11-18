@@ -31,7 +31,7 @@ $is_en = anp_lang() === 'en';
 				<?php echo esc_html(get_the_title() ?: ($is_en ? 'Frequently Asked Questions' : 'Câu hỏi thường gặp')); ?>
 			</h1>
 			<p class="mt-4 text-base leading-relaxed text-slate-300 sm:text-lg">
-				<?php echo esc_html($is_en ? 'Detailed answers regarding customs clearance procedures, preferential tariff rates, transit times, and international cargo delivery.' : 'Giải đáp chi tiết về thủ tục khai báo hải quan, mã HS, thuế suất ưu đãi, thời gian thông quan và các điều khoản giao nhận hàng hóa tại ANP Logistics.'); ?>
+				<?php echo esc_html($is_en ? 'Detailed answers regarding customs clearance procedures, preferential tariff rates, transit times, and international cargo delivery.' : 'Giải đáp chi tiết về thủ tục khai báo hải quan, mã HS, thuế suất ưu đãi, thời gian thông quan và các điều khoản giao nhận hàng hóa tại HP Trading - Transport.'); ?>
 			</p>
 		</div>
 
@@ -79,7 +79,7 @@ $is_en = anp_lang() === 'en';
 
 			<!-- Thẻ cam kết bảo mật & nghiệp vụ -->
 			<div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-				<h3 class="text-xs font-bold uppercase tracking-wider text-slate-600"><?php echo esc_html($is_en ? 'Our Commitment' : 'Cam kết của ANP'); ?></h3>
+				<h3 class="text-xs font-bold uppercase tracking-wider text-slate-600"><?php echo esc_html($is_en ? 'Our Commitment' : 'Cam kết của HP Trading - Transport'); ?></h3>
 				<ul class="mt-4 space-y-3 text-xs text-slate-700">
 					<li class="flex items-start gap-2.5">
 						<span class="mt-0.5 text-accent"><?php echo anp_icon('check', 'h-4 w-4'); ?></span>
@@ -133,7 +133,7 @@ $is_en = anp_lang() === 'en';
 			<?php echo esc_html($is_en ? 'Have questions regarding your specific cargo?' : 'Bạn có thắc mắc riêng về lô hàng cụ thể?'); ?>
 		</h2>
 		<p class="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base">
-			<?php echo esc_html($is_en ? 'Submit your cargo packing list or invoice details. Our experts will revert with an itemized customs & shipping plan in 30 minutes.' : 'Gửi danh mục hàng hóa hoặc yêu cầu vận chuyển, đội ngũ chuyên viên của ANP sẽ tư vấn giải pháp tối ưu và gửi báo giá chi tiết hoàn toàn miễn phí.'); ?>
+			<?php echo esc_html($is_en ? 'Submit your cargo packing list or invoice details. Our experts will revert with an itemized customs & shipping plan in 30 minutes.' : 'Gửi danh mục hàng hóa hoặc yêu cầu vận chuyển, đội ngũ chuyên viên của HP Trading - Transport sẽ tư vấn giải pháp tối ưu và gửi báo giá chi tiết hoàn toàn miễn phí.'); ?>
 		</p>
 		<div class="mt-8 flex flex-wrap items-center justify-center gap-4">
 			<a href="<?php echo esc_url(home_url('/#lien-he')); ?>" class="btn btn-accent">

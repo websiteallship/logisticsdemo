@@ -1,6 +1,6 @@
-# Tài liệu dự án – Theme ANP Logistics
+# Tài liệu dự án – Theme HP Trading - Transport
 
-Theme WordPress cho Công ty TNHH Dịch vụ Logistics An Phát (ANP Logistics). Giao diện làm lại theo hướng hiện đại, song ngữ Việt/Anh, mọi thông tin doanh nghiệp và nội dung đều quản lý trong Customizer, không hardcode.
+Theme WordPress cho HP Trading - Transport. Giao diện làm lại theo hướng hiện đại, song ngữ Việt/Anh, mọi thông tin doanh nghiệp và nội dung đều quản lý trong Customizer, không hardcode.
 
 ---
 
@@ -8,7 +8,7 @@ Theme WordPress cho Công ty TNHH Dịch vụ Logistics An Phát (ANP Logistics)
 
 | Hạng mục | Nội dung |
 |---|---|
-| Tên theme | ANP Logistics (`anp-logistics`) |
+| Tên theme | HP Trading - Transport (`anp-logistics`) |
 | Phiên bản | 1.0.1 |
 | Nền tảng | WordPress 6.4+, PHP 7.4+ |
 | Giao diện | Tailwind CSS (Play CDN) + CSS bổ sung (`assets/css/theme.css`) + AOS (hiệu ứng cuộn) |
@@ -48,7 +48,7 @@ anp-logistics/
 │   ├── setup.php             Tính năng theme, menu, CSS/JS, Tailwind, bộ màu,
 │   │                         CPT Dịch vụ song ngữ, dữ liệu dịch vụ mẫu, icon, logo
 │   ├── photos.php            Thư viện ảnh: anp_photo_img(), ghi công ảnh, ảnh mặc định theo dịch vụ
-│   ├── options.php           Giá trị mặc định song ngữ, anp_opt(), Customizer "ANP Theme Options"
+│   ├── options.php           Giá trị mặc định song ngữ, anp_opt(), Customizer "HP Trading - Transport Theme Options"
 │   ├── seo.php               Meta, Open Graph, schema JSON-LD (gồm mã số thuế), llms.txt, Rank Math
 │   └── contact.php           Xử lý form báo giá (nonce, honeypot, wp_mail)
 ├── assets/
@@ -63,11 +63,11 @@ anp-logistics/
 
 ## 3. Cài đặt
 
-1. **Giao diện > Giao diện:** kích hoạt **ANP Logistics**. Khi kích hoạt, theme đăng ký CPT Dịch vụ, tạo 6 dịch vụ mẫu (chỉ một lần), và nạp lại rewrite rules.
+1. **Giao diện > Giao diện:** kích hoạt **HP Trading - Transport**. Khi kích hoạt, theme đăng ký CPT Dịch vụ, tạo 6 dịch vụ mẫu (chỉ một lần), và nạp lại rewrite rules.
 2. **Cài đặt > Đọc:** chọn **Trang tĩnh** làm trang chủ và tạo trang **Tin tức** làm trang bài viết. Nếu chưa tạo, menu dự phòng dùng `/blog/`.
 3. **Cài đặt > Đường dẫn tĩnh:** bấm **Lưu** một lần để `/llms.txt` và `/dich-vu/` hoạt động.
 4. **Giao diện > Menu:** tạo menu, gán vào **Menu chính** và **Menu chân trang**. Nếu chưa tạo, theme dùng menu dự phòng song ngữ.
-5. **Giao diện > Tùy chỉnh > ANP Theme Options:** điền toàn bộ thông tin (mục 5). Đặc biệt các trường pháp lý và thuế đang để trống, cần điền trước khi bàn giao.
+5. **Giao diện > Tùy chỉnh > HP Trading - Transport Theme Options:** điền toàn bộ thông tin (mục 5). Đặc biệt các trường pháp lý và thuế đang để trống, cần điền trước khi bàn giao.
 6. Cài **SMTP** (ví dụ WP Mail SMTP) để form báo giá gửi mail ổn định.
 
 **Yêu cầu trình duyệt truy cập được:** `cdn.tailwindcss.com`, `cdnjs.cloudflare.com`, `fonts.googleapis.com`.
@@ -96,7 +96,7 @@ Ngoài ra, footer hiển thị khối **Thông tin doanh nghiệp**: tên pháp 
 
 ## 5. Tùy chọn theme (Customizer)
 
-Vào **Giao diện > Tùy chỉnh > ANP Theme Options**. Các trường đánh dấu **(Tiếng Việt)** và **(English)** là cặp song ngữ. Trường không có dấu này dùng chung cho cả hai ngôn ngữ.
+Vào **Giao diện > Tùy chỉnh > HP Trading - Transport Theme Options**. Các trường đánh dấu **(Tiếng Việt)** và **(English)** là cặp song ngữ. Trường không có dấu này dùng chung cho cả hai ngôn ngữ.
 
 ### 5.1 Thương hiệu & logo
 - **Ngôn ngữ mặc định khi mở website:** Tiếng Việt hoặc English. Người dùng có thể đổi bằng nút VI/EN, lựa chọn được ghi nhớ trong cookie một năm.
@@ -112,7 +112,7 @@ Vào **Giao diện > Tùy chỉnh > ANP Theme Options**. Các trường đánh d
 ### 5.3 Thông tin liên hệ
 - Hotline (chỉ số để gọi) và hotline hiển thị, email, link Zalo, link Facebook, tên miền hiển thị.
 - Địa chỉ trụ sở và văn phòng đại diện (song ngữ), link bản đồ.
-- **Giờ làm việc (song ngữ):** ô nhiều dòng, **mỗi dòng một khung giờ**, ví dụ `Thứ 2 – Thứ 6: 08:00 – 17:30` và `Thứ 7: 08:00 – 12:00`. Hiển thị ở ba nơi: thanh đầu trang (các dòng gộp thành một dòng, ngăn cách bằng dấu "·"), mục liên hệ và chân trang (mỗi khung giờ một dòng), cùng tệp `/llms.txt`. Để trống cả ô thì thanh đầu trang tự ẩn dòng giờ làm việc. Đường dẫn: Giao diện > Tùy chỉnh > ANP Theme Options > Thông tin liên hệ.
+- **Giờ làm việc (song ngữ):** ô nhiều dòng, **mỗi dòng một khung giờ**, ví dụ `Thứ 2 – Thứ 6: 08:00 – 17:30` và `Thứ 7: 08:00 – 12:00`. Hiển thị ở ba nơi: thanh đầu trang (các dòng gộp thành một dòng, ngăn cách bằng dấu "·"), mục liên hệ và chân trang (mỗi khung giờ một dòng), cùng tệp `/llms.txt`. Để trống cả ô thì thanh đầu trang tự ẩn dòng giờ làm việc. Đường dẫn: Giao diện > Tùy chỉnh > HP Trading - Transport Theme Options > Thông tin liên hệ.
 - Email nhận form báo giá. Để trống thì dùng email quản trị của WordPress.
 
 ### 5.4 Trang chủ
@@ -170,14 +170,14 @@ Nội dung đầy đủ của 6 trang dịch vụ được viết lại bằng l
 
 **Cấu trúc mỗi trang**
 - **Đoạn mở đầu trả lời trực tiếp** (excerpt): nêu dịch vụ là gì, làm cho ai, kết quả ra sao. Đây là đoạn AI thường trích dẫn.
-- **Các mục H2:** dịch vụ bao gồm gì, quy trình thực hiện (danh sách có thứ tự), vì sao chọn ANP, thông tin cần gửi để nhận báo giá.
+- **Các mục H2:** dịch vụ bao gồm gì, quy trình thực hiện (danh sách có thứ tự), vì sao chọn HP Trading - Transport, thông tin cần gửi để nhận báo giá.
 - **Hỏi đáp (5 câu mỗi dịch vụ),** viết theo kiểu trả lời trước, hiển thị dạng mở rộng và đưa vào schema FAQPage.
 - **Dịch vụ liên quan** và **kêu gọi báo giá** ở cuối trang.
 
 **SEO và GEO trên mỗi trang**
 - Thẻ tiêu đề (`meta_title`, dưới 60 ký tự) và mô tả (`meta_desc`, 120 đến 160 ký tự) riêng cho từng dịch vụ, cả hai ngôn ngữ.
 - Đường dẫn ngắn có từ khóa: `/dich-vu/khai-bao-hai-quan/`, `/dich-vu/van-chuyen-duong-bien/`, v.v.
-- Schema: **Service** (tên, mô tả, nhà cung cấp là ANP), **FAQPage** (5 câu hỏi của trang), **BreadcrumbList** (đường dẫn). Khi có Rank Math, các node này được gộp vào đồ thị của Rank Math.
+- Schema: **Service** (tên, mô tả, nhà cung cấp là HP Trading - Transport), **FAQPage** (5 câu hỏi của trang), **BreadcrumbList** (đường dẫn). Khi có Rank Math, các node này được gộp vào đồ thị của Rank Math.
 - Thẻ đường dẫn (breadcrumb) hiển thị trên trang.
 - Từ khóa chính lưu trong `_anp_keyword` để tham khảo khi biên tập.
 
@@ -277,7 +277,7 @@ Yêu cầu ghi "CEO" nhưng không rõ viết tắt. Trong phiên này hiểu l�
 | Giờ làm việc | Thứ 2 – Thứ 6: 08:00 – 17:30; Thứ 7: 08:00 – 12:00 (do khách hàng cung cấp). Bản tiếng Anh do theme dịch | Đã điền, kiểm tra bản tiếng Anh |
 | Tên công ty tiếng Anh | Theme dịch sang tiếng Anh | Xác nhận đúng tên đăng ký quốc tế |
 | Logo | Chưa có file | **Cần file PNG/SVG nền trong suốt** |
-| Ảnh hero, giới thiệu, quy trình | Đang dùng ảnh minh họa có giấy phép mở (mục 13) | **Thay bằng ảnh thật của ANP** (đội xe, kho, cảng, nhân sự) |
+| Ảnh hero, giới thiệu, quy trình | Đang dùng ảnh minh họa có giấy phép mở (mục 13) | **Thay bằng ảnh thật của HP Trading - Transport** (đội xe, kho, cảng, nhân sự) |
 | Ảnh từng dịch vụ | Ảnh minh họa mặc định | Gắn Ảnh đại diện cho từng dịch vụ trong admin |
 | Email nhận form | Chưa có | Nên đặt email riêng cho báo giá |
 | Nội dung tiếng Anh các mục | Theme dịch, chưa có người bản ngữ rà soát | Nên rà soát trước khi công bố |
@@ -361,7 +361,7 @@ Các quy tắc của skill đã áp dụng: header nổi cách mép (`top-4`), c
 15 logo đối tác (MOL Logistics, APL, COSCO, Maersk Line, Yang Ming, TMC, Desig, DHL, CMA CGM, ANA, Delta, Malaysia Airlines, KMTC, KLM, OOCL) được copy từ mục Đối tác của website mẫu theo yêu cầu. Đây là **logo thương hiệu của bên thứ ba**, không thuộc giấy phép mở. Trước khi công bố, doanh nghiệp cần xác nhận đang hợp tác với từng đối tác và được phép dùng logo của họ. Nếu không, gỡ đối tác khỏi `anp_partners()` và xóa tệp tương ứng trong `assets/partners/`.
 
 ### 13.1 Ảnh đang dùng
-Ảnh thật, có giấy phép mở, lấy từ Wikimedia Commons bằng công cụ tìm kiếm ảnh trong skill thiết kế. Đây là **ảnh minh họa tạm thời** của các cảnh cùng loại, không phải ảnh của ANP Logistics.
+Ảnh thật, có giấy phép mở, lấy từ Wikimedia Commons bằng công cụ tìm kiếm ảnh trong skill thiết kế. Đây là **ảnh minh họa tạm thời** của các cảnh cùng loại, không phải ảnh của HP Trading - Transport.
 
 | Khóa | Dùng ở đâu | Tác giả | Giấy phép |
 |---|---|---|---|
@@ -378,11 +378,11 @@ Liên kết gốc từng ảnh nằm trong `inc/photos.php`. Chân trang tự in
 
 ### 13.2 Lưu ý về ảnh minh họa
 - Một số ảnh có chữ hoặc nhãn hiệu của bên thứ ba thấy được (tên cảng trên cẩu, nhãn container, hãng bay trên máy bay). Chúng chỉ nên dùng trong lúc dựng và duyệt giao diện.
-- Ảnh phần quy trình và ảnh hero đã được phủ lớp tối, nhưng vẫn nên thay bằng ảnh thật của ANP trước khi công bố.
+- Ảnh phần quy trình và ảnh hero đã được phủ lớp tối, nhưng vẫn nên thay bằng ảnh thật của HP Trading - Transport trước khi công bố.
 - Ghi chú pháp lý: giấy phép CC BY-SA yêu cầu ghi công và chia sẻ tương tự cho bản chỉnh sửa của chính ảnh đó, không bắt buộc cả website mở mã nguồn.
 
-### 13.3 Thay bằng ảnh thật của ANP
-1. **Hero, giới thiệu, quy trình:** Giao diện > Tùy chỉnh > ANP Theme Options > Trang chủ, tải ảnh vào ba ô ảnh. Nên dùng ảnh ngang, rộng tối thiểu 1600px cho hero, 1200px cho các ảnh còn lại.
+### 13.3 Thay bằng ảnh thật của HP Trading - Transport
+1. **Hero, giới thiệu, quy trình:** Giao diện > Tùy chỉnh > HP Trading - Transport Theme Options > Trang chủ, tải ảnh vào ba ô ảnh. Nên dùng ảnh ngang, rộng tối thiểu 1600px cho hero, 1200px cho các ảnh còn lại.
 2. **Từng dịch vụ:** vào menu Dịch vụ, mở một dịch vụ, đặt **Ảnh đại diện**. Ảnh này thay ảnh mặc định ngay.
 3. **Tin tức:** đặt Ảnh đại diện cho bài viết. Bài chưa có ảnh dùng ảnh `sea`.
 4. Khi đã thay hết, xóa dòng ghi công ở `footer.php` hoặc để trống `anp_photos()` trong `inc/photos.php` cho những ảnh không còn dùng.
@@ -391,7 +391,7 @@ Liên kết gốc từng ảnh nằm trong `inc/photos.php`. Chân trang tự in
 - Mỗi ảnh có `srcset` (500px và 960px; hero thêm 1280px), có `width` và `height` để tránh dịch bố cục.
 - Hero tải ngay (`fetchpriority="high"`), các ảnh còn lại tải khi cuộn tới (`loading="lazy"`).
 - Tổng dung lượng thư mục `assets/img` khoảng 1.9 MB cho cả bộ.
-- Ảnh hero có 1280px rộng, đủ cho màn hình 1440px ở độ phân giải thường. Màn hình Retina nên thay bằng ảnh gốc của ANP, rộng từ 2400px.
+- Ảnh hero có 1280px rộng, đủ cho màn hình 1440px ở độ phân giải thường. Màn hình Retina nên thay bằng ảnh gốc của HP Trading - Transport, rộng từ 2400px.
 
 ---
 

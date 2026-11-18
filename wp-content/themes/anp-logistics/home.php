@@ -40,7 +40,7 @@ $contact_url  = $contact_page ? get_permalink($contact_page) : home_url('/lien-h
 				<?php echo esc_html($is_en ? 'News, Tariff Guides & Industry Insights' : 'Tin tức, Biểu thuế XNK & Kiến thức Logistics'); ?>
 			</h1>
 			<p class="mt-4 text-base leading-relaxed text-slate-300 sm:text-lg">
-				<?php echo esc_html($is_en ? 'Practical guides on customs declaration, freight cost optimization, and supply chain updates from ANP Logistics experts.' : 'Cập nhật chính sách biểu thuế hải quan, cẩm nang thông quan cảng biển và giải pháp tối ưu hóa chi phí chuỗi cung ứng từ các chuyên gia ANP Logistics.'); ?>
+				<?php echo esc_html($is_en ? 'Practical guides on customs declaration, freight cost optimization, and supply chain updates from HP Trading - Transport experts.' : 'Cập nhật chính sách biểu thuế hải quan, cẩm nang thông quan cảng biển và giải pháp tối ưu hóa chi phí chuỗi cung ứng từ các chuyên gia HP Trading - Transport.'); ?>
 			</p>
 		</div>
 	</div>
@@ -94,7 +94,7 @@ $contact_url  = $contact_page ? get_permalink($contact_page) : home_url('/lien-h
 								</p>
 							</div>
 							<div class="mt-8 flex items-center justify-between border-t border-slate-100 pt-5">
-								<span class="text-xs font-semibold text-slate-500"><?php echo esc_html($is_en ? 'By ANP Expert Team' : 'Ban biên tập ANP Logistics'); ?></span>
+								<span class="text-xs font-semibold text-slate-500"><?php echo esc_html($is_en ? 'By HP Trading - Transport Expert Team' : 'Ban biên tập HP Trading - Transport'); ?></span>
 								<a href="<?php echo esc_url($f_url); ?>" class="inline-flex items-center gap-1.5 font-bold text-accent hover:text-accent-hover transition text-sm">
 									<span><?php echo esc_html($is_en ? 'Read Full Article' : 'Đọc bài viết'); ?></span>
 									<?php echo anp_icon('arrow', 'h-4 w-4'); ?>
@@ -190,7 +190,7 @@ $contact_url  = $contact_page ? get_permalink($contact_page) : home_url('/lien-h
 						<?php echo esc_html($is_en ? 'Need Expert Advice on Customs or Freight Routes?' : 'Bạn cần tư vấn thủ tục hải quan hoặc tối ưu cước vận tải?'); ?>
 					</h2>
 					<p class="text-sm leading-relaxed text-slate-300 sm:text-base max-w-2xl">
-						<?php echo esc_html($is_en ? 'Connect with ANP Logistics specialists for tailored solutions, transparent pricing, and zero hidden costs.' : 'Đội ngũ chuyên gia của ANP Logistics luôn sẵn sàng phân tích hồ sơ, áp mã HS chính xác và xây dựng phương án giao nhận Door-to-Door tối ưu nhất cho bạn.'); ?>
+						<?php echo esc_html($is_en ? 'Connect with HP Trading - Transport specialists for tailored solutions, transparent pricing, and zero hidden costs.' : 'Đội ngũ chuyên gia của HP Trading - Transport luôn sẵn sàng phân tích hồ sơ, áp mã HS chính xác và xây dựng phương án giao nhận Door-to-Door tối ưu nhất cho bạn.'); ?>
 					</p>
 				</div>
 				<div class="flex flex-col sm:flex-row items-center gap-4 lg:col-span-4 lg:justify-end">

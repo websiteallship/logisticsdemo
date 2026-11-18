@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Trang Giới Thiệu (About Page)
- * Description: Trang giới thiệu hồ sơ năng lực doanh nghiệp chi tiết, chuẩn SEO B2B Logistics (design-taste-frontend).
+ * Description: Hồ sơ năng lực doanh nghiệp HP Trading - Transport (Split Industrial Showcase & Floating Fleet Stage).
  */
 get_header();
 
@@ -21,41 +21,125 @@ $theme_assets = get_template_directory_uri() . '/assets/img/';
 	</div>
 </nav>
 
-<!-- 2. Header Banner: Enterprise Profile Hero -->
-<header class="relative isolate overflow-hidden bg-[#061220] py-16 text-white sm:py-24">
-	<div class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#061220]/90 via-[#0B192C]/80 to-[#061220]"></div>
-	<div class="mx-auto max-w-7xl px-5 sm:px-8">
-		<div class="reveal-up max-w-3xl">
-			<div class="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-				<span class="h-1.5 w-1.5 rounded-full bg-accent animate-pulse"></span>
-				<?php echo esc_html($is_en ? 'Company Profile • HP Trading - Transport' : 'Hồ Sơ Năng Lực • HP Trading - Transport'); ?>
-			</div>
-			<h1 class="mt-4 font-display text-3xl font-extrabold tracking-tight sm:text-5xl lg:text-5xl leading-tight">
-				<?php echo esc_html($is_en ? 'One Unified Partner for Your Complete Logistics Chain' : 'Một Đầu Mối Toàn Diện Cho Chuỗi Cung Ứng Xuất Nhập Khẩu'); ?>
-			</h1>
-			<p class="mt-4 text-base sm:text-lg leading-relaxed text-slate-300">
-				<?php echo esc_html($is_en ? 'Founded in 2014, ANP Logistics (HP Trading - Transport) specializes in comprehensive import-export logistics, operating an owned fleet of 40+ container trucks, modern warehousing, and 24/7 on-site customs clearance.' : 'Thành lập từ năm 2014, ANP Logistics (HP Trading - Transport) là đơn vị vận tải chuyên sâu cho hàng hóa xuất nhập khẩu, sở hữu đội xe hơn 40 đầu kéo chuyên dụng, kho bãi hiện đại và đội ngũ khai báo hải quan túc trực 24/7.'); ?>
-			</p>
-		</div>
+<!-- 2. HERO: Split Industrial Showcase & Floating Fleet Stage (Phương án 1) -->
+<header class="relative isolate overflow-hidden bg-[#061220] py-14 sm:py-20 lg:py-24 text-white">
+	<!-- Atmospheric glow layers -->
+	<div class="pointer-events-none absolute -left-40 -top-40 h-[500px] w-[500px] rounded-full bg-brand/35 blur-[140px]"></div>
+	<div class="pointer-events-none absolute -right-20 top-1/2 h-[450px] w-[450px] -translate-y-1/2 rounded-full bg-[#1F4F25]/25 blur-[140px]"></div>
+	<div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/[0.04] via-transparent to-transparent"></div>
 
-		<!-- 4 Chỉ Số Năng Lực Nổi Bật -->
-		<div class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
-			<div class="rounded-2xl border border-white/10 bg-white/[0.05] p-5 backdrop-blur-md">
-				<div class="font-display text-3xl sm:text-4xl font-extrabold text-accent">10+</div>
-				<p class="mt-1 text-xs sm:text-sm text-slate-300"><?php echo esc_html($is_en ? 'Years of Experience' : 'Năm kinh nghiệm thực chiến'); ?></p>
+	<div class="mx-auto max-w-7xl px-5 sm:px-8">
+		<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+			
+			<!-- CỘT TRÁI (7 cols): Định Vị Thương Hiệu, Headline, CTA & Dải Chỉ Số -->
+			<div class="lg:col-span-7 space-y-6 sm:space-y-7">
+				
+				<!-- Badge Xác Thực Doanh Nghiệp -->
+				<div class="inline-flex flex-wrap items-center gap-2">
+					<div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-[#1F4F25]/50 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-emerald-300 backdrop-blur-md">
+						<span class="relative flex h-2 w-2">
+							<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+							<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+						</span>
+						<?php echo esc_html($is_en ? 'HP Trading - Transport • Since 2014' : 'HP Trading - Transport • 10 Năm Vững Bước'); ?>
+					</div>
+					<span class="hidden sm:inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-slate-300">
+						<?php echo esc_html($is_en ? 'Licensed Port Logistics Carrier' : 'Đơn vị vận tải cảng biển & Hải quan'); ?>
+					</span>
+				</div>
+
+				<!-- H1 Headline Công Nghiệp -->
+				<h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.18]">
+					<?php echo esc_html($is_en ? 'One Unified Partner for Your Complete' : 'Một Đầu Mối Toàn Diện Cho'); ?>
+					<span class="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-emerald-400 to-accent">
+						<?php echo esc_html($is_en ? 'Import - Export Logistics Chain' : 'Chuỗi Cung Ứng Xuất Nhập Khẩu'); ?>
+					</span>
+				</h1>
+
+				<!-- Đoạn Lead Khẳng Định Vị Thế -->
+				<p class="text-base sm:text-lg leading-relaxed text-slate-300 max-w-2xl">
+					<?php echo esc_html($is_en ? 'Founded in 2014, HP Trading - Transport specializes in integrated container trucking and customs brokerage. We operate an owned fleet of 40+ heavy tractor trucks connecting international sea ports (Cat Lai, Cai Mep) directly to industrial parks across Southern Vietnam.' : 'Thành lập từ năm 2014, HP Trading - Transport chuyên sâu vận tải container và thủ tục hải quan trọn gói. Chúng tôi sở hữu đội xe hơn 40 đầu kéo chủ động, kết nối trực tiếp các cụm cảng quốc tế Cát Lái, Cái Mép, ICD đến các khu công nghiệp trọng điểm phía Nam với cam kết 100% đúng hạn closing time.'); ?>
+				</p>
+
+				<!-- CTA Kép Hành Động -->
+				<div class="flex flex-wrap items-center gap-3.5 pt-2">
+					<a href="<?php echo esc_url($contact_url); ?>" class="btn btn-accent px-6 py-3.5 font-bold text-sm shadow-xl flex items-center gap-2">
+						<span><?php echo esc_html($is_en ? 'Request an All-in Quote' : 'Yêu Cầu Báo Giá Trọn Gói'); ?></span>
+						<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+					</a>
+					<a href="#nang-luc-doi-xe" class="btn btn-ghost-light px-5 py-3.5 font-semibold text-sm flex items-center gap-2">
+						<?php echo anp_icon('truck', 'h-4 w-4 text-emerald-300'); ?>
+						<span><?php echo esc_html($is_en ? 'Explore Fleet & Capacity' : 'Khảo Sát Năng Lực Đội Xe'); ?></span>
+					</a>
+				</div>
+
+				<!-- Dải Capsule 4 Chỉ Số Năng Lực -->
+				<div class="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-3 border-t border-white/10">
+					<div class="rounded-xl border border-white/10 bg-white/[0.04] p-3.5 backdrop-blur-sm">
+						<div class="font-display text-2xl font-extrabold text-accent">10+</div>
+						<p class="mt-0.5 text-xs text-slate-300"><?php echo esc_html($is_en ? 'Years of Operation' : 'Năm kinh nghiệm thực chiến'); ?></p>
+					</div>
+					<div class="rounded-xl border border-white/10 bg-white/[0.04] p-3.5 backdrop-blur-sm">
+						<div class="font-display text-2xl font-extrabold text-white">40+</div>
+						<p class="mt-0.5 text-xs text-slate-300"><?php echo esc_html($is_en ? 'GPS Tractor Trucks' : 'Đầu kéo & rơ-moóc GPS'); ?></p>
+					</div>
+					<div class="rounded-xl border border-white/10 bg-white/[0.04] p-3.5 backdrop-blur-sm">
+						<div class="font-display text-2xl font-extrabold text-emerald-400">500+</div>
+						<p class="mt-0.5 text-xs text-slate-300"><?php echo esc_html($is_en ? 'B2B & FDI Clients' : 'Doanh nghiệp FDI tin cậy'); ?></p>
+					</div>
+					<div class="rounded-xl border border-white/10 bg-white/[0.04] p-3.5 backdrop-blur-sm">
+						<div class="font-display text-2xl font-extrabold text-accent">0 VNĐ</div>
+						<p class="mt-0.5 text-xs text-slate-300"><?php echo esc_html($is_en ? 'Zero Hidden Fees' : 'Phí ẩn phát sinh'); ?></p>
+					</div>
+				</div>
+
 			</div>
-			<div class="rounded-2xl border border-white/10 bg-white/[0.05] p-5 backdrop-blur-md">
-				<div class="font-display text-3xl sm:text-4xl font-extrabold text-white">40+</div>
-				<p class="mt-1 text-xs sm:text-sm text-slate-300"><?php echo esc_html($is_en ? 'Tractor Trucks & Trailers' : 'Xe đầu kéo & Rơ-moóc'); ?></p>
+
+			<!-- CỘT PHẢI (5 cols): Floating Fleet Stage (Frame Đa Tầng & Thẻ Nổi Kính) -->
+			<div class="lg:col-span-5 relative">
+				<div class="relative mx-auto max-w-lg lg:max-w-none">
+					
+					<!-- Glow hậu cảnh thẻ media -->
+					<div class="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-emerald-500/20 via-accent/20 to-brand/30 blur-lg opacity-75"></div>
+					
+					<!-- Khung kiến trúc Media -->
+					<div class="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-white/20 bg-slate-900 shadow-2xl group">
+						<img src="<?php echo esc_url($uploads_base . 'banner-doi-xe-hp-trading.jpg'); ?>" 
+							 alt="Toàn cảnh đội xe đầu kéo và bãi container HP Trading - Transport" 
+							 class="w-full h-[360px] sm:h-[440px] object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+							 loading="eager" fetchpriority="high">
+						
+						<!-- Lớp gradient bảo đảm độ tương phản thẻ nổi -->
+						<div class="absolute inset-0 bg-gradient-to-t from-[#061220]/90 via-[#061220]/25 to-transparent"></div>
+
+						<!-- Floating Glass Badge 1: Live Fleet Tracking (Góc trên trái) -->
+						<div class="absolute top-4 left-4 rounded-xl border border-white/20 bg-[#061220]/80 p-3 sm:p-3.5 backdrop-blur-md shadow-2xl flex items-center gap-3">
+							<div class="relative flex h-3 w-3">
+								<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+								<span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-400"></span>
+							</div>
+							<div>
+								<div class="text-xs font-bold text-white"><?php echo esc_html($is_en ? 'Live Fleet Dispatch 24/7' : 'Đội Xe Chủ Động 24/7'); ?></div>
+								<div class="text-[11px] text-emerald-300 font-medium"><?php echo esc_html($is_en ? '40+ Tractors connected to GPS' : '40+ Đầu kéo kết nối định vị GPS'); ?></div>
+							</div>
+						</div>
+
+						<!-- Floating Glass Badge 2: Cam Kết SLA & Bảo Hiểm (Góc dưới phải) -->
+						<div class="absolute bottom-4 right-4 rounded-xl border border-white/20 bg-[#0B192C]/90 p-3 sm:p-3.5 backdrop-blur-md shadow-2xl flex items-center gap-3">
+							<div class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent text-[#0B192C] font-black text-sm">
+								✓
+							</div>
+							<div>
+								<div class="text-xs font-bold text-white"><?php echo esc_html($is_en ? 'Customs SLA < 24 Hours' : 'Cam Kết Thông Quan < 24h'); ?></div>
+								<div class="text-[11px] text-accent font-medium"><?php echo esc_html($is_en ? '10 Billion VND Cargo Liability' : 'Bảo hiểm trách nhiệm 10 Tỷ VNĐ'); ?></div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
 			</div>
-			<div class="rounded-2xl border border-white/10 bg-white/[0.05] p-5 backdrop-blur-md">
-				<div class="font-display text-3xl sm:text-4xl font-extrabold text-accent">500+</div>
-				<p class="mt-1 text-xs sm:text-sm text-slate-300"><?php echo esc_html($is_en ? 'B2B & FDI Clients' : 'Doanh nghiệp FDI tin cậy'); ?></p>
-			</div>
-			<div class="rounded-2xl border border-white/10 bg-white/[0.05] p-5 backdrop-blur-md">
-				<div class="font-display text-3xl sm:text-4xl font-extrabold text-white">100%</div>
-				<p class="mt-1 text-xs sm:text-sm text-slate-300"><?php echo esc_html($is_en ? 'Transparent 0 Hidden Fee' : 'Cam kết 0 chi phí ẩn'); ?></p>
-			</div>
+
 		</div>
 	</div>
 </header>
@@ -63,11 +147,236 @@ $theme_assets = get_template_directory_uri() . '/assets/img/';
 <main class="py-14 sm:py-20 bg-white">
 	<div class="mx-auto max-w-7xl px-5 sm:px-8 space-y-20 sm:space-y-28">
 
-		<!-- SECTION 1: PANORAMIC BANNER ĐỘI XE & 4 NĂNG LỰC CỐT LÕI -->
+		<!-- SECTION 1: TẦM NHÌN & SỨ MỆNH (VISION & MISSION CARDS) -->
 		<section class="reveal-up">
+			<div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+				<span class="text-xs font-bold uppercase tracking-wider text-accent"><?php echo esc_html($is_en ? 'Guiding Principles' : 'Kim Chỉ Nam Hoạt Động'); ?></span>
+				<h2 class="mt-2 font-display text-2xl sm:text-4xl font-extrabold text-brand">
+					<?php echo esc_html($is_en ? 'Vision & Mission' : 'Sứ Mệnh Phụng Sự & Tầm Nhìn Chiến Lược'); ?>
+				</h2>
+				<p class="mt-3 text-slate-600 text-sm sm:text-base">
+					<?php echo esc_html($is_en ? 'Building enduring value for partners through discipline, transparency, and continuous technological enhancement.' : 'Định hình tương lai vận tải container cảng biển bằng cam kết minh bạch chi phí, kỷ luật giờ giấc và trách nhiệm pháp lý trọn vẹn.'); ?>
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+				
+				<!-- Thẻ SỨ MỆNH (Tone Trắng / Công nghiệp tinh khiết) -->
+				<div class="relative rounded-3xl border border-slate-200 bg-slate-50/80 p-8 sm:p-10 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between">
+					<div>
+						<div class="flex items-center justify-between pb-6 border-b border-slate-200">
+							<span class="inline-flex items-center gap-2 rounded-full bg-[#1F4F25]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand">
+								<span class="h-1.5 w-1.5 rounded-full bg-brand"></span>
+								<?php echo esc_html($is_en ? 'Our Mission' : 'Sứ Mệnh Của Chúng Tôi'); ?>
+							</span>
+							<span class="text-3xl font-display font-black text-slate-300">01</span>
+						</div>
+						<h3 class="mt-6 font-display text-xl sm:text-2xl font-bold text-brand leading-snug">
+							<?php echo esc_html($is_en ? 'Simplify the Supply Chain & Protect Client Value' : 'Đơn Giản Hóa Chuỗi Cung Ứng • Bảo Vệ Lợi Ích Khách Hàng'); ?>
+						</h3>
+						<p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+							<?php echo esc_html($is_en ? 'HP Trading - Transport exists to eliminate the greatest pain points in import-export: port demurrage fees, clearance bottlenecks, and unforeseen surcharges. We act as an unwavering extension of your logistics department with total accountability.' : 'HP Trading - Transport ra đời nhằm giải quyết triệt để các rủi ro lớn nhất của doanh nghiệp xuất nhập khẩu: trễ hạn tàu, lưu bãi phát sinh chi phí và ách tắc thủ tục hải quan. Sứ mệnh của chúng tôi là trở thành cánh tay nối dài tin cậy, bảo vệ từng lô hàng và tối ưu dòng tiền của khách hàng bằng sự tận tâm, chuẩn xác và kỷ luật tuyệt đối.'); ?>
+						</p>
+					</div>
+					
+					<div class="mt-8 pt-6 border-t border-slate-200/80 space-y-3">
+						<div class="flex items-center gap-3 text-sm text-slate-700">
+							<span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-brand font-bold text-xs">✓</span>
+							<span><?php echo esc_html($is_en ? '100% Adherence to shipping line closing times' : 'Kiểm soát 100% closing time của mọi hãng tàu lớn'); ?></span>
+						</div>
+						<div class="flex items-center gap-3 text-sm text-slate-700">
+							<span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-brand font-bold text-xs">✓</span>
+							<span><?php echo esc_html($is_en ? 'Itemized quotes with absolute zero hidden costs' : 'Minh bạch toàn bộ cước phí, nâng hạ và phí bến bãi'); ?></span>
+						</div>
+						<div class="flex items-center gap-3 text-sm text-slate-700">
+							<span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-brand font-bold text-xs">✓</span>
+							<span><?php echo esc_html($is_en ? 'Round-the-clock on-site port problem solving' : 'Túc trực xử lý kiểm hóa và giải phóng hàng tại cảng 24/7'); ?></span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Thẻ TẦM NHÌN (Tone Deep Navy Doanh Nghiệp) -->
+				<div class="relative rounded-3xl border border-white/10 bg-[#061220] p-8 sm:p-10 text-white shadow-xl hover:shadow-2xl transition duration-300 flex flex-col justify-between overflow-hidden">
+					<div class="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-brand/40 blur-3xl"></div>
+					
+					<div class="relative z-10">
+						<div class="flex items-center justify-between pb-6 border-b border-white/10">
+							<span class="inline-flex items-center gap-2 rounded-full bg-accent/20 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-accent">
+								<span class="h-1.5 w-1.5 rounded-full bg-accent animate-pulse"></span>
+								<?php echo esc_html($is_en ? 'Vision Toward 2030' : 'Tầm Nhìn Đến Năm 2030'); ?>
+							</span>
+							<span class="text-3xl font-display font-black text-white/20">02</span>
+						</div>
+						<h3 class="mt-6 font-display text-xl sm:text-2xl font-bold text-white leading-snug">
+							<?php echo esc_html($is_en ? 'Leading Port Logistics Ecosystem in Southern Vietnam' : 'Thương Hiệu Vận Tải Cảng Biển & Hải Quan Uy Tín Hàng Đầu'); ?>
+						</h3>
+						<p class="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+							<?php echo esc_html($is_en ? 'To expand HP Trading - Transport into a premier multimodal transport ecosystem across Southern Vietnam, expanding our active fleet to 100+ tractor units, integrating digital TMS/WMS software directly connected to deep-water port systems.' : 'Phát triển HP Trading - Transport trở thành thương hiệu vận tải container và dịch vụ hải quan kiểu mẫu tại vùng kinh tế trọng điểm phía Nam. Nâng quy mô đội xe lên 100+ đầu kéo chuyên dụng, ứng dụng hệ thống số hóa điều vận TMS và quản lý kho bãi WMS thông minh kết nối trực tiếp với cụm cảng Cát Lái - Cái Mép - Long Thành.'); ?>
+						</p>
+					</div>
+
+					<div class="relative z-10 mt-8 pt-6 border-t border-white/10 space-y-3">
+						<div class="flex items-center gap-3 text-sm text-slate-200">
+							<span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/20 text-accent font-bold text-xs">⬡</span>
+							<span><?php echo esc_html($is_en ? '100+ Heavy tractors meeting Euro 5/6 emission standards' : '100+ Đầu kéo đời mới Chenglong, Scania chuẩn Euro 5/6'); ?></span>
+						</div>
+						<div class="flex items-center gap-3 text-sm text-slate-200">
+							<span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/20 text-accent font-bold text-xs">⬡</span>
+							<span><?php echo esc_html($is_en ? '3 Strategic transit hubs next to main expressways' : '03 Bãi xe & kho trung chuyển vệ tinh tiếp giáp cao tốc'); ?></span>
+						</div>
+						<div class="flex items-center gap-3 text-sm text-slate-200">
+							<span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/20 text-accent font-bold text-xs">⬡</span>
+							<span><?php echo esc_html($is_en ? 'Trusted by Top 10 International Shipping Lines' : 'Đối tác vận tải chỉ định của các tập đoàn sản xuất FDI'); ?></span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+		<!-- SECTION 2: CÂU CHUYỆN THƯƠNG HIỆU & HÀNH TRÌNH 10 NĂM (BRAND STORY & TIMELINE) -->
+		<section class="reveal-up grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+			
+			<!-- Cột Trái: Câu Chuyện Hình Thành -->
+			<div class="lg:col-span-6 space-y-5">
+				<span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-slate-700">
+					<?php echo esc_html($is_en ? 'Company Journey' : 'Hành Trình 10 Năm Phát Triển'); ?>
+				</span>
+				<h2 class="font-display text-2xl sm:text-4xl font-extrabold text-brand leading-tight">
+					<?php echo esc_html($is_en ? 'From Deep Regulatory Expertise to a Powerful Owned Fleet' : 'Thấu Hiểu Trực Địa • Làm Chủ Năng Lực Vận Tải'); ?>
+				</h2>
+				<p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+					<?php echo esc_html($is_en ? 'Founded in 2014, HP Trading - Transport originated from a team of customs brokers who witnessed first-hand the heavy losses enterprises endured simply because of document delays or mismatched trucking schedules.' : 'Khởi đầu từ năm 2014, HP Trading - Transport được sáng lập bởi những chuyên gia hải quan dày dạn kinh nghiệm thực tế. Chúng tôi từng chứng kiến không ít doanh nghiệp xuất nhập khẩu phải gánh chịu hàng trăm triệu tiền phạt lưu bãi, lưu container chỉ vì một sai sót nhỏ trên tờ khai hoặc do phụ thuộc vào đội xe thuê ngoài thiếu trách nhiệm.'); ?>
+				</p>
+				<p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+					<?php echo esc_html($is_en ? 'That reality motivated our bold investment: instead of being a traditional forwarder, we invested directly in heavy-duty tractor trucks and built our own logistics infrastructure to guarantee absolute service quality from port to factory gate.' : 'Thực tế đó đã thôi thúc chúng tôi chọn hướng đi khác biệt: Không đơn thuần làm môi giới trung gian, HP Trading - Transport quyết định đầu tư trực tiếp vào đội xe đầu kéo chuyên dụng và bãi xe vệ tinh. Nhờ đó, chúng tôi nắm quyền chủ động 100% trong điều phối, bảo đảm hàng hạ bãi xuất cảng an toàn và đúng hẹn trong mọi tình huống.'); ?>
+				</p>
+
+				<div class="pt-2 flex items-center gap-4">
+					<div class="flex items-center gap-3">
+						<div class="grid h-12 w-12 place-items-center rounded-xl bg-brand text-accent font-black text-lg">
+							10
+						</div>
+						<div>
+							<div class="font-bold text-sm text-brand"><?php echo esc_html($is_en ? '10 Years of Excellence' : '10 Năm Thực Chiến Bền Bỉ'); ?></div>
+							<div class="text-xs text-slate-500"><?php echo esc_html($is_en ? 'Over 50,000 successful container trips' : 'Hơn 50,000 chuyến container an toàn'); ?></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Cột Phải: Dòng Thời Gian Mốc Son Phát Triển -->
+			<div class="lg:col-span-6 space-y-4">
+				
+				<div class="relative pl-8 pb-6 border-l-2 border-slate-200">
+					<div class="absolute -left-2.5 top-0 h-5 w-5 rounded-full border-4 border-white bg-brand shadow"></div>
+					<div class="text-xs font-bold uppercase tracking-wider text-accent">Năm 2014</div>
+					<h3 class="font-bold text-brand text-base sm:text-lg mt-0.5"><?php echo esc_html($is_en ? 'Foundation & Customs Brokerage Focus' : 'Thành Lập Doanh Nghiệp & Chuyên Môn Hóa Hải Quan'); ?></h3>
+					<p class="mt-1 text-sm text-slate-600 leading-relaxed">
+						<?php echo esc_html($is_en ? 'Established in HCMC, focusing on customs declarations, tariff consulting, and local delivery around Cat Lai port.' : 'Thành lập tại TP.HCM, tập trung cung cấp giải pháp khai báo hải quan điện tử VNACCS và tư vấn áp mã HS cho các doanh nghiệp gia công, sản xuất xuất khẩu.'); ?>
+					</p>
+				</div>
+
+				<div class="relative pl-8 pb-6 border-l-2 border-slate-200">
+					<div class="absolute -left-2.5 top-0 h-5 w-5 rounded-full border-4 border-white bg-brand shadow"></div>
+					<div class="text-xs font-bold uppercase tracking-wider text-accent">Năm 2017</div>
+					<h3 class="font-bold text-brand text-base sm:text-lg mt-0.5"><?php echo esc_html($is_en ? 'First 10 Tractor Trucks Investment' : 'Đầu Tư Đội Xe Đầu Kéo Đầu Tiên (10 Xe)'); ?></h3>
+					<p class="mt-1 text-sm text-slate-600 leading-relaxed">
+						<?php echo esc_html($is_en ? 'Direct purchase of 10 modern tractor trucks, fully mastering the container delivery route between HCMC and Binh Duong.' : 'Đầu tư trực tiếp 10 xe đầu kéo chuyên dụng mới, hoàn toàn tự chủ khâu kéo container từ cảng Cát Lái về các nhà máy tại KCN Sóng Thần, VSIP Bình Dương.'); ?>
+					</p>
+				</div>
+
+				<div class="relative pl-8 pb-6 border-l-2 border-slate-200">
+					<div class="absolute -left-2.5 top-0 h-5 w-5 rounded-full border-4 border-white bg-brand shadow"></div>
+					<div class="text-xs font-bold uppercase tracking-wider text-accent">Năm 2020</div>
+					<h3 class="font-bold text-brand text-base sm:text-lg mt-0.5"><?php echo esc_html($is_en ? 'Fleet Expansion & Satellite Depot' : 'Mở Rộng 25 Đầu Kéo & Vận Hành Bãi Xe Bình Dương'); ?></h3>
+					<p class="mt-1 text-sm text-slate-600 leading-relaxed">
+						<?php echo esc_html($is_en ? 'Expanded fleet to 25 Chenglong/Scania units and opened a dedicated satellite depot for container staging and staging maintenance.' : 'Nâng quy mô lên 25 xe đầu kéo Chenglong, Hải Âu H7 và đưa vào hoạt động bãi xe trung chuyển tại Thuận An, rút ngắn 40% thời gian giao nhận giờ cao điểm.'); ?>
+					</p>
+				</div>
+
+				<div class="relative pl-8 border-l-2 border-transparent">
+					<div class="absolute -left-2.5 top-0 h-5 w-5 rounded-full border-4 border-white bg-accent shadow animate-pulse"></div>
+					<div class="text-xs font-bold uppercase tracking-wider text-accent">Hiện Nay (2024+)</div>
+					<h3 class="font-bold text-brand text-base sm:text-lg mt-0.5"><?php echo esc_html($is_en ? '40+ Fleet & Full Supply Chain Partner' : '40+ Đầu Kéo Chủ Động & Hệ Thống Kho Bãi Hiện Đại'); ?></h3>
+					<p class="mt-1 text-sm text-slate-600 leading-relaxed">
+						<?php echo esc_html($is_en ? 'Operating 40+ heavy trucks, modern warehousing, serving 500+ FDI enterprises with 10 Billion VND comprehensive insurance.' : 'Sở hữu hơn 40 đầu kéo và rơ-moóc chuyên dụng, kho bãi tiêu chuẩn, kết nối thông suốt Cát Lái - Cái Mép, phục vụ hơn 500 khách hàng FDI với bảo hiểm 10 tỷ VNĐ.'); ?>
+					</p>
+				</div>
+
+			</div>
+		</section>
+
+		<!-- SECTION 3: 4 GIÁ TRỊ CỐT LÕI (CORE VALUES BENTO GRID) -->
+		<section class="reveal-up rounded-3xl bg-slate-50 border border-slate-200/80 p-8 sm:p-12">
+			<div class="text-center max-w-2xl mx-auto mb-10">
+				<span class="text-xs font-bold uppercase tracking-wider text-accent"><?php echo esc_html($is_en ? 'Our Core Values' : 'Văn Hóa & Cam Kết Bất Biến'); ?></span>
+				<h2 class="mt-2 font-display text-2xl sm:text-4xl font-extrabold text-brand">
+					<?php echo esc_html($is_en ? '4 Core Values Behind Every Shipment' : '4 Giá Trị Cốt Lõi Tạo Nên Uy Tín HP Trading'); ?>
+				</h2>
+				<p class="mt-2 text-slate-600 text-sm sm:text-base">
+					<?php echo esc_html($is_en ? 'The bedrock principles guiding every decision, dispatch route, and customer interaction.' : 'Những nguyên tắc sống còn định hình phong cách làm việc chuyên nghiệp, tận tâm trên từng cung đường.'); ?>
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+				
+				<!-- Giá trị 1 -->
+				<div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition">
+					<div class="flex items-center justify-between mb-4">
+						<span class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1F4F25]/10 text-brand font-black text-lg">01</span>
+						<span class="text-xs font-bold uppercase tracking-wider text-slate-400">Minh Bạch</span>
+					</div>
+					<h3 class="font-bold text-brand text-base sm:text-lg"><?php echo esc_html($is_en ? 'Integrity & Transparency' : 'Chính Trực & Minh Bạch'); ?></h3>
+					<p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+						<?php echo esc_html($is_en ? 'Itemized all-in pricing with absolute zero hidden costs. Complete honesty in tariff classifications and customs procedures.' : 'Báo giá trọn gói 1 lần không chi phí ẩn. Trung thực trong kê khai hải quan, đối soát rõ ràng từng khoản cước, phí nâng hạ và cầu đường.'); ?>
+					</p>
+				</div>
+
+				<!-- Giá trị 2 -->
+				<div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition">
+					<div class="flex items-center justify-between mb-4">
+						<span class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1F4F25]/10 text-brand font-black text-lg">02</span>
+						<span class="text-xs font-bold uppercase tracking-wider text-slate-400">Kỷ Luật</span>
+					</div>
+					<h3 class="font-bold text-brand text-base sm:text-lg"><?php echo esc_html($is_en ? 'Disciplined Punctuality' : 'Kỷ Luật Giờ Giấc'); ?></h3>
+					<p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+						<?php echo esc_html($is_en ? 'Punctuality is honor. Strict adherence to vessel closing time and factory loading schedules with GPS tracking.' : 'Đúng giờ là danh dự. Lịch đóng hàng tại nhà máy và thời gian hạ bãi xuất cảng được kiểm soát chặt chẽ từng phút, thông báo tiến độ trực tiếp.'); ?>
+					</p>
+				</div>
+
+				<!-- Giá trị 3 -->
+				<div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition">
+					<div class="flex items-center justify-between mb-4">
+						<span class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1F4F25]/10 text-brand font-black text-lg">03</span>
+						<span class="text-xs font-bold uppercase tracking-wider text-slate-400">An Toàn</span>
+					</div>
+					<h3 class="font-bold text-brand text-base sm:text-lg"><?php echo esc_html($is_en ? 'Safety First Mindset' : 'An Toàn Tuyệt Đối'); ?></h3>
+					<p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+						<?php echo esc_html($is_en ? 'Comprehensive 10 Billion VND cargo insurance. Fleet regularly inspected and maintained to ensure zero transport mishaps.' : 'Bảo hiểm trách nhiệm hàng hóa 10 tỷ VNĐ toàn diện. Đội xe được bảo dưỡng định kỳ khắt khe, tài xế có chứng chỉ và đạo đức nghề nghiệp cao.'); ?>
+					</p>
+				</div>
+
+				<!-- Giá trị 4 -->
+				<div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition">
+					<div class="flex items-center justify-between mb-4">
+						<span class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1F4F25]/10 text-brand font-black text-lg">04</span>
+						<span class="text-xs font-bold uppercase tracking-wider text-slate-400">Tận Tâm</span>
+					</div>
+					<h3 class="font-bold text-brand text-base sm:text-lg"><?php echo esc_html($is_en ? 'Client-Centric Dedication' : 'Tận Tâm Phụng Sự'); ?></h3>
+					<p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+						<?php echo esc_html($is_en ? 'We treat your cargo as our own. 24/7 dedicated support resolving unexpected customs or dispatch issues on the spot.' : 'Lô hàng của khách là tài sản của chính mình. Đội ngũ chuyên viên và tài xế túc trực hiện trường 24/7 giải quyết mọi phát sinh tại cảng và bãi.'); ?>
+					</p>
+				</div>
+
+			</div>
+		</section>
+
+		<!-- SECTION 4: HỆ THỐNG ĐỘI XE & CƠ SỞ VẬT CHẤT (HÌNH ẢNH THỰC TẾ) -->
+		<section id="nang-luc-doi-xe" class="reveal-up scroll-mt-24">
 			<div class="text-center max-w-3xl mx-auto mb-10">
 				<span class="text-xs font-bold uppercase tracking-wider text-accent"><?php echo esc_html($is_en ? 'Fleet & Infrastructure' : 'Cơ Sở Vật Chất & Năng Lực Phương Tiện'); ?></span>
-				<h2 class="mt-2 font-display text-2xl sm:text-4xl font-bold text-brand">
+				<h2 class="mt-2 font-display text-2xl sm:text-4xl font-extrabold text-brand">
 					<?php echo esc_html($is_en ? 'Owned Modern Fleet & Standard Warehousing' : 'Hệ Thống Đội Xe Hiện Đại & Kho Bãi Quy Chuẩn'); ?>
 				</h2>
 				<p class="mt-3 text-slate-600 text-sm sm:text-base">
@@ -78,7 +387,7 @@ $theme_assets = get_template_directory_uri() . '/assets/img/';
 			<!-- Ảnh Panorama thực tế -->
 			<div class="overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xl bg-slate-900">
 				<img src="<?php echo esc_url($uploads_base . 'banner-doi-xe-hp-trading.jpg'); ?>" 
-					 alt="Toàn cảnh đội xe đầu kéo và kho bãi HP Trading - Transport ANP Logistics" 
+					 alt="Toàn cảnh đội xe đầu kéo và kho bãi HP Trading - Transport" 
 					 class="w-full h-auto object-cover max-h-[550px]"
 					 loading="lazy" decoding="async">
 			</div>
@@ -116,70 +425,7 @@ $theme_assets = get_template_directory_uri() . '/assets/img/';
 			</div>
 		</section>
 
-		<!-- SECTION 2: CÂU CHUYỆN THƯƠNG HIỆU & GIÁ TRỊ CỐT LÕI -->
-		<section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-			<div class="lg:col-span-6 space-y-5">
-				<span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-slate-700">
-					<?php echo esc_html($is_en ? 'Company Journey' : 'Hành Trình Phát Triển'); ?>
-				</span>
-				<h2 class="font-display text-2xl sm:text-4xl font-extrabold text-brand leading-tight">
-					<?php echo esc_html($is_en ? 'Clear Procedures, Complete Peace of Mind' : 'Thủ Tục Rõ Ràng • Hàng Đi An Tâm'); ?>
-				</h2>
-				<p class="text-slate-600 leading-relaxed text-sm sm:text-base">
-					<?php echo esc_html($is_en ? 'Founded in 2014, ANP Logistics has built its reputation on transparency, procedural accuracy, and punctuality. We bridge the critical gap between shipping lines, customs authorities, and manufacturing factories.' : 'Khởi đầu từ năm 2014 với quy mô ban đầu chuyên về thủ tục hải quan và giao nhận nội địa, ANP Logistics đã không ngừng mở rộng năng lực phương tiện và mạng lưới bãi xe vệ tinh tại TP.HCM, Bình Dương và Bà Rịa - Vũng Tàu.'); ?>
-				</p>
-				<p class="text-slate-600 leading-relaxed text-sm sm:text-base">
-					<?php echo esc_html($is_en ? 'We understand that in international trade, a 1-day delay at port can cost tens of millions in demurrage. That is why our entire workflow is engineered around SLA commitments and direct accountability.' : 'Chúng tôi hiểu rằng trong ngành xuất nhập khẩu, chỉ một sai sót nhỏ về chứng từ hoặc chậm trễ 1 ngày lưu bãi có thể khiến doanh nghiệp chịu tổn thất hàng chục triệu đồng. Đó là lý do mọi quy trình tại ANP đều được chuẩn hóa với cam kết SLA rõ ràng và trách nhiệm pháp lý minh bạch.'); ?>
-				</p>
-
-				<div class="pt-2">
-					<a href="<?php echo esc_url($contact_url); ?>" class="btn btn-accent px-6 py-3 font-bold text-sm shadow-md">
-						<?php echo esc_html($is_en ? 'Contact Our Team' : 'Liên hệ hợp tác cùng chúng tôi'); ?> &rarr;
-					</a>
-				</div>
-			</div>
-
-			<!-- Card 3 Giá Trị Cốt Lõi -->
-			<div class="lg:col-span-6 space-y-4">
-				<div class="rounded-2xl border border-slate-200 bg-slate-50/70 p-6 transition hover:shadow-md">
-					<div class="flex items-start gap-4">
-						<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/15 text-accent font-bold text-lg">01</span>
-						<div>
-							<h3 class="font-bold text-brand text-base sm:text-lg"><?php echo esc_html($is_en ? 'Absolute Transparency' : 'Minh Bạch Chi Phí & Tuyến Vận Chuyển'); ?></h3>
-							<p class="mt-1 text-sm text-slate-600 leading-relaxed">
-								<?php echo esc_html($is_en ? 'All-in quotes without hidden fees. Every tariff rate, local charge, and handling expense is itemized clearly before dispatch.' : 'Báo giá trọn gói 1 lần không chi phí ẩn. Mọi khoản cước, phụ phí bến bãi, nâng hạ container và biểu thuế đều được giải trình chi tiết.'); ?>
-							</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="rounded-2xl border border-slate-200 bg-slate-50/70 p-6 transition hover:shadow-md">
-					<div class="flex items-start gap-4">
-						<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/15 text-accent font-bold text-lg">02</span>
-						<div>
-							<h3 class="font-bold text-brand text-base sm:text-lg"><?php echo esc_html($is_en ? 'Disciplined Punctuality' : 'Kỷ Luật Giờ Giấc & Cam Kết Closing Time'); ?></h3>
-							<p class="mt-1 text-sm text-slate-600 leading-relaxed">
-								<?php echo esc_html($is_en ? 'Precise truck dispatch adhering strictly to shipping line cut-off times and factory loading schedules.' : 'Điều xe đúng hẹn, đón trả container chuẩn xác theo giờ closing time của hãng tàu, đảm bảo hàng hạ bãi và xuất bến đúng lịch.'); ?>
-							</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="rounded-2xl border border-slate-200 bg-slate-50/70 p-6 transition hover:shadow-md">
-					<div class="flex items-start gap-4">
-						<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/15 text-accent font-bold text-lg">03</span>
-						<div>
-							<h3 class="font-bold text-brand text-base sm:text-lg"><?php echo esc_html($is_en ? 'Comprehensive Cargo Insurance' : 'Bảo Hiểm Trách Nhiệm 10 Tỷ Toàn Diện'); ?></h3>
-							<p class="mt-1 text-sm text-slate-600 leading-relaxed">
-								<?php echo esc_html($is_en ? 'Full liability coverage up to 10 Billion VND for every shipment, giving customers total reassurance on every route.' : 'Bảo hiểm trách nhiệm vận tải hàng hóa lên tới 10 tỷ VNĐ liên kết cùng các đơn vị bảo hiểm uy tín (Bảo Việt, PVI), đền bù 100% khi phát sinh rủi ro.'); ?>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- SECTION 3: ĐỘI NGŨ NHÂN SỰ THỰC CHIẾN (HÌNH ẢNH THẬT) -->
+		<!-- SECTION 5: ĐỘI NGŨ NHÂN SỰ THỰC CHIẾN (HÌNH ẢNH THẬT) -->
 		<section class="reveal-up rounded-3xl bg-slate-50 border border-slate-200/80 p-6 sm:p-12">
 			<div class="text-center max-w-2xl mx-auto mb-10">
 				<span class="text-xs font-bold uppercase tracking-wider text-accent"><?php echo esc_html($is_en ? 'Our Dedicated People' : 'Con Người Là Trọng Tâm'); ?></span>
@@ -194,7 +440,7 @@ $theme_assets = get_template_directory_uri() . '/assets/img/';
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
 				<div class="overflow-hidden rounded-2xl border border-slate-200 shadow-md group">
 					<img src="<?php echo esc_url($uploads_base . 'doi-ngu-nhan-su-hp-trading.jpg'); ?>" 
-						 alt="Đội ngũ cán bộ nhân viên và tài xế ANP Logistics HP Trading" 
+						 alt="Đội ngũ cán bộ nhân viên và tài xế HP Trading - Transport" 
 						 class="w-full h-auto aspect-[4/3] object-cover transition duration-500 group-hover:scale-105"
 						 loading="lazy" decoding="async">
 					<div class="p-5 bg-white">
@@ -207,7 +453,7 @@ $theme_assets = get_template_directory_uri() . '/assets/img/';
 
 				<div class="overflow-hidden rounded-2xl border border-slate-200 shadow-md group">
 					<img src="<?php echo esc_url($uploads_base . 'dieu-hanh-xe-kho-bai.jpg'); ?>" 
-						 alt="Điều hành giao nhận thực tế tại kho bãi và cảng biển ANP Logistics" 
+						 alt="Điều hành giao nhận thực tế tại kho bãi và cảng biển HP Trading - Transport" 
 						 class="w-full h-auto aspect-[4/3] object-cover transition duration-500 group-hover:scale-105"
 						 loading="lazy" decoding="async">
 					<div class="p-5 bg-white">
@@ -220,7 +466,7 @@ $theme_assets = get_template_directory_uri() . '/assets/img/';
 			</div>
 		</section>
 
-		<!-- SECTION 4: HỒ SƠ PHÁP NHÂN & MINH BẠCH DOANH NGHIỆP -->
+		<!-- SECTION 6: HỒ SƠ PHÁP NHÂN & MINH BẠCH DOANH NGHIỆP -->
 		<section class="rounded-3xl border border-slate-200 bg-white p-7 sm:p-10 shadow-sm">
 			<div class="flex items-center gap-3 border-b border-slate-200 pb-5">
 				<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand text-accent font-bold text-lg">
@@ -265,18 +511,18 @@ $theme_assets = get_template_directory_uri() . '/assets/img/';
 			</div>
 		</section>
 
-		<!-- SECTION 5: CTA CARD BÁO GIÁ & HOTLINE -->
-		<section class="rounded-3xl bg-gradient-to-br from-[#061220] via-brand to-[#0B192C] p-8 sm:p-14 text-white shadow-2xl relative overflow-hidden">
+		<!-- SECTION 7: CTA BÁO GIÁ & HOTLINE TRỰC TIẾP -->
+		<section id="bao-gia" class="rounded-3xl bg-gradient-to-br from-[#061220] via-brand to-[#0B192C] p-8 sm:p-14 text-white shadow-2xl relative overflow-hidden">
 			<div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-accent/20 blur-3xl pointer-events-none"></div>
 			<div class="relative z-10 max-w-2xl">
 				<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/20 text-accent text-xs font-bold tracking-wider uppercase">
-					<?php echo esc_html($is_en ? 'Direct Partnership' : 'Hợp Tác Dài Hạn Cùng ANP'); ?>
+					<?php echo esc_html($is_en ? 'Direct Partnership' : 'Hợp Tác Dài Hạn Cùng HP Trading - Transport'); ?>
 				</span>
 				<h2 class="mt-4 font-display text-2xl sm:text-4xl font-extrabold text-white leading-tight">
 					<?php echo esc_html($is_en ? 'Looking for a Reliable Logistics Partner?' : 'Sẵn Sàng Tối Ưu Hóa Chi Phí Logistics Của Bạn?'); ?>
 				</h2>
 				<p class="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
-					<?php echo esc_html($is_en ? 'Contact our team for a personalized route survey and all-in quote within 30 minutes.' : 'Liên hệ ngay đội ngũ chuyên viên ANP Logistics để được khảo sát tuyến đường và nhận bảng báo giá trọn gói trong 30 phút.'); ?>
+					<?php echo esc_html($is_en ? 'Contact our team for a personalized route survey and all-in quote within 30 minutes.' : 'Liên hệ ngay đội ngũ chuyên viên HP Trading - Transport để được khảo sát tuyến đường và nhận bảng báo giá trọn gói trong 30 phút.'); ?>
 				</p>
 
 				<div class="mt-8 flex flex-col sm:flex-row items-center gap-4">

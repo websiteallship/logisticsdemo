@@ -58,7 +58,7 @@ $legal_pages = array(
 				<?php the_title(); ?>
 			</h1>
 			<p class="mt-3 text-xs sm:text-sm text-slate-300">
-				<?php echo esc_html($is_en ? 'Effective date & Last updated: November 2026 • Official ANP Logistics Document' : 'Hiệu lực áp dụng & Cập nhật lần cuối: Tháng 11/2026 • Văn bản có giá trị pháp lý'); ?>
+				<?php echo esc_html($is_en ? 'Effective date & Last updated: November 2026 • Official HP Trading - Transport Document' : 'Hiệu lực áp dụng & Cập nhật lần cuối: Tháng 11/2026 • Văn bản có giá trị pháp lý'); ?>
 			</p>
 		</div>
 	</div>
@@ -129,7 +129,7 @@ $legal_pages = array(
 							Cần Làm Rõ Điều Khoản Hoặc Khiếu Nại Dịch Vụ?
 						</h3>
 						<p class="mt-2 text-xs text-slate-300 leading-relaxed">
-							Bộ phận Chăm sóc khách hàng & Pháp chế của ANP sẵn sàng tiếp nhận biên bản và xử lý trong 24h.
+							Bộ phận Chăm sóc khách hàng & Pháp chế của HP Trading - Transport sẵn sàng tiếp nhận biên bản và xử lý trong 24h.
 						</p>
 
 						<div class="mt-5 space-y-3">

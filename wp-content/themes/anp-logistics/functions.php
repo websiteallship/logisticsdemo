@@ -1,6 +1,6 @@
 <?php
 /**
- * ANP Logistics – functions.php
+ * HP Trading - Transport – functions.php
  * Điểm vào của theme. Các phần chức năng nằm trong thư mục inc/.
  */
 

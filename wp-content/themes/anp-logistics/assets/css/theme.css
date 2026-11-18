@@ -1,4 +1,4 @@
-/* ANP Logistics – CSS bổ sung cho Tailwind CDN.
+/* HP Trading - Transport – CSS bổ sung cho Tailwind CDN.
    Màu lấy từ biến :root (sinh ra bởi inc/setup.php theo bộ màu đã chọn). */
 
 :root {
@@ -795,7 +795,7 @@ body.anp-menu-open {
 .skip-link:focus { outline: none; }
 
 /* ==========================================================================
-   ANP Native Reveal Animation System (Zero-dependency, 60fps)
+   HP Trading - Transport Native Reveal Animation System (Zero-dependency, 60fps)
    ========================================================================== */
 
 /* Trạng thái ban đầu */

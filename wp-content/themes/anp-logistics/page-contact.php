@@ -60,7 +60,7 @@ if (anp_opt('anp_license_no') !== '') {
 				<?php echo esc_html(get_the_title() ?: ($is_en ? 'Contact & Cargo Quotation' : 'Liên hệ & Nhận báo giá vận tải')); ?>
 			</h1>
 			<p class="mt-4 text-base leading-relaxed text-slate-300 sm:text-lg">
-				<?php echo esc_html($is_en ? 'Reach out to our logistics consultants for fast customs clearance, freight rates, and door-to-door delivery plans.' : 'Đội ngũ chuyên viên ANP Logistics sẵn sàng tiếp nhận hồ sơ, tư vấn lộ trình và gửi bảng báo giá tối ưu chi phí trong vòng 30 phút.'); ?>
+				<?php echo esc_html($is_en ? 'Reach out to our logistics consultants for fast customs clearance, freight rates, and door-to-door delivery plans.' : 'Đội ngũ chuyên viên HP Trading - Transport sẵn sàng tiếp nhận hồ sơ, tư vấn lộ trình và gửi bảng báo giá tối ưu chi phí trong vòng 30 phút.'); ?>
 			</p>
 		</div>
 	</div>
