@@ -1,13 +1,15 @@
 <?php
 /**
  * Template Name: Trang liên hệ (Contact Page)
- * Description: Trang liên hệ chuyên biệt chuẩn B2B Logistics (design-taste-frontend).
+ * Description: Trang liên hệ & nhận báo giá chuẩn B2B Logistics (design-taste-frontend).
  */
 get_header();
 
 $sent             = isset($_GET['anp_sent']) ? sanitize_text_field(wp_unslash($_GET['anp_sent'])) : '';
 $services_options = anp_t_list('service_options');
 $is_en            = anp_lang() === 'en';
+
+$page_h1 = $is_en ? 'Contact & Cargo Quotation' : 'Liên Hệ & Yêu Cầu Báo Giá Trực Tiếp';
 
 $legal_rows = array();
 if (anp_opt('anp_company_name') !== '') {
@@ -31,9 +33,6 @@ if (anp_opt('anp_license_no') !== '') {
 	if (anp_opt('anp_license_date') !== '') {
 		$license .= ' – ' . anp_t('license_date') . ': ' . anp_opt('anp_license_date');
 	}
-	if (anp_opt('anp_license_issuer') !== '') {
-		$license .= ' – ' . anp_t('license_issuer') . ': ' . anp_opt('anp_license_issuer');
-	}
 	$legal_rows[] = array(anp_t('license_no'), $license);
 }
 ?>
@@ -41,150 +40,197 @@ if (anp_opt('anp_license_no') !== '') {
 <!-- 1. Breadcrumb -->
 <nav class="border-b border-slate-200 bg-slate-50" aria-label="<?php echo esc_attr(anp_t('breadcrumb')); ?>">
 	<ol class="mx-auto flex max-w-7xl flex-wrap items-center gap-2 px-5 py-3.5 text-sm text-slate-600 sm:px-8">
-		<li><a class="hover:text-brand" href="<?php echo esc_url(home_url('/')); ?>"><?php echo esc_html(anp_t('home')); ?></a></li>
+		<li><a class="hover:text-brand font-medium transition" href="<?php echo esc_url(home_url('/')); ?>"><?php echo esc_html(anp_t('home')); ?></a></li>
 		<li aria-hidden="true" class="text-slate-400">/</li>
 		<li class="font-semibold text-brand" aria-current="page"><?php echo esc_html($is_en ? 'Contact' : 'Liên hệ'); ?></li>
 	</ol>
 </nav>
 
-<!-- 2. Header Banner -->
-<header class="relative isolate overflow-hidden bg-brand py-16 text-white sm:py-20">
-	<div class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-brand via-brand/95 to-brand/80"></div>
+<!-- 2. Header Banner (Deep Navy & Emerald Atmosphere) -->
+<header class="relative isolate overflow-hidden bg-[#061220] py-14 sm:py-20 text-white">
+	<div class="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-brand/35 blur-3xl"></div>
+	<div class="pointer-events-none absolute -right-20 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-[#1F4F25]/30 blur-3xl"></div>
+	<div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/[0.04] via-transparent to-transparent"></div>
+
 	<div class="mx-auto max-w-7xl px-5 sm:px-8">
-		<div class="reveal-up max-w-3xl">
-			<p class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white">
-				<span class="h-1.5 w-1.5 rounded-full bg-accent animate-pulse"></span>
-				<?php echo esc_html($is_en ? 'Direct Communication • 24/7 Support' : 'Kết nối trực tiếp • Hỗ trợ 24/7'); ?>
-			</p>
-			<h1 class="mt-4 font-display text-3xl font-bold tracking-tight sm:text-5xl">
-				<?php echo esc_html(get_the_title() ?: ($is_en ? 'Contact & Cargo Quotation' : 'Liên hệ & Nhận báo giá vận tải')); ?>
+		<div class="max-w-3xl">
+			<div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-[#1F4F25]/50 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-emerald-300 backdrop-blur-md">
+				<span class="relative flex h-2 w-2">
+					<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+					<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+				</span>
+				<?php echo esc_html($is_en ? 'Direct Logistics Advisory • 24/7 Response' : 'Tư Vấn Trực Tiếp • Phản Hồi Trong 30 Phút'); ?>
+			</div>
+
+			<h1 class="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+				<?php echo esc_html($page_h1); ?>
 			</h1>
-			<p class="mt-4 text-base leading-relaxed text-slate-300 sm:text-lg">
-				<?php echo esc_html($is_en ? 'Reach out to our logistics consultants for fast customs clearance, freight rates, and door-to-door delivery plans.' : 'Đội ngũ chuyên viên HP Trading - Transport sẵn sàng tiếp nhận hồ sơ, tư vấn lộ trình và gửi bảng báo giá tối ưu chi phí trong vòng 30 phút.'); ?>
+
+			<p class="mt-4 text-base sm:text-lg leading-relaxed text-slate-300 max-w-2xl">
+				<?php echo esc_html($is_en ? 'Connect directly with HP Trading - Transport field dispatchers and customs specialists. We survey your container routes and provide all-in transparent quotations with 0 hidden costs.' : 'Kết nối trực tiếp chuyên viên hiện trường và đội ngũ điều phối xe HP Trading - Transport. Khảo sát tuyến đường và cung cấp bảng báo giá trọn gói minh bạch trong 30 phút.'); ?>
 			</p>
+
+			<!-- 3 Quick Contact Pills -->
+			<div class="mt-8 flex flex-wrap items-center gap-3">
+				<a href="tel:<?php echo esc_attr(anp_opt('anp_phone')); ?>" class="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold text-white backdrop-blur-sm transition hover:bg-white/10 hover:border-accent">
+					<span class="text-accent"><?php echo anp_icon('phone', 'h-4 w-4'); ?></span>
+					<span>Hotline 24/7: <strong><?php echo esc_html(anp_opt('anp_phone_display')); ?></strong></span>
+				</a>
+				<a href="mailto:<?php echo esc_attr(anp_opt('anp_email')); ?>" class="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold text-white backdrop-blur-sm transition hover:bg-white/10 hover:border-accent">
+					<span class="text-emerald-300"><?php echo anp_icon('mail', 'h-4 w-4'); ?></span>
+					<span><?php echo esc_html(anp_opt('anp_email')); ?></span>
+				</a>
+				<div class="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold text-slate-300 backdrop-blur-sm">
+					<span class="text-accent">✓</span>
+					<span><?php echo esc_html($is_en ? 'On-site at Cat Lai & Cai Mep' : 'Túc trực cảng Cát Lái & Cái Mép'); ?></span>
+				</div>
+			</div>
 		</div>
 	</div>
 </header>
 
 <!-- 3. Bố cục 2 Cột: Thông tin liên hệ & Form báo giá chuyên sâu -->
-<section id="lien-he" class="scroll-mt-28 py-16 sm:py-24">
-	<div class="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-14">
+<section id="lien-he" class="scroll-mt-28 py-14 sm:py-20 bg-slate-50/50">
+	<div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-12 lg:gap-12 items-start">
 		
-		<!-- Cột trái (5 cols): Thông tin trụ sở, chi nhánh, pháp lý -->
-		<div class="reveal-left space-y-8 lg:col-span-5">
-			<div>
-				<p class="text-xs font-bold uppercase tracking-[0.16em] text-accent-hover"><?php echo esc_html($is_en ? 'Office & Contacts' : 'Thông tin liên hệ'); ?></p>
-				<h2 class="mt-2 font-display text-2xl font-bold text-brand sm:text-3xl"><?php echo esc_html(anp_opt('anp_company_name')); ?></h2>
-				<p class="mt-2 text-sm text-slate-600"><?php echo esc_html(anp_opt('anp_tagline')); ?></p>
-			</div>
-
-			<!-- Danh sách liên lạc chính -->
-			<ul class="space-y-5 text-slate-700">
-				<!-- Hotline -->
-				<li class="flex items-start gap-4 rounded-2xl border border-slate-200/80 bg-slate-50/60 p-4 transition hover:border-accent/40 hover:bg-white hover:shadow-sm">
-					<span class="mt-1 shrink-0 text-accent"><?php echo anp_icon('phone', 'h-5 w-5'); ?></span>
-					<div class="min-w-0 flex-1">
-						<p class="text-xs font-semibold uppercase tracking-wider text-slate-500"><?php echo esc_html(anp_t('hotline')); ?></p>
-						<a class="mt-0.5 block font-display text-lg font-bold text-brand transition hover:text-accent" href="tel:<?php echo esc_attr(anp_opt('anp_phone')); ?>">
+		<!-- Cột trái (5 cols): Thông tin liên hệ, Trụ sở & Pháp lý -->
+		<div class="space-y-6 lg:col-span-5">
+			
+			<!-- Thẻ Hotline Nổi Bật -->
+			<div class="rounded-3xl border border-[#1F4F25]/20 bg-[#1F4F25] p-6 text-white shadow-lg">
+				<div class="flex items-center gap-3">
+					<span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-white/15 text-white ring-4 ring-white/10">
+						<?php echo anp_icon('phone', 'h-6 w-6 text-white'); ?>
+					</span>
+					<div>
+						<p class="text-xs font-bold uppercase tracking-wider text-emerald-200"><?php echo esc_html(anp_t('hotline')); ?> (24/7)</p>
+						<a class="mt-0.5 block font-display text-2xl font-black text-white hover:text-accent transition" href="tel:<?php echo esc_attr(anp_opt('anp_phone')); ?>">
 							<?php echo esc_html(anp_opt('anp_phone_display')); ?>
 						</a>
-						<span class="text-xs text-emerald-600 font-medium"><?php echo esc_html($is_en ? 'Available 24/7 for urgent cargo' : 'Hỗ trợ giải phóng hàng nhanh 24/7'); ?></span>
 					</div>
-				</li>
+				</div>
+				<p class="mt-4 text-xs text-emerald-100 leading-relaxed border-t border-white/15 pt-3">
+					<?php echo esc_html($is_en ? 'Direct line for emergency container dispatch, port demurrage clearance and customs support.' : 'Đường dây nóng điều hành đầu kéo, cứu cont trễ hạn closing time và xử lý kiểm hóa gấp.'); ?>
+				</p>
+			</div>
 
-				<!-- Email -->
-				<li class="flex items-start gap-4 rounded-2xl border border-slate-200/80 bg-slate-50/60 p-4 transition hover:border-accent/40 hover:bg-white hover:shadow-sm">
-					<span class="mt-1 shrink-0 text-accent"><?php echo anp_icon('mail', 'h-5 w-5'); ?></span>
-					<div class="min-w-0 flex-1">
-						<p class="text-xs font-semibold uppercase tracking-wider text-slate-500"><?php echo esc_html(anp_t('email')); ?></p>
-						<a class="mt-0.5 block font-semibold text-brand transition hover:text-accent" href="mailto:<?php echo esc_attr(anp_opt('anp_email')); ?>">
-							<?php echo esc_html(anp_opt('anp_email')); ?>
-						</a>
-						<span class="text-xs text-slate-500"><?php echo esc_html($is_en ? 'Response within 30 minutes' : 'Phản hồi trong giờ làm việc'); ?></span>
-					</div>
-				</li>
+			<!-- Danh sách văn phòng & kho bãi -->
+			<div class="rounded-3xl border border-slate-200 bg-white p-6 sm:p-7 shadow-sm space-y-5">
+				<div>
+					<span class="text-xs font-bold uppercase tracking-wider text-accent"><?php echo esc_html($is_en ? 'Headquarters & Locations' : 'Hệ Thống Trụ Sở & Bãi Xe'); ?></span>
+					<h3 class="mt-1 font-display text-lg font-bold text-brand"><?php echo esc_html(anp_opt('anp_company_name')); ?></h3>
+				</div>
 
-				<!-- Trụ sở chính -->
-				<li class="flex items-start gap-4 rounded-2xl border border-slate-200/80 bg-slate-50/60 p-4 transition hover:border-accent/40 hover:bg-white hover:shadow-sm">
-					<span class="mt-1 shrink-0 text-accent"><?php echo anp_icon('pin', 'h-5 w-5'); ?></span>
-					<div class="min-w-0 flex-1">
-						<p class="text-xs font-semibold uppercase tracking-wider text-slate-500"><?php echo esc_html(anp_t('head_office')); ?></p>
-						<p class="mt-0.5 text-sm font-medium text-slate-800 leading-relaxed"><?php echo esc_html(anp_opt('anp_address_hq')); ?></p>
-						<?php if (anp_opt('anp_map_url')) : ?>
-							<a href="<?php echo esc_url(anp_opt('anp_map_url')); ?>" target="_blank" rel="noopener" class="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-accent hover:text-accent-hover">
-								<span><?php echo esc_html(anp_t('view_map')); ?></span>
-								<?php echo anp_icon('arrow', 'h-3 w-3'); ?>
-							</a>
-						<?php endif; ?>
-					</div>
-				</li>
-
-				<!-- Văn phòng đại diện -->
-				<?php if (anp_opt('anp_address_rep')) : ?>
-				<li class="flex items-start gap-4 rounded-2xl border border-slate-200/80 bg-slate-50/60 p-4 transition hover:border-accent/40 hover:bg-white hover:shadow-sm">
-					<span class="mt-1 shrink-0 text-accent"><?php echo anp_icon('pin', 'h-5 w-5'); ?></span>
-					<div class="min-w-0 flex-1">
-						<p class="text-xs font-semibold uppercase tracking-wider text-slate-500"><?php echo esc_html(anp_t('rep_office')); ?></p>
-						<p class="mt-0.5 text-sm font-medium text-slate-800 leading-relaxed"><?php echo esc_html(anp_opt('anp_address_rep')); ?></p>
-					</div>
-				</li>
-				<?php endif; ?>
-
-				<!-- Giờ làm việc -->
-				<li class="flex items-start gap-4 rounded-2xl border border-slate-200/80 bg-slate-50/60 p-4">
-					<span class="mt-1 shrink-0 text-accent"><?php echo anp_icon('clock', 'h-5 w-5'); ?></span>
-					<div class="min-w-0 flex-1">
-						<p class="text-xs font-semibold uppercase tracking-wider text-slate-500"><?php echo esc_html(anp_t('working_hours')); ?></p>
-						<div class="mt-0.5 text-sm font-medium text-slate-800 leading-relaxed">
-							<?php foreach (anp_hours_lines() as $hl) : ?>
-								<p><?php echo esc_html($hl); ?></p>
-							<?php endforeach; ?>
+				<ul class="space-y-4 text-sm text-slate-700 divide-y divide-slate-100">
+					<!-- Trụ sở chính -->
+					<li class="pt-3 first:pt-0">
+						<div class="flex items-start gap-3">
+							<span class="mt-1 shrink-0 text-brand"><?php echo anp_icon('pin', 'h-5 w-5'); ?></span>
+							<div>
+								<p class="text-xs font-bold uppercase tracking-wider text-slate-400"><?php echo esc_html(anp_t('head_office')); ?></p>
+								<p class="mt-0.5 font-medium text-slate-800 leading-relaxed"><?php echo esc_html(anp_opt('anp_address_hq')); ?></p>
+								<?php if (anp_opt('anp_map_url')) : ?>
+									<a href="<?php echo esc_url(anp_opt('anp_map_url')); ?>" target="_blank" rel="noopener" class="mt-1.5 inline-flex items-center gap-1 text-xs font-semibold text-brand hover:text-accent transition">
+										<span><?php echo esc_html(anp_t('view_map')); ?></span>
+										<?php echo anp_icon('arrow', 'h-3 w-3'); ?>
+									</a>
+								<?php endif; ?>
+							</div>
 						</div>
-					</div>
-				</li>
-			</ul>
+					</li>
+
+					<!-- Văn phòng đại diện -->
+					<?php if (anp_opt('anp_address_rep')) : ?>
+					<li class="pt-3">
+						<div class="flex items-start gap-3">
+							<span class="mt-1 shrink-0 text-brand"><?php echo anp_icon('pin', 'h-5 w-5'); ?></span>
+							<div>
+								<p class="text-xs font-bold uppercase tracking-wider text-slate-400"><?php echo esc_html(anp_t('rep_office')); ?></p>
+								<p class="mt-0.5 font-medium text-slate-800 leading-relaxed"><?php echo esc_html(anp_opt('anp_address_rep')); ?></p>
+							</div>
+						</div>
+					</li>
+					<?php endif; ?>
+
+					<!-- Email tiếp nhận hồ sơ -->
+					<li class="pt-3">
+						<div class="flex items-start gap-3">
+							<span class="mt-1 shrink-0 text-brand"><?php echo anp_icon('mail', 'h-5 w-5'); ?></span>
+							<div>
+								<p class="text-xs font-bold uppercase tracking-wider text-slate-400"><?php echo esc_html(anp_t('email')); ?></p>
+								<a class="mt-0.5 block font-semibold text-brand hover:text-accent transition" href="mailto:<?php echo esc_attr(anp_opt('anp_email')); ?>">
+									<?php echo esc_html(anp_opt('anp_email')); ?>
+								</a>
+							</div>
+						</div>
+					</li>
+
+					<!-- Giờ làm việc -->
+					<li class="pt-3">
+						<div class="flex items-start gap-3">
+							<span class="mt-1 shrink-0 text-brand"><?php echo anp_icon('clock', 'h-5 w-5'); ?></span>
+							<div>
+								<p class="text-xs font-bold uppercase tracking-wider text-slate-400"><?php echo esc_html(anp_t('working_hours')); ?></p>
+								<div class="mt-0.5 font-medium text-slate-800 leading-relaxed">
+									<?php foreach (anp_hours_lines() as $hl) : ?>
+										<p><?php echo esc_html($hl); ?></p>
+									<?php endforeach; ?>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
 
 			<!-- Thông tin pháp lý thu gọn -->
 			<?php if ($legal_rows) : ?>
-				<div class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5">
-					<h3 class="text-xs font-bold uppercase tracking-[0.14em] text-slate-600"><?php echo esc_html(anp_t('tax_info')); ?></h3>
-					<dl class="mt-4 space-y-2.5 text-xs text-slate-600">
+				<div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+					<div class="flex items-center gap-2 mb-3">
+						<span class="grid h-6 w-6 place-items-center rounded bg-slate-100 text-slate-600 font-bold text-xs">§</span>
+						<h3 class="text-xs font-bold uppercase tracking-wider text-slate-500"><?php echo esc_html(anp_t('tax_info')); ?></h3>
+					</div>
+					<dl class="space-y-2 text-xs text-slate-600">
 						<?php foreach ($legal_rows as $row) : ?>
 							<div>
-								<dt class="text-[11px] uppercase tracking-wider text-slate-500"><?php echo esc_html($row[0]); ?></dt>
-								<dd class="mt-0.5 font-medium text-slate-800"><?php echo esc_html($row[1]); ?></dd>
+								<dt class="text-[11px] uppercase tracking-wider text-slate-400"><?php echo esc_html($row[0]); ?></dt>
+								<dd class="mt-0.5 font-semibold text-slate-800"><?php echo esc_html($row[1]); ?></dd>
 							</div>
 						<?php endforeach; ?>
 					</dl>
 				</div>
 			<?php endif; ?>
+
 		</div>
 
 		<!-- Cột phải (7 cols): Thẻ Form báo giá B2B chuyên nghiệp -->
-		<div class="reveal-right delay-150 lg:col-span-7">
-			<div class="rounded-3xl border border-slate-200 bg-white p-7 shadow-xl shadow-slate-200/60 sm:p-10">
+		<div class="lg:col-span-7">
+			<div class="rounded-3xl border border-slate-200 bg-white p-7 sm:p-10 shadow-xl shadow-slate-200/50">
 				<div>
-					<span class="inline-flex items-center gap-1.5 rounded-md border border-accent/25 bg-accent/10 px-2.5 py-1 text-xs font-bold text-accent">
-						<?php echo esc_html($is_en ? 'FAST QUOTE REQUEST' : 'YÊU CẦU BÁO GIÁ NHANH'); ?>
+					<span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-50 px-3 py-1 text-xs font-bold text-brand">
+						<span class="h-1.5 w-1.5 rounded-full bg-brand"></span>
+						<?php echo esc_html($is_en ? 'FAST QUOTE REQUEST' : 'TIẾP NHẬN YÊU CẦU BÁO GIÁ'); ?>
 					</span>
-					<h2 class="mt-3 font-display text-2xl font-bold tracking-tight text-brand sm:text-3xl">
-						<?php echo esc_html(anp_opt('anp_contact_title') ?: ($is_en ? 'Request Cargo Quotation' : 'Gửi yêu cầu báo giá lô hàng')); ?>
+					<h2 class="mt-3 font-display text-2xl sm:text-3xl font-extrabold text-brand tracking-tight">
+						<?php echo esc_html(anp_opt('anp_contact_title') ?: ($is_en ? 'Request Cargo Quotation' : 'Gửi Yêu Cầu Báo Giá Lô Hàng')); ?>
 					</h2>
 					<p class="mt-2 text-sm leading-relaxed text-slate-600">
-						<?php echo esc_html(anp_opt('anp_contact_lead') ?: ($is_en ? 'Fill in your cargo details and our specialists will revert with optimal routing and pricing.' : 'Điền thông tin lô hàng của bạn. Đội ngũ chuyên viên sẽ liên hệ lại xác nhận và đề xuất phương án tối ưu.')); ?>
+						<?php echo esc_html(anp_opt('anp_contact_lead') ?: ($is_en ? 'Fill in your cargo details and our specialists will revert with optimal routing and pricing.' : 'Điền thông tin lô hàng của bạn. Đội ngũ chuyên viên sẽ liên hệ lại xác nhận và đề xuất phương án tối ưu trong 30 phút.')); ?>
 					</p>
 				</div>
 
 				<!-- Thông báo trạng thái gửi -->
 				<?php if ($sent === '1') : ?>
-					<div class="mt-6 rounded-xl bg-emerald-50 border border-emerald-200 p-4 text-sm text-emerald-800" role="status">
-						<p class="font-bold"><?php echo esc_html($is_en ? 'Request sent successfully!' : 'Gửi yêu cầu thành công!'); ?></p>
-						<p class="mt-1 text-xs"><?php echo esc_html(anp_t('f_ok')); ?></p>
+					<div class="mt-6 rounded-2xl bg-emerald-50 border border-emerald-300 p-5 text-sm text-emerald-900 shadow-sm" role="status">
+						<div class="flex items-center gap-2">
+							<span class="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+							<p class="font-bold text-base"><?php echo esc_html($is_en ? 'Request sent successfully!' : 'Gửi yêu cầu thành công!'); ?></p>
+						</div>
+						<p class="mt-2 text-xs sm:text-sm text-emerald-800 leading-relaxed"><?php echo esc_html(anp_t('f_ok')); ?></p>
 					</div>
 				<?php elseif ($sent === '0') : ?>
-					<div class="mt-6 rounded-xl bg-rose-50 border border-rose-200 p-4 text-sm text-rose-800" role="alert">
-						<p class="font-bold"><?php echo esc_html($is_en ? 'Transmission failed' : 'Gửi yêu cầu thất bại'); ?></p>
-						<p class="mt-1 text-xs"><?php echo esc_html(anp_t('f_err')); ?></p>
+					<div class="mt-6 rounded-2xl bg-rose-50 border border-rose-300 p-5 text-sm text-rose-900 shadow-sm" role="alert">
+						<p class="font-bold text-base"><?php echo esc_html($is_en ? 'Transmission failed' : 'Gửi yêu cầu thất bại'); ?></p>
+						<p class="mt-1 text-xs sm:text-sm text-rose-800 leading-relaxed"><?php echo esc_html(anp_t('f_err')); ?></p>
 					</div>
 				<?php endif; ?>
 
@@ -235,17 +281,17 @@ if (anp_opt('anp_license_no') !== '') {
 						<label for="f-message" class="mb-2 block text-sm font-semibold text-brand">
 							<?php echo esc_html(anp_t('f_message')); ?>
 						</label>
-						<textarea id="f-message" name="message" rows="5" class="anp-input" placeholder="<?php echo esc_attr(anp_t('f_message_ph')); ?>"></textarea>
+						<textarea id="f-message" name="message" rows="4" class="anp-input" placeholder="<?php echo esc_attr($is_en ? 'Cargo type, container size, pickup & delivery locations, estimated date...' : 'Loại hàng, loại container (20ft/40ft), tuyến đường giao nhận (VD: Cát Lái -> KCN VSIP 1), ngày dự kiến...'); ?>"></textarea>
 					</div>
 
-					<!-- Honeypot: ẩn với người dùng, bẫy bot -->
+					<!-- Honeypot -->
 					<div class="hidden" aria-hidden="true">
 						<label><?php echo esc_html(anp_t('f_honeypot')); ?> <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
 					</div>
 
-					<div class="flex flex-wrap items-center justify-between gap-4 pt-2 sm:col-span-2">
-						<p class="text-xs text-slate-500"><?php echo esc_html(anp_t('f_privacy')); ?></p>
-						<button type="submit" class="btn btn-accent">
+					<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-3 sm:col-span-2 border-t border-slate-100">
+						<p class="text-xs text-slate-500 leading-relaxed"><?php echo esc_html(anp_t('f_privacy')); ?></p>
+						<button type="submit" class="btn btn-accent px-8 py-3.5 font-bold text-sm shadow-lg w-full sm:w-auto justify-center flex items-center gap-2">
 							<span><?php echo esc_html(anp_t('send_request')); ?></span>
 							<?php echo anp_icon('arrow', 'h-4 w-4'); ?>
 						</button>
@@ -253,35 +299,36 @@ if (anp_opt('anp_license_no') !== '') {
 				</form>
 			</div>
 		</div>
+
 	</div>
 </section>
 
 <!-- 4. Cam kết chất lượng dịch vụ B2B (3 Cột) -->
-<section class="border-t border-slate-200 bg-slate-50 py-16">
+<section class="border-t border-slate-200 bg-white py-16">
 	<div class="mx-auto max-w-7xl px-5 sm:px-8">
 		<div class="grid gap-6 sm:grid-cols-3">
-			<div class="rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm">
-				<div class="grid h-10 w-10 place-items-center rounded-xl bg-accent/15 text-accent">
+			<div class="rounded-2xl border border-slate-200/90 bg-slate-50/70 p-6 shadow-sm hover:shadow-md transition">
+				<div class="grid h-11 w-11 place-items-center rounded-xl bg-brand text-accent font-bold">
 					<?php echo anp_icon('clock', 'h-5 w-5'); ?>
 				</div>
-				<h3 class="mt-4 font-display font-bold text-brand"><?php echo esc_html($is_en ? '30-Minute Response' : 'Phản hồi trong 30 phút'); ?></h3>
+				<h3 class="mt-4 font-display font-bold text-brand text-base"><?php echo esc_html($is_en ? '30-Minute Response' : 'Phản hồi trong 30 phút'); ?></h3>
 				<p class="mt-1.5 text-xs text-slate-600 leading-relaxed"><?php echo esc_html($is_en ? 'Fast quotes and customs consultancy directly from field specialists.' : 'Báo giá nhanh chóng và tư vấn chính xác biểu thuế, mã HS từ chuyên viên hiện trường.'); ?></p>
 			</div>
 
-			<div class="rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm">
-				<div class="grid h-10 w-10 place-items-center rounded-xl bg-accent/15 text-accent">
+			<div class="rounded-2xl border border-slate-200/90 bg-slate-50/70 p-6 shadow-sm hover:shadow-md transition">
+				<div class="grid h-11 w-11 place-items-center rounded-xl bg-brand text-accent font-bold">
 					<?php echo anp_icon('check', 'h-5 w-5'); ?>
 				</div>
-				<h3 class="mt-4 font-display font-bold text-brand"><?php echo esc_html($is_en ? 'Zero Hidden Surcharges' : 'Báo giá trọn gói 0 phí ẩn'); ?></h3>
+				<h3 class="mt-4 font-display font-bold text-brand text-base"><?php echo esc_html($is_en ? 'Zero Hidden Surcharges' : 'Báo giá trọn gói 0 phí ẩn'); ?></h3>
 				<p class="mt-1.5 text-xs text-slate-600 leading-relaxed"><?php echo esc_html($is_en ? 'Every fee itemized transparently with legal contracts and full VAT.' : 'Mọi khoản phí minh bạch từ đầu, hợp đồng pháp lý rõ ràng và xuất hóa đơn VAT đầy đủ.'); ?></p>
 			</div>
 
-			<div class="rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm">
-				<div class="grid h-10 w-10 place-items-center rounded-xl bg-accent/15 text-accent">
+			<div class="rounded-2xl border border-slate-200/90 bg-slate-50/70 p-6 shadow-sm hover:shadow-md transition">
+				<div class="grid h-11 w-11 place-items-center rounded-xl bg-brand text-accent font-bold">
 					<?php echo anp_icon('truck', 'h-5 w-5'); ?>
 				</div>
-				<h3 class="mt-4 font-display font-bold text-brand"><?php echo esc_html($is_en ? '24/7 Port & Fleet Support' : 'Hỗ trợ cảng & xe 24/7'); ?></h3>
-				<p class="mt-1.5 text-xs text-slate-600 leading-relaxed"><?php echo esc_html($is_en ? 'Dedicated operational team on-site at major ports, airports and ICDs.' : 'Đội ngũ giao nhận túc trực tại Cát Lái, VICT, ICD và sân bay sẵn sàng xử lý phát sinh.'); ?></p>
+				<h3 class="mt-4 font-display font-bold text-brand text-base"><?php echo esc_html($is_en ? '24/7 Port & Fleet Support' : 'Hỗ trợ cảng & xe 24/7'); ?></h3>
+				<p class="mt-1.5 text-xs text-slate-600 leading-relaxed"><?php echo esc_html($is_en ? 'Dedicated operational team on-site at major ports, airports and ICDs.' : 'Đội ngũ giao nhận túc trực tại Cát Lái, Cái Mép, ICD và sân bay sẵn sàng xử lý phát sinh.'); ?></p>
 			</div>
 		</div>
 	</div>
