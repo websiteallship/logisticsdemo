@@ -21,17 +21,13 @@ $theme_assets = get_template_directory_uri() . '/assets/img/';
 	</div>
 </nav>
 
-<!-- 2. Hero Banner: Ảnh Toàn Cảnh Nhận Diện Doanh Nghiệp & Đội Xe HP Trading -->
-<header class="bg-white pt-4 pb-2 sm:pt-6 sm:pb-4">
-	<div class="mx-auto max-w-7xl px-5 sm:px-8">
-		<h1 class="sr-only"><?php echo esc_html($is_en ? 'HP Trading - Transport | Company Profile & Logistics Solutions' : 'HP Trading - Transport | Giới Thiệu Doanh Nghiệp & Hồ Sơ Năng Lực Chuỗi Cung Ứng'); ?></h1>
-		<div class="overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xl bg-slate-900 group">
-			<img src="<?php echo esc_url($uploads_base . 'banner-doi-xe-hp-trading.jpg'); ?>" 
-				 alt="HP Trading - Transport - Vận tải hàng hóa, Cho thuê xe đầu kéo, Kho bãi hàng hóa, Tư vấn dịch vụ hải quan" 
-				 class="w-full h-auto object-cover transition-transform duration-700 hover:scale-[1.01]"
-				 loading="eager" fetchpriority="high">
-		</div>
-	</div>
+<!-- 2. Hero Banner: Ảnh Toàn Cảnh Nhận Diện Doanh Nghiệp & Đội Xe HP Trading (Full-width) -->
+<header class="relative w-full overflow-hidden bg-slate-900">
+	<h1 class="sr-only"><?php echo esc_html($is_en ? 'HP Trading - Transport | Company Profile & Logistics Solutions' : 'HP Trading - Transport | Giới Thiệu Doanh Nghiệp & Hồ Sơ Năng Lực Chuỗi Cung Ứng'); ?></h1>
+	<img src="<?php echo esc_url($uploads_base . 'banner-doi-xe-hp-trading.jpg'); ?>" 
+		 alt="HP Trading - Transport - Vận tải hàng hóa, Cho thuê xe đầu kéo, Kho bãi hàng hóa, Tư vấn dịch vụ hải quan" 
+		 class="w-full h-auto object-cover block"
+		 loading="eager" fetchpriority="high">
 </header>
 
 <main class="py-10 sm:py-16 bg-white">

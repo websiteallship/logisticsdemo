@@ -873,3 +873,11 @@ body.anp-menu-open {
 	.anp-marquee__track { animation: none; width: auto; justify-content: center; flex-wrap: wrap; }
 	.anp-marquee__item[aria-hidden="true"] { display: none; }
 }
+
+/* Khối nền màu tràn hết chiều ngang màn hình (không bo góc, không viền),
+   nội dung bên trong vẫn nằm gọn trong khung max-w-7xl. */
+.anp-fullbleed {
+	background: #f8fafc;
+	box-shadow: 0 0 0 100vmax #f8fafc;
+	clip-path: inset(0 -100vmax);
+}
