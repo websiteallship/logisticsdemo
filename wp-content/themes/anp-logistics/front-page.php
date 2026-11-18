@@ -99,7 +99,7 @@ $services_options = anp_t_list('service_options');
 
 					<ol class="space-y-4">
 						<li class="anp-step-1 relative flex items-start gap-3.5">
-							<span class="relative z-10 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-accent text-white shadow-md ring-4 ring-[#0f2440]">
+							<span class="relative z-10 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-accent text-white shadow-md ring-4 ring-[#143E1C]">
 								<?php echo anp_icon('check', 'h-4 w-4'); ?>
 							</span>
 							<div class="min-w-0 flex-1 pt-0.5">
@@ -112,7 +112,7 @@ $services_options = anp_t_list('service_options');
 						</li>
 
 						<li class="anp-step-2 relative flex items-start gap-3.5">
-							<span class="relative z-10 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-accent text-white shadow-md ring-4 ring-[#0f2440]">
+							<span class="relative z-10 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-accent text-white shadow-md ring-4 ring-[#143E1C]">
 								<?php echo anp_icon('check', 'h-4 w-4'); ?>
 							</span>
 							<div class="min-w-0 flex-1 pt-0.5">
@@ -125,7 +125,7 @@ $services_options = anp_t_list('service_options');
 						</li>
 
 						<li class="anp-step-3 relative -mx-2.5 flex items-start gap-3.5 rounded-xl border-l-2 border-accent bg-gradient-to-r from-accent/20 via-accent/10 to-transparent p-2.5">
-							<span class="anp-pulse-active relative z-10 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-accent text-white shadow-lg shadow-accent/40 ring-4 ring-[#0f2440]">
+							<span class="anp-pulse-active relative z-10 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-accent text-white shadow-lg shadow-accent/40 ring-4 ring-[#143E1C]">
 								<span class="animate-pulse"><?php echo anp_icon('truck', 'h-4 w-4'); ?></span>
 							</span>
 							<div class="min-w-0 flex-1 pt-0.5">
@@ -138,7 +138,7 @@ $services_options = anp_t_list('service_options');
 						</li>
 
 						<li class="anp-step-4 relative flex items-start gap-3.5">
-							<span class="relative z-10 grid h-8 w-8 shrink-0 place-items-center rounded-full border border-white/25 bg-white/10 text-white/50 ring-4 ring-[#0f2440]">
+							<span class="relative z-10 grid h-8 w-8 shrink-0 place-items-center rounded-full border border-white/25 bg-white/10 text-white/50 ring-4 ring-[#143E1C]">
 								<?php echo anp_icon('ship', 'h-4 w-4'); ?>
 							</span>
 							<div class="min-w-0 flex-1 pt-0.5">

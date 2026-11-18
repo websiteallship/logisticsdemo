@@ -670,12 +670,13 @@ body.anp-menu-open {
 	overflow: hidden;
 }
 
-/* Badge Icon Thẻ Dịch Vụ - Enterprise Deep Navy & Ring White (design-taste-frontend) */
+/* Badge Icon Thẻ Dịch Vụ - Xanh theo logo & Ring White (design-taste-frontend) */
 .anp-service-badge {
-	background-color: #0B192C !important;
+	background: linear-gradient(135deg, #1F4F25 0%, #143E1C 100%) !important;
+	background-color: #1F4F25 !important;
 	color: #ffffff !important;
 	border-radius: 0.85rem;
-	box-shadow: 0 0 0 4px #ffffff, 0 12px 28px -6px rgba(11, 25, 44, 0.35);
+	box-shadow: 0 0 0 4px #ffffff, 0 12px 28px -6px rgba(20, 62, 28, 0.4);
 	transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .anp-service-badge svg {
@@ -684,9 +685,10 @@ body.anp-menu-open {
 	transition: transform 0.3s ease;
 }
 .group:hover .anp-service-badge {
-	background-color: rgb(var(--c-accent)) !important;
+	background: linear-gradient(135deg, #7CC242 0%, #62A030 100%) !important;
+	background-color: #7CC242 !important;
 	transform: translateY(50%) scale(1.1) !important;
-	box-shadow: 0 0 0 4px #ffffff, 0 14px 30px -4px rgb(var(--c-accent) / 0.5) !important;
+	box-shadow: 0 0 0 4px #ffffff, 0 14px 30px -4px rgba(124, 194, 66, 0.5) !important;
 }
 .group:hover .anp-service-badge svg {
 	transform: scale(1.08);
