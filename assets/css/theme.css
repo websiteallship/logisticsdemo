@@ -503,9 +503,9 @@ body.anp-menu-open {
 
 /* Card kính mờ quy trình 4 bước (Connected Glass Stepper - Deep Maritime Navy) */
 .anp-stepper-glass {
-	background: linear-gradient(160deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
-	backdrop-filter: blur(18px);
-	-webkit-backdrop-filter: blur(18px);
+	background: linear-gradient(160deg, rgba(11, 25, 44, 0.78) 0%, rgba(6, 18, 32, 0.88) 100%);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
 	border: 1px solid rgba(255, 255, 255, 0.14);
 	border-radius: 1.25rem;
 	padding: 1.75rem 1.5rem;
@@ -513,7 +513,7 @@ body.anp-menu-open {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.45);
+	box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.5);
 	transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .anp-stepper-glass:hover {

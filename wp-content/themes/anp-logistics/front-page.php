@@ -372,11 +372,8 @@ $step_slas  = array(
 			<p class="mt-3 text-base text-slate-300/90"><?php echo esc_html($is_en ? 'Standardized 4-stage logistics pipeline from cargo intake, customs handling to last-mile fulfillment.' : 'Quy trình 4 bước chuẩn hóa từ khâu tiếp nhận, xử lý hải quan đến điều phối và đối soát minh bạch.'); ?></p>
 		</div>
 
-		<!-- Grid 4 Card kính mờ có kết nối dòng chảy -->
-		<div class="relative mt-14">
-			<!-- Ray kết nối tiến trình trên Desktop (Connected Stepper Beam) -->
-			<div class="pointer-events-none absolute top-12 left-16 right-16 hidden h-0.5 bg-gradient-to-r from-amber-400/30 via-accent/70 to-amber-400/60 lg:block" aria-hidden="true"></div>
-
+		<!-- Grid 4 Card kính mờ quy trình -->
+		<div class="mt-14">
 			<ol class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 				<?php foreach (array_values($process) as $i => $step) :
 					$icon_name = isset($step_icons[$i]) ? $step_icons[$i] : 'check';
