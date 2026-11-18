@@ -12,6 +12,7 @@ $process     = anp_pipe_lines('anp_process_lines');
 $faq         = anp_faq_items();
 $sent        = isset($_GET['anp_sent']) ? sanitize_text_field(wp_unslash($_GET['anp_sent'])) : '';
 $hero_img    = anp_opt('anp_hero_image');
+$banner_only = (bool) anp_opt('anp_hero_banner_only');
 $about_img   = anp_opt('anp_about_image');
 $process_bg  = anp_opt('anp_process_bg');
 $stats       = array(
@@ -26,7 +27,30 @@ $services_options = anp_t_list('service_options');
 <!-- 1. HERO: Slider nền ambient chuyển cảnh đa phương thức (design-taste-frontend) -->
 <section id="hero-section" class="relative isolate overflow-hidden bg-brand text-white pb-28 sm:pb-32">
 	<!-- Hero Slider Background: 4 lĩnh vực logistics thực tế (biển, hàng không, kho bãi, đêm) -->
-	<div id="hero-slider" class="absolute inset-0 -z-10 overflow-hidden" data-interval="5000">
+	<div id="hero-slider" class="absolute inset-0 -z-10 overflow-hidden" data-interval="10000">
+<?php if ($banner_only) : ?>
+		<?php
+		// Chế độ banner ảnh: 4 ảnh thật của công ty, mỗi ảnh hiển thị 10 giây.
+		$banner_slides = array(
+			array('hero-banner', 2000, 745, 1000, 'center center'),
+			array('hero-team-1', 1920, 1440, 960, 'center 62%'),
+			array('hero-team-2', 1920, 1440, 960, 'center 62%'),
+			array('hero-team-3', 1920, 1440, 960, 'center 62%'),
+		);
+		foreach ($banner_slides as $bi => $b) :
+			$is_first = ($bi === 0);
+			$src      = ($is_first && $hero_img) ? $hero_img : '';
+		?>
+		<div class="anp-hero-slide<?php echo $is_first ? ' is-active' : ''; ?>" data-slide="<?php echo (int) $bi; ?>">
+			<?php if ($src) : ?>
+				<img src="<?php echo esc_url($src); ?>" alt="<?php echo esc_attr(anp_t('alt_hero')); ?>" class="h-full w-full object-cover" loading="eager" decoding="async" fetchpriority="high">
+			<?php else : ?>
+				<?php echo anp_theme_img($b[0], $b[1], $b[2], $b[3], anp_t('alt_hero'), $is_first, 'object-position:' . $b[4]); // phpcs:ignore ?>
+			<?php endif; ?>
+		</div>
+		<?php endforeach; ?>
+		<div class="anp-hero-overlay anp-hero-overlay--light"></div>
+<?php else : ?>
 		<div class="anp-hero-slide is-active" data-slide="0">
 			<?php if ($hero_img) : ?>
 				<img src="<?php echo esc_url($hero_img); ?>" alt="<?php echo esc_attr(anp_t('alt_hero')); ?>" class="h-full w-full object-cover" loading="eager" decoding="async" fetchpriority="high">
@@ -47,7 +71,10 @@ $services_options = anp_t_list('service_options');
 		<!-- Lớp overlay phủ đa tầng bảo đảm tương phản sắc nét cho chữ & thẻ tracking -->
 		<div class="anp-hero-overlay"></div>
 	</div>
+<?php endif; ?>
+	</div>
 
+<?php if (!$banner_only) : ?>
 	<div class="mx-auto grid min-h-[540px] max-w-7xl items-center gap-12 px-5 pb-10 pt-16 sm:px-8 lg:min-h-[660px] lg:grid-cols-12 lg:pb-12 lg:pt-20">
 		<div class="lg:col-span-7">
 			<p class="reveal-up inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3.5 py-1.5 text-sm font-medium text-white backdrop-blur">
@@ -154,6 +181,11 @@ $services_options = anp_t_list('service_options');
 			</div>
 		</div>
 	</div>
+<?php else : ?>
+	<!-- Chế độ banner ảnh: chỉ chừa khung cho ảnh nền, giữ 4 bullet dịch vụ bên dưới -->
+	<h1 class="sr-only"><?php echo esc_html(anp_opt('anp_hero_title')); ?></h1>
+	<div class="mx-auto h-[250px] max-w-7xl sm:h-[360px] lg:h-[470px]" aria-hidden="true"></div>
+<?php endif; ?>
 
 	<!-- Timeline Progress Controls: 4 phân đoạn trực quan (anti-slop, zero CLS) -->
 	<div class="relative z-20 mx-auto max-w-7xl px-5 pb-4 sm:px-8">

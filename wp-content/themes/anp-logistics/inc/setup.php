@@ -590,3 +590,42 @@ function anp_brand_head() {
 	echo '<meta name="msapplication-TileColor" content="' . esc_attr($p['primary']) . '">' . "\n";
 }
 add_action('wp_head', 'anp_brand_head', 3);
+
+/* ---------- 8. Chuyển dữ liệu thương hiệu cũ đã lưu trong Customizer (chạy một lần) ---------- */
+/**
+ * Các giá trị đã lưu trong Customizer ghi đè mặc định trong code, nên tên cũ (HP Trading - Transport, An Phát...)
+ * vẫn hiện ra dù code đã đổi. Hàm này thay tên cũ trong các tùy chọn của theme sang tên mới.
+ */
+function anp_migrate_brand_mods() {
+	if (get_option('anp_brand_migrated') === '1') {
+		return;
+	}
+
+	$name  = 'HP Trading - Transport';
+	$pairs = array(
+		'Công ty TNHH Dịch vụ Logistics An Phát (ANP Logistics)' => $name,
+		'An Phat Logistics Services Company Limited (ANP Logistics)' => $name,
+		'Công ty TNHH Dịch vụ Logistics An Phát' => 'Công ty TNHH Dịch vụ Logistics hptransport',
+		'An Phat Logistics Services Company Limited' => 'hptransport Logistics Services Company Limited',
+		'info@anplogistics.com' => 'sales@hptransport.com.vn',
+		'anplogistics.com' => 'hptransport.com.vn',
+		'ANP Logistics' => $name,
+	);
+
+	$mods = get_theme_mods();
+	if (is_array($mods)) {
+		foreach ($mods as $key => $value) {
+			if (!is_string($value) || strpos($key, 'anp_') !== 0 || $value === '') {
+				continue;
+			}
+			$new = strtr($value, $pairs);
+			$new = preg_replace('/\bANP\b/u', $name, $new);
+			if ($new !== $value) {
+				set_theme_mod($key, $new);
+			}
+		}
+	}
+
+	update_option('anp_brand_migrated', '1', false);
+}
+add_action('init', 'anp_migrate_brand_mods');

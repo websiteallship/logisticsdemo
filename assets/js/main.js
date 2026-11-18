@@ -198,7 +198,7 @@
 		var totalSlides = slides.length;
 		if (totalSlides > 1) {
 			var currentIndex = 0;
-			var duration = parseInt(heroSlider.getAttribute('data-interval'), 10) || 5000;
+			var duration = parseInt(heroSlider.getAttribute('data-interval'), 10) || 10000;
 			var startTime = null;
 
 			var updateUI = function (index) {

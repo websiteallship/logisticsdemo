@@ -549,7 +549,7 @@ body.anp-menu-open {
 	height: 100%;
 	object-fit: cover;
 	transform: scale(1);
-	transition: transform 7.5s cubic-bezier(0.25, 1, 0.5, 1);
+	transition: transform 12s cubic-bezier(0.25, 1, 0.5, 1);
 	will-change: transform;
 }
 .anp-hero-slide.is-active img {
@@ -882,4 +882,9 @@ body.anp-menu-open {
 	border-radius: 0 !important;
 	box-shadow: 0 0 0 100vmax #f8fafc !important;
 	clip-path: inset(0 -100vmax) !important;
+}
+
+/* Chế độ banner ảnh: giữ ảnh sáng rõ, chỉ làm tối nhẹ phần đáy để 4 bullet dịch vụ dễ đọc */
+.anp-hero-overlay--light {
+	background: linear-gradient(to top, rgba(9, 34, 15, 0.82) 0%, rgba(9, 34, 15, 0.38) 22%, transparent 48%);
 }

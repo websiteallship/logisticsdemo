@@ -18,34 +18,34 @@ function anp_photos() {
 			'url' => 'https://commons.wikimedia.org/wiki/File:Seaforth_Container_Terminal_2022.jpg',
 		),
 		'port' => array(
-			'base' => 'port', 'widths' => array(500, 960), 'w' => 960, 'h' => 640,
-			'by' => 'Andrzej Otrębski', 'licence' => 'CC BY-SA 4.0',
-			'url' => 'https://commons.wikimedia.org/wiki/File:Hamburg_aerial_4.jpg',
+			'base' => 'port', 'widths' => array(500, 960), 'w' => 960, 'h' => 600,
+			'by' => 'Tom Fisk / Unsplash', 'licence' => 'Unsplash License',
+			'url' => 'https://unsplash.com/photos/photo-1578575437130-527eed3abbec',
 		),
 		'road' => array(
-			'base' => 'road', 'widths' => array(500, 960), 'w' => 960, 'h' => 641,
-			'by' => 'Lokseng01', 'licence' => 'CC BY-SA 4.0',
-			'url' => 'https://commons.wikimedia.org/wiki/File:A_Volvo_FM_truck_carrying_a_container_at_Taichung.jpg',
+			'base' => 'road', 'widths' => array(500, 960), 'w' => 960, 'h' => 600,
+			'by' => 'Marcin Jozwiak / Unsplash', 'licence' => 'Unsplash License',
+			'url' => 'https://unsplash.com/photos/photo-1601584115197-04ecc0da31d7',
 		),
 		'sea' => array(
-			'base' => 'sea', 'widths' => array(500, 960), 'w' => 960, 'h' => 720,
-			'by' => 'Calistemon', 'licence' => 'CC BY-SA 4.0',
-			'url' => 'https://commons.wikimedia.org/wiki/File:Container_ship_Express_Black_Sea_in_Fremantle_Harbour,_April_2026_02.jpg',
+			'base' => 'sea', 'widths' => array(500, 960), 'w' => 960, 'h' => 600,
+			'by' => 'Ian Taylor / Unsplash', 'licence' => 'Unsplash License',
+			'url' => 'https://unsplash.com/photos/photo-1542296332-2e4473faf563',
 		),
 		'air' => array(
-			'base' => 'air', 'widths' => array(500, 960), 'w' => 960, 'h' => 640,
-			'by' => 'Iswzo', 'licence' => 'CC BY-SA 4.0',
-			'url' => 'https://commons.wikimedia.org/wiki/File:A_Cathay_Pacific_Cargo_Aircraft.jpg',
+			'base' => 'air', 'widths' => array(500, 960), 'w' => 960, 'h' => 600,
+			'by' => 'Vitor Fontes / Unsplash', 'licence' => 'Unsplash License',
+			'url' => 'https://unsplash.com/photos/photo-1570710891163-6d3b5c47248b',
 		),
 		'warehouse' => array(
-			'base' => 'warehouse', 'widths' => array(500, 960), 'w' => 960, 'h' => 550,
-			'by' => 'Holland Storage Solutions', 'licence' => 'CC BY-SA 4.0',
-			'url' => 'https://commons.wikimedia.org/wiki/File:Palletstellingen_in_een_warehouse_met_framebescherming.jpg',
+			'base' => 'warehouse', 'widths' => array(500, 960), 'w' => 960, 'h' => 600,
+			'by' => 'Petar Petkovski / Unsplash', 'licence' => 'Unsplash License',
+			'url' => 'https://unsplash.com/photos/photo-1586528116311-ad8dd3c8310d',
 		),
 		'project' => array(
-			'base' => 'project', 'widths' => array(500, 960), 'w' => 960, 'h' => 625,
-			'by' => 'Jean-Pierre Bazard', 'licence' => 'CC BY 4.0',
-			'url' => 'https://commons.wikimedia.org/wiki/File:Transport_d%27une_pale_d%27%C3%A9olienne.JPG',
+			'base' => 'project', 'widths' => array(500, 960), 'w' => 960, 'h' => 600,
+			'by' => 'CHUTTERSNAP / Unsplash', 'licence' => 'Unsplash License',
+			'url' => 'https://unsplash.com/photos/photo-1587293852726-70cdb56c2866',
 		),
 		'night' => array(
 			'base' => 'night', 'widths' => array(500, 960), 'w' => 960, 'h' => 640,
@@ -154,4 +154,26 @@ function anp_photo_credits_markup() {
 		);
 	}
 	return implode(', ', $parts);
+}
+
+/**
+ * In thẻ <img> cho ảnh riêng của theme (assets/img/<base>-1920.jpg và -960.jpg).
+ * $w, $h: kích thước bản lớn; $w_small: chiều rộng bản nhỏ dùng cho màn hình hẹp.
+ */
+function anp_theme_img($base, $w, $h, $w_small, $alt, $eager = false, $style = '') {
+	$uri = get_template_directory_uri() . '/assets/img/' . $base;
+	return sprintf(
+		'<img src="%s" srcset="%s %dw, %s %dw" sizes="100vw" width="%d" height="%d" alt="%s" class="h-full w-full object-cover" loading="%s" decoding="async"%s%s>',
+		esc_url($uri . '-960.jpg'),
+		esc_url($uri . '-960.jpg'),
+		(int) $w_small,
+		esc_url($uri . '-1920.jpg'),
+		(int) $w,
+		(int) $w,
+		(int) $h,
+		esc_attr($alt),
+		$eager ? 'eager' : 'lazy',
+		$eager ? ' fetchpriority="high"' : '',
+		$style ? ' style="' . esc_attr($style) . '"' : ''
+	);
 }
