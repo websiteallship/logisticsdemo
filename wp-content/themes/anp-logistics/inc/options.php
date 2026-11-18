@@ -111,10 +111,10 @@ function anp_defaults() {
 		'anp_meta_description_en' => 'ANP Logistics provides customs declarations, domestic trucking, sea and air freight, warehousing and project cargo. Operating since 2014 in Thu Duc City, Ho Chi Minh City.',
 
 		// Màu sắc
-		'anp_palette'             => 'corporate',
-		'anp_custom_primary'      => '#0F172A',
-		'anp_custom_soft'         => '#1E293B',
-		'anp_custom_accent'       => '#0EA5E9',
+		'anp_palette'             => 'hp',
+		'anp_custom_primary'      => '#1F4F25',
+		'anp_custom_soft'         => '#2A6A2C',
+		'anp_custom_accent'       => '#7CC242',
 		'anp_custom_accent_hover' => '#0369A1',
 
 		// Ảnh tùy chỉnh (để trống = dùng ảnh mặc định của theme)

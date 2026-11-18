@@ -2,11 +2,11 @@
    Màu lấy từ biến :root (sinh ra bởi inc/setup.php theo bộ màu đã chọn). */
 
 :root {
-	--c-primary: 11 25 44;
-	--c-primary-soft: 30 41 59;
-	--c-accent: 234 88 12;
-	--c-accent-hover: 194 65 12;
-	--c-on-accent: 255 255 255;
+	--c-primary: 31 79 37;
+	--c-primary-soft: 42 106 44;
+	--c-accent: 124 194 66;
+	--c-accent-hover: 98 160 48;
+	--c-on-accent: 31 79 37;
 }
 
 /* Font chữ duy nhất toàn website: Be Vietnam Pro (tối ưu tiếng Việt, đa nền tảng) */
@@ -617,7 +617,7 @@ body.anp-menu-open {
 
 /* Liên kết trong nội dung bài viết / trang (Chuẩn Editorial B2B Logistics) */
 .anp-prose { color: #334155; font-size: 1.05rem; line-height: 1.85; }
-.anp-prose h2 { margin: 2.5rem 0 1rem; font-size: 1.65rem; font-weight: 800; color: #0B192C; line-height: 1.35; }
+.anp-prose h2 { margin: 2.5rem 0 1rem; font-size: 1.65rem; font-weight: 800; color: rgb(var(--c-primary)); line-height: 1.35; }
 .anp-prose h3 { margin: 2rem 0 0.8rem; font-size: 1.3rem; font-weight: 700; color: #1E3E62; line-height: 1.4; }
 .anp-prose p { margin: 0 0 1.25rem; }
 .anp-prose ul { list-style: disc; padding-left: 1.5rem; margin: 0 0 1.25rem; }
@@ -652,14 +652,14 @@ body.anp-menu-open {
 .anp-prose blockquote { border-left: 4px solid rgb(var(--c-accent)); padding: 1rem 1.25rem; font-style: italic; color: #1e293b; margin: 1.8rem 0; background: #f8fafc; border-radius: 0 0.75rem 0.75rem 0; }
 .anp-prose table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.92rem; border-radius: 0.75rem; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
 .anp-prose th, .anp-prose td { border: 1px solid #e2e8f0; padding: 0.75rem 1rem; text-align: left; }
-.anp-prose th { background: #0B192C; color: #ffffff; font-weight: 700; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.anp-prose th { background: rgb(var(--c-primary)); color: #ffffff; font-weight: 700; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.04em; }
 .anp-prose tr:nth-child(even) { background: #f8fafc; }
 .anp-prose tr:hover { background: #f1f5f9; }
 
 /* Box Kêu Gọi Hành Động Trong Bài Viết (B2B Logistics CRO Card) */
 .anp-cro-card {
 	position: relative;
-	background: linear-gradient(135deg, #0B192C 0%, #162a45 100%);
+	background: linear-gradient(135deg, rgb(var(--c-primary)) 0%, rgb(var(--c-primary-soft)) 100%);
 	color: #ffffff;
 	padding: 2rem 2.25rem;
 	border-radius: 1.25rem;

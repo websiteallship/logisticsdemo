@@ -85,7 +85,7 @@ if (!$related_query->have_posts() && $primary_cat) {
 						</span>
 					</div>
 
-					<h1 class="mt-4 font-display text-2xl sm:text-3xl lg:text-[38px] font-extrabold leading-[1.28] tracking-tight text-[#0B192C]">
+					<h1 class="mt-4 font-display text-2xl sm:text-3xl lg:text-[38px] font-extrabold leading-[1.28] tracking-tight text-brand">
 						<?php echo esc_html(get_the_title()); ?>
 					</h1>
 
@@ -137,11 +137,11 @@ if (!$related_query->have_posts() && $primary_cat) {
 			<aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
 				
 				<!-- 1. Card Kêu Gọi Báo Giá 30 Phút -->
-				<div class="rounded-2xl bg-gradient-to-br from-[#0B192C] to-[#1E3E62] p-6 sm:p-7 text-white shadow-xl border border-white/10 relative overflow-hidden">
+				<div class="rounded-2xl bg-gradient-to-br from-brand to-brand-soft p-6 sm:p-7 text-white shadow-xl border border-white/10 relative overflow-hidden">
 					<div class="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-accent/20 blur-2xl pointer-events-none"></div>
 					<div class="relative z-10">
-						<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold tracking-wider uppercase border border-amber-500/30">
-							<span class="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+						<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/20 text-accent text-xs font-bold tracking-wider uppercase border border-accent/30">
+							<span class="h-1.5 w-1.5 rounded-full bg-accent animate-pulse"></span>
 							SLA Phản Hồi 30 Phút
 						</span>
 						<h3 class="mt-4 text-xl font-bold leading-snug text-white">
@@ -156,7 +156,7 @@ if (!$related_query->have_posts() && $primary_cat) {
 								Nhận báo giá trọn gói &rarr;
 							</a>
 							<a href="tel:0911221214" class="btn btn-ghost-light w-full py-3 text-center font-semibold text-sm justify-center flex items-center gap-2">
-								<svg class="h-4 w-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+								<svg class="h-4 w-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
 								Hotline: 0911 22 12 14
 							</a>
 						</div>

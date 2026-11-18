@@ -66,6 +66,7 @@ function anp_tailwind_config() {
  */
 function anp_palettes() {
 	return array(
+		'hp' => array('label' => 'HP Trading – Transport: Xanh lá logo & Xanh chanh (mặc định)', 'primary' => '#1F4F25', 'soft' => '#2A6A2C', 'accent' => '#7CC242', 'accent_hover' => '#62A030'),
 		'corporate' => array('label' => 'Doanh nghiệp: Deep Navy & Cam Hàng hải (mặc định)', 'primary' => '#0B192C', 'soft' => '#1E293B', 'accent' => '#EA580C', 'accent_hover' => '#C2410C'),
 		'navy'     => array('label' => 'Navy & Vàng hổ phách', 'primary' => '#0B2545', 'soft' => '#13315C', 'accent' => '#F5A623', 'accent_hover' => '#E0941A'),
 		'ocean'    => array('label' => 'Biển xanh & Ngọc lam', 'primary' => '#053B5C', 'soft' => '#0E5A8A', 'accent' => '#2EC4B6', 'accent_hover' => '#20A99C'),
@@ -77,19 +78,19 @@ function anp_palettes() {
 
 /** Trả về bộ màu đang dùng (kể cả bộ "custom" lấy từ Customizer). */
 function anp_current_palette() {
-	$id = get_theme_mod('anp_palette', 'corporate');
+	$id = get_theme_mod('anp_palette', 'hp');
 
 	if ($id === 'custom') {
 		return array(
-			'primary'      => get_theme_mod('anp_custom_primary', '#0F172A'),
-			'soft'         => get_theme_mod('anp_custom_soft', '#1E293B'),
-			'accent'       => get_theme_mod('anp_custom_accent', '#0EA5E9'),
-			'accent_hover' => get_theme_mod('anp_custom_accent_hover', '#0369A1'),
+			'primary'      => get_theme_mod('anp_custom_primary', '#1F4F25'),
+			'soft'         => get_theme_mod('anp_custom_soft', '#2A6A2C'),
+			'accent'       => get_theme_mod('anp_custom_accent', '#7CC242'),
+			'accent_hover' => get_theme_mod('anp_custom_accent_hover', '#62A030'),
 		);
 	}
 
 	$all = anp_palettes();
-	return isset($all[$id]) ? $all[$id] : $all['corporate'];
+	return isset($all[$id]) ? $all[$id] : $all['hp'];
 }
 
 /** Độ sáng tương đối theo WCAG, từ #RRGGBB. */
@@ -368,8 +369,11 @@ function anp_icon($name, $class = 'h-6 w-6') {
 /** In logo: ảnh tải lên trong Customizer, hoặc chữ + biểu tượng mặc định. */
 function anp_logo_markup($light = false) {
 	$logo = anp_opt('anp_logo');
+	if (!$logo) {
+		$logo = get_template_directory_uri() . '/assets/img/' . ($light ? 'logo-white.png' : 'logo-green.png');
+	}
 	if ($logo) {
-		echo '<img src="' . esc_url($logo) . '" alt="' . esc_attr(anp_opt('anp_brand_name')) . '" class="h-10 w-auto sm:h-12" width="180" height="48" decoding="async">';
+		echo '<img src="' . esc_url($logo) . '" alt="' . esc_attr(anp_opt('anp_brand_name')) . '" class="h-11 w-auto sm:h-14" width="715" height="445" decoding="async">';
 		return;
 	}
 	$text_class = $light ? 'text-white' : 'text-brand';
@@ -557,3 +561,13 @@ function anp_custom_templates_routing($template) {
 	return $template;
 }
 add_filter('template_include', 'anp_custom_templates_routing', 99);
+
+/* ---------- 7. Favicon & màu thanh trình duyệt theo logo ---------- */
+function anp_brand_head() {
+	$p = anp_current_palette();
+	if (!has_site_icon()) {
+		echo '<link rel="icon" type="image/png" href="' . esc_url(get_template_directory_uri() . '/assets/img/favicon.png') . '">' . "\n";
+	}
+	echo '<meta name="theme-color" content="' . esc_attr($p['primary']) . '">' . "\n";
+}
+add_action('wp_head', 'anp_brand_head', 3);

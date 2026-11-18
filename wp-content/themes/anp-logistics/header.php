@@ -20,7 +20,7 @@ $faq_url      = $faq_page ? get_permalink($faq_page) : home_url('/hoi-dap/');
 
 <header id="site-header" class="fixed inset-x-0 top-0 z-50 bg-white transition-shadow duration-300">
 	<!-- 1. Top Utility Bar (36px) -->
-	<div class="anp-topbar border-b border-white/10 bg-[#0B192C] text-xs text-slate-300">
+	<div class="anp-topbar border-b border-white/10 bg-brand text-xs text-slate-300">
 		<div class="mx-auto flex h-9 max-w-7xl items-center justify-between px-5 sm:px-8">
 			<div class="flex items-center gap-5 sm:gap-7">
 				<a href="tel:<?php echo esc_attr(anp_opt('anp_phone')); ?>" class="inline-flex items-center gap-2 transition hover:text-white">
@@ -104,7 +104,7 @@ $faq_url      = $faq_page ? get_permalink($faq_page) : home_url('/hoi-dap/');
 
 			<!-- Card liên hệ nhanh & CTA Báo giá -->
 			<div class="pt-3 border-t border-slate-100 space-y-3">
-				<div class="flex items-center justify-between p-3.5 rounded-2xl bg-gradient-to-r from-slate-50 to-amber-50/50 border border-slate-200/80 shadow-xs">
+				<div class="flex items-center justify-between p-3.5 rounded-2xl bg-gradient-to-r from-slate-50 to-accent/10 border border-slate-200/80 shadow-xs">
 					<div class="flex items-center gap-3">
 						<span class="grid h-10 w-10 place-items-center rounded-xl bg-accent text-white shadow-sm ring-2 ring-accent/20">
 							<?php echo anp_icon('phone', 'h-5 w-5'); ?>

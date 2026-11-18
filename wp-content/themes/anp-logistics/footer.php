@@ -136,11 +136,22 @@ if (anp_opt('anp_license_no') !== '') {
 		</div>
 	</div>
 
-	<!-- Dòng bản quyền & Minh bạch theo chuẩn Anti-slop -->
+	<!-- Dòng bản quyền & Chính sách pháp lý theo chuẩn Anti-slop -->
 	<div class="border-t border-white/10 bg-black/20">
-		<div class="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-5 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-			<p>© <?php echo esc_html(date_i18n('Y')); ?> <?php echo esc_html(anp_opt('anp_company_name')); ?>. <?php echo esc_html(anp_t('rights')); ?></p>
-			<p class="text-white/40"><?php echo esc_html(anp_opt('anp_website')); ?></p>
+		<div class="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-6 text-xs text-white/50 lg:flex-row lg:items-center lg:justify-between sm:px-8">
+			<div>
+				<p>© <?php echo esc_html(date_i18n('Y')); ?> <?php echo esc_html(anp_opt('anp_company_name')); ?>. <?php echo esc_html(anp_t('rights')); ?></p>
+				<p class="text-white/40 mt-1"><?php echo esc_html(anp_opt('anp_website')); ?></p>
+			</div>
+			<div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-slate-400">
+				<a href="<?php echo esc_url(home_url('/chinh-sach-bao-mat/')); ?>" class="hover:text-accent transition">Chính sách bảo mật</a>
+				<span class="text-white/20">•</span>
+				<a href="<?php echo esc_url(home_url('/dieu-khoan-su-dung/')); ?>" class="hover:text-accent transition">Điều khoản sử dụng</a>
+				<span class="text-white/20">•</span>
+				<a href="<?php echo esc_url(home_url('/chinh-sach-van-chuyen/')); ?>" class="hover:text-accent transition">Chính sách vận chuyển</a>
+				<span class="text-white/20">•</span>
+				<a href="<?php echo esc_url(home_url('/chinh-sach-boi-thuong/')); ?>" class="hover:text-accent transition">Khiếu nại & Bồi thường</a>
+			</div>
 		</div>
 	</div>
 </footer>

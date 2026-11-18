@@ -359,7 +359,7 @@ $step_slas  = array(
 		<?php else : ?>
 			<?php echo anp_photo_img('night', array('class' => 'h-full w-full object-cover', 'sizes' => '100vw', 'alt' => '')); // phpcs:ignore ?>
 		<?php endif; ?>
-		<div class="absolute inset-0 bg-gradient-to-b from-[#0B192C]/95 via-[#0B192C]/85 to-[#0B192C]/95"></div>
+		<div class="absolute inset-0 bg-gradient-to-b from-brand/95 via-brand/85 to-brand/95"></div>
 	</div>
 
 	<div class="mx-auto max-w-7xl px-5 sm:px-8">
