@@ -387,6 +387,8 @@ function anp_logo_markup($light = false) {
 /** Menu dự phòng khi chưa gán menu trong Giao diện > Menu. */
 function anp_fallback_menu($args = array()) {
 	$vertical = isset($args['theme_location']) && $args['theme_location'] === 'footer';
+	$about_page   = get_page_by_path('gioi-thieu') ?: get_page_by_path('about');
+	$about_url    = $about_page ? get_permalink($about_page) : home_url('/gioi-thieu/');
 	$contact_page = get_page_by_path('lien-he') ?: get_page_by_path('contact');
 	$contact_url  = $contact_page ? get_permalink($contact_page) : home_url('/lien-he/');
 	$faq_page     = get_page_by_path('hoi-dap') ?: get_page_by_path('faq');
@@ -394,7 +396,7 @@ function anp_fallback_menu($args = array()) {
 
 	$items = array(
 		anp_t('menu_home')     => home_url('/'),
-		anp_t('menu_about')    => home_url('/#gioi-thieu'),
+		anp_t('menu_about')    => $about_url,
 		anp_t('menu_services') => home_url('/#dich-vu'),
 		anp_t('menu_process')  => home_url('/#quy-trinh'),
 		anp_t('menu_news')     => home_url('/tin-tuc/'),
@@ -565,9 +567,26 @@ add_filter('template_include', 'anp_custom_templates_routing', 99);
 /* ---------- 7. Favicon & màu thanh trình duyệt theo logo ---------- */
 function anp_brand_head() {
 	$p = anp_current_palette();
+	$template_uri = get_template_directory_uri();
+
 	if (!has_site_icon()) {
-		echo '<link rel="icon" type="image/png" href="' . esc_url(get_template_directory_uri() . '/assets/img/favicon.png') . '">' . "\n";
+		// Favicon chính cho desktop & mobile
+		echo '<link rel="icon" type="image/x-icon" href="' . esc_url($template_uri . '/assets/img/favicon.ico') . '">' . "\n";
+		echo '<link rel="icon" type="image/png" sizes="16x16" href="' . esc_url($template_uri . '/assets/img/favicon-16x16.png') . '">' . "\n";
+		echo '<link rel="icon" type="image/png" sizes="32x32" href="' . esc_url($template_uri . '/assets/img/favicon.png') . '">' . "\n";
+		echo '<link rel="icon" type="image/webp" sizes="192x192" href="' . esc_url($template_uri . '/assets/img/favicon.webp') . '">' . "\n";
+
+		// Apple touch icon cho iPhone & iPad
+		echo '<link rel="apple-touch-icon" href="' . esc_url($template_uri . '/assets/img/apple-touch-icon.png') . '">' . "\n";
+		echo '<meta name="apple-mobile-web-app-capable" content="yes">' . "\n";
+		echo '<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">' . "\n";
 	}
+
+	// Web App Manifest cho PWA support
+	echo '<link rel="manifest" href="' . esc_url($template_uri . '/assets/img/site.webmanifest') . '">' . "\n";
+
+	// Màu thanh trình duyệt (Chrome, Edge, Safari) theo bộ màu chủ đạo
 	echo '<meta name="theme-color" content="' . esc_attr($p['primary']) . '">' . "\n";
+	echo '<meta name="msapplication-TileColor" content="' . esc_attr($p['primary']) . '">' . "\n";
 }
 add_action('wp_head', 'anp_brand_head', 3);
