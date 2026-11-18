@@ -351,21 +351,21 @@ $step_slas  = array(
 	$is_en ? 'Full POD & Tax Invoicing' : 'Bàn giao đủ POD & Hóa đơn',
 );
 ?>
-<section id="quy-trinh" class="relative isolate scroll-mt-28 overflow-hidden bg-brand py-20 text-white sm:py-28">
-	<!-- Ảnh nền cảng đêm & Lớp phủ gradient sâu chống chói -->
+<section id="quy-trinh" class="relative isolate scroll-mt-28 overflow-hidden bg-[#061220] py-20 text-white sm:py-28">
+	<!-- Ảnh nền cảng đêm & Lớp phủ gradient sâu chống chói (Deep Maritime Navy) -->
 	<div class="absolute inset-0 -z-10">
 		<?php if ($process_bg) : ?>
 			<img src="<?php echo esc_url($process_bg); ?>" alt="" class="h-full w-full object-cover" loading="lazy" decoding="async">
 		<?php else : ?>
 			<?php echo anp_photo_img('night', array('class' => 'h-full w-full object-cover', 'sizes' => '100vw', 'alt' => '')); // phpcs:ignore ?>
 		<?php endif; ?>
-		<div class="absolute inset-0 bg-gradient-to-b from-[#0F3016]/95 via-brand/80 to-[#0A2410]/95"></div>
+		<div class="absolute inset-0 bg-gradient-to-b from-[#061220]/95 via-[#0B192C]/85 to-[#061220]/95"></div>
 	</div>
 
 	<div class="mx-auto max-w-7xl px-5 sm:px-8">
 		<div class="reveal-up max-w-2xl">
-			<p class="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-				<span class="h-1.5 w-1.5 rounded-full bg-accent animate-pulse"></span>
+			<p class="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-500/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-amber-400">
+				<span class="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse"></span>
 				<?php echo esc_html(anp_t('process_label')); ?>
 			</p>
 			<h2 class="mt-4 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl"><?php echo esc_html(anp_opt('anp_process_title')); ?></h2>
@@ -375,7 +375,7 @@ $step_slas  = array(
 		<!-- Grid 4 Card kính mờ có kết nối dòng chảy -->
 		<div class="relative mt-14">
 			<!-- Ray kết nối tiến trình trên Desktop (Connected Stepper Beam) -->
-			<div class="pointer-events-none absolute top-12 left-16 right-16 hidden h-0.5 bg-gradient-to-r from-accent/30 via-accent/70 to-amber-400/80 lg:block" aria-hidden="true"></div>
+			<div class="pointer-events-none absolute top-12 left-16 right-16 hidden h-0.5 bg-gradient-to-r from-amber-400/30 via-accent/70 to-amber-400/60 lg:block" aria-hidden="true"></div>
 
 			<ol class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 				<?php foreach (array_values($process) as $i => $step) :
@@ -387,16 +387,16 @@ $step_slas  = array(
 							<!-- Header card: Icon tròn kính mờ & Badge số bước -->
 							<div>
 								<div class="flex items-center justify-between">
-									<div class="relative z-10 grid h-12 w-12 place-items-center rounded-xl border border-white/20 bg-white/[0.08] text-accent shadow-md backdrop-blur-md transition-all duration-300 group-hover:scale-105 group-hover:border-accent group-hover:bg-accent group-hover:text-white">
+									<div class="relative z-10 grid h-12 w-12 place-items-center rounded-xl border border-white/20 bg-white/[0.08] text-white shadow-md backdrop-blur-md transition-all duration-300 group-hover:scale-105 group-hover:border-accent group-hover:bg-accent group-hover:text-white">
 										<?php echo anp_icon($icon_name, 'h-5 w-5'); ?>
 									</div>
-									<span class="font-mono text-xs font-bold tracking-wider text-accent rounded-md border border-accent/30 bg-accent/15 px-2.5 py-1">
+									<span class="font-mono text-xs font-bold tracking-wider text-amber-300 rounded-md border border-amber-400/30 bg-amber-500/15 px-2.5 py-1">
 										STAGE 0<?php echo esc_html($i + 1); ?>
 									</span>
 								</div>
 
 								<!-- Tiêu đề bước -->
-								<h3 class="mt-5 font-display text-lg font-bold tracking-tight text-white transition-colors group-hover:text-accent">
+								<h3 class="mt-5 font-display text-lg font-bold tracking-tight text-white transition-colors group-hover:text-amber-300">
 									<?php echo esc_html($step['q']); ?>
 								</h3>
 
