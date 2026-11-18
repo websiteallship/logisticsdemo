@@ -33,7 +33,60 @@ $theme_assets = get_template_directory_uri() . '/assets/img/';
 <main class="py-10 sm:py-16 bg-white">
 	<div class="mx-auto max-w-7xl px-5 sm:px-8 space-y-16 sm:space-y-24">
 
-		<!-- SECTION 1: TẦM NHÌN & SỨ MỆNH (VISION & MISSION CARDS) -->
+		<!-- SECTION 1: HỆ THỐNG ĐỘI XE & CƠ SỞ VẬT CHẤT (HÌNH ẢNH THỰC TẾ) -->
+		<section id="nang-luc-doi-xe" class="reveal-up scroll-mt-24">
+			<div class="text-center max-w-3xl mx-auto mb-10">
+				<span class="text-xs font-bold uppercase tracking-wider text-accent"><?php echo esc_html($is_en ? 'Fleet & Infrastructure' : 'Cơ Sở Vật Chất & Năng Lực Phương Tiện'); ?></span>
+				<h2 class="mt-2 font-display text-2xl sm:text-4xl font-extrabold text-brand">
+					<?php echo esc_html($is_en ? 'Owned Modern Fleet & Standard Warehousing' : 'Hệ Thống Đội Xe Hiện Đại & Kho Bãi Quy Chuẩn'); ?>
+				</h2>
+				<p class="mt-3 text-slate-600 text-sm sm:text-base">
+					<?php echo esc_html($is_en ? 'Active fleet of Chenglong, Scania, Haiau H7 heavy tractor trucks equipped with GPS tracking and round-the-clock dispatch.' : 'Đội xe chủ động hơn 40 đầu kéo Chenglong, Scania, Hải Âu H7 được kiểm định định kỳ, tích hợp thiết bị giám sát hành trình GPS và camera 24/7.'); ?>
+				</p>
+			</div>
+
+			<!-- Ảnh Đội Xe & Bãi Trung Chuyển Thực Tế -->
+			<div class="overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xl bg-slate-900">
+				<img src="<?php echo esc_url($uploads_base . 'doi-ngu-anp-logistics-fleet.jpg'); ?>" 
+					 alt="Đội xe đầu kéo và bãi container HP Trading - Transport" 
+					 class="w-full h-auto object-cover max-h-[550px]"
+					 loading="lazy" decoding="async">
+			</div>
+
+			<!-- 4 Trụ Cột Năng Lực Trực Quan -->
+			<div class="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
+				<div class="rounded-xl border border-slate-200 bg-slate-50/70 p-5 text-center">
+					<div class="mx-auto grid h-12 w-12 place-items-center rounded-xl bg-brand text-accent font-bold mb-3">
+						<?php echo anp_icon('truck', 'h-6 w-6'); ?>
+					</div>
+					<h3 class="font-bold text-sm text-brand"><?php echo esc_html($is_en ? 'Cargo Freight' : 'Vận Tải Hàng Hóa'); ?></h3>
+					<p class="mt-1 text-xs text-slate-500"><?php echo esc_html($is_en ? 'Container & domestic trucking' : 'Kéo cont cảng biển & vận chuyển nội địa'); ?></p>
+				</div>
+				<div class="rounded-xl border border-slate-200 bg-slate-50/70 p-5 text-center">
+					<div class="mx-auto grid h-12 w-12 place-items-center rounded-xl bg-brand text-accent font-bold mb-3">
+						<?php echo anp_icon('project', 'h-6 w-6'); ?>
+					</div>
+					<h3 class="font-bold text-sm text-brand"><?php echo esc_html($is_en ? 'Tractor Rental' : 'Cho Thuê Xe Đầu Kéo'); ?></h3>
+					<p class="mt-1 text-xs text-slate-500"><?php echo esc_html($is_en ? 'Heavy tractors & specialized trailers' : 'Đầu kéo đời mới kèm rơ-moóc chuyên dụng'); ?></p>
+				</div>
+				<div class="rounded-xl border border-slate-200 bg-slate-50/70 p-5 text-center">
+					<div class="mx-auto grid h-12 w-12 place-items-center rounded-xl bg-brand text-accent font-bold mb-3">
+						<?php echo anp_icon('warehouse', 'h-6 w-6'); ?>
+					</div>
+					<h3 class="font-bold text-sm text-brand"><?php echo esc_html($is_en ? 'Warehousing' : 'Kho Bãi Hàng Hóa'); ?></h3>
+					<p class="mt-1 text-xs text-slate-500"><?php echo esc_html($is_en ? 'Standard storage & barcode WMS' : 'Lưu kho an toàn, quản lý mã vạch WMS'); ?></p>
+				</div>
+				<div class="rounded-xl border border-slate-200 bg-slate-50/70 p-5 text-center">
+					<div class="mx-auto grid h-12 w-12 place-items-center rounded-xl bg-brand text-accent font-bold mb-3">
+						<?php echo anp_icon('customs', 'h-6 w-6'); ?>
+					</div>
+					<h3 class="font-bold text-sm text-brand"><?php echo esc_html($is_en ? 'Customs Brokerage' : 'Tư Vấn Thủ Tục Hải Quan'); ?></h3>
+					<p class="mt-1 text-xs text-slate-500"><?php echo esc_html($is_en ? 'VNACCS electronic declarations' : 'Khai báo điện tử, thông quan trong 24h'); ?></p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 2: TẦM NHÌN & SỨ MỆNH (VISION & MISSION CARDS) -->
 		<section class="reveal-up">
 			<div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
 				<span class="text-xs font-bold uppercase tracking-wider text-accent"><?php echo esc_html($is_en ? 'Guiding Principles' : 'Kim Chỉ Nam Hoạt Động'); ?></span>
@@ -194,7 +247,7 @@ $theme_assets = get_template_directory_uri() . '/assets/img/';
 		</section>
 
 		<!-- SECTION 3: 4 GIÁ TRỊ CỐT LÕI (CORE VALUES BENTO GRID) -->
-		<section class="reveal-up rounded-3xl bg-slate-50 border border-slate-200/80 p-8 sm:p-12">
+		<section class="reveal-up anp-fullbleed py-12 sm:py-16">
 			<div class="text-center max-w-2xl mx-auto mb-10">
 				<span class="text-xs font-bold uppercase tracking-wider text-accent"><?php echo esc_html($is_en ? 'Our Core Values' : 'Văn Hóa & Cam Kết Bất Biến'); ?></span>
 				<h2 class="mt-2 font-display text-2xl sm:text-4xl font-extrabold text-brand">
@@ -258,61 +311,8 @@ $theme_assets = get_template_directory_uri() . '/assets/img/';
 			</div>
 		</section>
 
-		<!-- SECTION 4: HỆ THỐNG ĐỘI XE & CƠ SỞ VẬT CHẤT (HÌNH ẢNH THỰC TẾ) -->
-		<section id="nang-luc-doi-xe" class="reveal-up scroll-mt-24">
-			<div class="text-center max-w-3xl mx-auto mb-10">
-				<span class="text-xs font-bold uppercase tracking-wider text-accent"><?php echo esc_html($is_en ? 'Fleet & Infrastructure' : 'Cơ Sở Vật Chất & Năng Lực Phương Tiện'); ?></span>
-				<h2 class="mt-2 font-display text-2xl sm:text-4xl font-extrabold text-brand">
-					<?php echo esc_html($is_en ? 'Owned Modern Fleet & Standard Warehousing' : 'Hệ Thống Đội Xe Hiện Đại & Kho Bãi Quy Chuẩn'); ?>
-				</h2>
-				<p class="mt-3 text-slate-600 text-sm sm:text-base">
-					<?php echo esc_html($is_en ? 'Active fleet of Chenglong, Scania, Haiau H7 heavy tractor trucks equipped with GPS tracking and round-the-clock dispatch.' : 'Đội xe chủ động hơn 40 đầu kéo Chenglong, Scania, Hải Âu H7 được kiểm định định kỳ, tích hợp thiết bị giám sát hành trình GPS và camera 24/7.'); ?>
-				</p>
-			</div>
-
-			<!-- Ảnh Đội Xe & Bãi Trung Chuyển Thực Tế -->
-			<div class="overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xl bg-slate-900">
-				<img src="<?php echo esc_url($uploads_base . 'doi-ngu-anp-logistics-fleet.jpg'); ?>" 
-					 alt="Đội xe đầu kéo và bãi container HP Trading - Transport" 
-					 class="w-full h-auto object-cover max-h-[550px]"
-					 loading="lazy" decoding="async">
-			</div>
-
-			<!-- 4 Trụ Cột Năng Lực Trực Quan -->
-			<div class="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
-				<div class="rounded-xl border border-slate-200 bg-slate-50/70 p-5 text-center">
-					<div class="mx-auto grid h-12 w-12 place-items-center rounded-xl bg-brand text-accent font-bold mb-3">
-						<?php echo anp_icon('truck', 'h-6 w-6'); ?>
-					</div>
-					<h3 class="font-bold text-sm text-brand"><?php echo esc_html($is_en ? 'Cargo Freight' : 'Vận Tải Hàng Hóa'); ?></h3>
-					<p class="mt-1 text-xs text-slate-500"><?php echo esc_html($is_en ? 'Container & domestic trucking' : 'Kéo cont cảng biển & vận chuyển nội địa'); ?></p>
-				</div>
-				<div class="rounded-xl border border-slate-200 bg-slate-50/70 p-5 text-center">
-					<div class="mx-auto grid h-12 w-12 place-items-center rounded-xl bg-brand text-accent font-bold mb-3">
-						<?php echo anp_icon('project', 'h-6 w-6'); ?>
-					</div>
-					<h3 class="font-bold text-sm text-brand"><?php echo esc_html($is_en ? 'Tractor Rental' : 'Cho Thuê Xe Đầu Kéo'); ?></h3>
-					<p class="mt-1 text-xs text-slate-500"><?php echo esc_html($is_en ? 'Heavy tractors & specialized trailers' : 'Đầu kéo đời mới kèm rơ-moóc chuyên dụng'); ?></p>
-				</div>
-				<div class="rounded-xl border border-slate-200 bg-slate-50/70 p-5 text-center">
-					<div class="mx-auto grid h-12 w-12 place-items-center rounded-xl bg-brand text-accent font-bold mb-3">
-						<?php echo anp_icon('warehouse', 'h-6 w-6'); ?>
-					</div>
-					<h3 class="font-bold text-sm text-brand"><?php echo esc_html($is_en ? 'Warehousing' : 'Kho Bãi Hàng Hóa'); ?></h3>
-					<p class="mt-1 text-xs text-slate-500"><?php echo esc_html($is_en ? 'Standard storage & barcode WMS' : 'Lưu kho an toàn, quản lý mã vạch WMS'); ?></p>
-				</div>
-				<div class="rounded-xl border border-slate-200 bg-slate-50/70 p-5 text-center">
-					<div class="mx-auto grid h-12 w-12 place-items-center rounded-xl bg-brand text-accent font-bold mb-3">
-						<?php echo anp_icon('customs', 'h-6 w-6'); ?>
-					</div>
-					<h3 class="font-bold text-sm text-brand"><?php echo esc_html($is_en ? 'Customs Brokerage' : 'Tư Vấn Thủ Tục Hải Quan'); ?></h3>
-					<p class="mt-1 text-xs text-slate-500"><?php echo esc_html($is_en ? 'VNACCS electronic declarations' : 'Khai báo điện tử, thông quan trong 24h'); ?></p>
-				</div>
-			</div>
-		</section>
-
 		<!-- SECTION 5: ĐỘI NGŨ NHÂN SỰ THỰC CHIẾN (HÌNH ẢNH THẬT) -->
-		<section class="reveal-up rounded-3xl bg-slate-50 border border-slate-200/80 p-6 sm:p-12">
+		<section class="reveal-up anp-fullbleed py-12 sm:py-16">
 			<div class="text-center max-w-2xl mx-auto mb-10">
 				<span class="text-xs font-bold uppercase tracking-wider text-accent"><?php echo esc_html($is_en ? 'Our Dedicated People' : 'Con Người Là Trọng Tâm'); ?></span>
 				<h2 class="mt-2 font-display text-2xl sm:text-3xl font-bold text-brand">

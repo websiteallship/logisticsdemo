@@ -877,7 +877,9 @@ body.anp-menu-open {
 /* Khối nền màu tràn hết chiều ngang màn hình (không bo góc, không viền),
    nội dung bên trong vẫn nằm gọn trong khung max-w-7xl. */
 .anp-fullbleed {
-	background: #f8fafc;
-	box-shadow: 0 0 0 100vmax #f8fafc;
-	clip-path: inset(0 -100vmax);
+	background: #f8fafc !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	box-shadow: 0 0 0 100vmax #f8fafc !important;
+	clip-path: inset(0 -100vmax) !important;
 }

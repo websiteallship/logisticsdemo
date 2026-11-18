@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-define('ANP_VERSION', '1.0.1');
+define('ANP_VERSION', '1.0.2');
 
 require_once get_template_directory() . '/inc/i18n.php';
 require_once get_template_directory() . '/inc/setup.php';
