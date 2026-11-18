@@ -624,6 +624,28 @@ body.anp-menu-open {
 .anp-prose ol { list-style: decimal; padding-left: 1.5rem; margin: 0 0 1.25rem; }
 .anp-prose li { margin-bottom: 0.5rem; }
 .anp-prose a { color: rgb(var(--c-accent-hover)); text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
+.anp-prose a.btn {
+	text-decoration: none !important;
+}
+.anp-prose a.btn-accent {
+	background: rgb(var(--c-accent)) !important;
+	color: #ffffff !important;
+	box-shadow: 0 4px 14px -3px rgb(var(--c-accent) / 0.5) !important;
+}
+.anp-prose a.btn-accent:hover {
+	background: rgb(var(--c-accent-hover)) !important;
+	color: #ffffff !important;
+}
+.anp-prose a.btn-ghost-light {
+	border: 1px solid rgba(255, 255, 255, 0.4) !important;
+	background: rgba(255, 255, 255, 0.08) !important;
+	color: #ffffff !important;
+}
+.anp-prose a.btn-ghost-light:hover {
+	background: rgba(255, 255, 255, 0.2) !important;
+	color: #ffffff !important;
+	border-color: rgba(255, 255, 255, 0.7) !important;
+}
 .anp-prose figure { margin: 2.2rem 0; }
 .anp-prose img { border-radius: 1rem; margin: 0.5rem 0; width: 100%; height: auto; object-fit: cover; box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08); }
 .anp-prose figcaption { font-size: 0.85rem; color: #64748b; text-align: center; margin-top: 0.6rem; font-style: italic; }
@@ -633,7 +655,116 @@ body.anp-menu-open {
 .anp-prose th { background: #0B192C; color: #ffffff; font-weight: 700; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.04em; }
 .anp-prose tr:nth-child(even) { background: #f8fafc; }
 .anp-prose tr:hover { background: #f1f5f9; }
-.anp-cro-card { background: linear-gradient(135deg, #0B192C 0%, #1E3E62 100%); color: #fff; padding: 2rem; border-radius: 1.25rem; margin: 2.5rem 0; box-shadow: 0 14px 35px -8px rgba(11, 25, 44, 0.25); border: 1px solid rgba(255,255,255,0.1); }
+
+/* Box Kêu Gọi Hành Động Trong Bài Viết (B2B Logistics CRO Card) */
+.anp-cro-card {
+	position: relative;
+	background: linear-gradient(135deg, #0B192C 0%, #162a45 100%);
+	color: #ffffff;
+	padding: 2rem 2.25rem;
+	border-radius: 1.25rem;
+	margin: 2.75rem 0;
+	box-shadow: 0 16px 36px -10px rgba(11, 25, 44, 0.35);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	overflow: hidden;
+}
+.anp-cro-card::after {
+	content: "";
+	position: absolute;
+	top: -60px;
+	right: -60px;
+	width: 240px;
+	height: 240px;
+	background: radial-gradient(circle, rgba(234, 88, 12, 0.18) 0%, transparent 70%);
+	border-radius: 50%;
+	pointer-events: none;
+}
+.anp-cro-card .anp-cro-inner,
+.anp-cro-card > div {
+	position: relative;
+	z-index: 1;
+}
+.anp-cro-card .anp-cro-inner {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+@media (min-width: 1024px) {
+	.anp-cro-card .anp-cro-inner {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		gap: 2.5rem;
+	}
+}
+.anp-cro-card .anp-cro-body,
+.anp-cro-card .space-y-2 {
+	flex: 1 1 0%;
+	min-width: 0;
+}
+.anp-cro-card .anp-cro-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.35rem 0.85rem;
+	border-radius: 9999px;
+	background: rgba(234, 88, 12, 0.2);
+	color: #fb923c;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	margin-bottom: 0.75rem;
+	border: 1px solid rgba(234, 88, 12, 0.35);
+}
+.anp-cro-card .anp-cro-title {
+	font-size: 1.35rem;
+	line-height: 1.35;
+	font-weight: 800;
+	color: #ffffff !important;
+	margin: 0 0 0.5rem 0;
+	letter-spacing: -0.01em;
+}
+@media (min-width: 640px) {
+	.anp-cro-card .anp-cro-title {
+		font-size: 1.55rem;
+	}
+}
+.anp-cro-card .anp-cro-desc {
+	font-size: 0.95rem;
+	line-height: 1.6;
+	color: #cbd5e1;
+	margin: 0;
+}
+.anp-cro-card .anp-cro-actions {
+	flex-shrink: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	width: 100%;
+}
+.anp-cro-card .anp-cro-actions br {
+	display: none !important;
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+	.anp-cro-card .anp-cro-actions {
+		flex-direction: row;
+		width: auto;
+	}
+}
+@media (min-width: 1024px) {
+	.anp-cro-card .anp-cro-actions {
+		width: 250px;
+		flex-direction: column;
+	}
+}
+.anp-cro-card .anp-cro-actions .btn {
+	width: 100%;
+	justify-content: center;
+	padding: 0.85rem 1.25rem;
+	font-size: 0.95rem;
+	white-space: nowrap;
+}
 
 /* Tiêu đề mục trang Liên hệ, footer dùng chung */
 .skip-link:focus { outline: none; }
